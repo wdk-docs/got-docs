@@ -1,11 +1,11 @@
 ---
-title: "错误"
-linkTitle: ""
-weight: 4
+title: "错误方法"
+linkTitle: "错误方法"
+weight: 10
+description: >
+  每个错误包含一个`options`属性 这是`Got`用于创建一个请求的选项 - 只是为了让调试更加容易。
 type: "docs"
 ---
-
-每个错误包含一个`options`属性 这是选项`Got`用于创建一个请求 - 只是为了让调试更加容易。
 
 ## got.CacheError
 

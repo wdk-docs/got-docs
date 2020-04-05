@@ -1,11 +1,11 @@
 ---
-title: "中止请求"
-linkTitle: ""
-weight: 5
+title: "中止请求-cancel"
+linkTitle: "中止请求"
+weight: 11
+description: >
+  返回的承诺`Got`具有[`.cancel()`](https://github.com/sindresorhus/p-cancelable)方法，该方法被调用时，将中止请求。
 type: "docs"
 ---
-
-返回的承诺`Got`具有[`.cancel()`](https://github.com/sindresorhus/p-cancelable)方法，该方法被调用时，将中止请求。
 
 ```js
 (async () => {

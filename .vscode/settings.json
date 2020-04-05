@@ -1,3 +1,6 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "editor.tabSize": 2,
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true
 }

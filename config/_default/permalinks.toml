@@ -1,0 +1,2 @@
+# Configure how URLs look like per section.
+blog = "/:section/:year/:month/:day/:slug/"

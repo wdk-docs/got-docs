@@ -1,0 +1,32 @@
+{{ if (in .Dir "releases") }}
+{{ $.Scratch.Set "blogsection" "Got releases"}}
+{{ else if (in .Dir "articles") }}
+{{ $.Scratch.Set "blogsection" "Got articles"}}
+{{ else if (in .Dir "events") }}
+{{ $.Scratch.Set "blogsection" "Got social events"}}
+{{ else }}
+{{ $.Scratch.Set "blogsection" "Welcome to the Got blog"}}
+{{ end }}
+
+<h1>{{ $.Scratch.Get "blogsection" }}</h1>
+{{ if eq .Dir "blog/" }}
+<p>Follow this blog to keep up-to-date with Got.</p>
+<ul>
+<li><a href="./releases"><b>Release and feature announcements</b></a>: <br>{{ end }}
+{{ if or (in .Dir "releases") (eq .Dir "blog/") }}Learn about each Got release, what's new and changed, and how to get started with the latest and greatest.{{ end }}
+
+{{ if eq .Dir "blog/" }}</li>
+<li><a href="./articles"><b>Articles</b></a>: <br>{{ end }}
+{{ if or (in .Dir "articles") (eq .Dir "blog/") }}Read about Got-centric features, tools, and related topics.{{ end }}
+
+{{ if eq .Dir "blog/" }}</li>
+<li><a href="./events"><b>Future and past social events</b></a>: <br>{{ end }}
+{{ if or (in .Dir "events") (eq .Dir "blog/") }}Find out where the Got team will be talking next, and where they've been.{{ end }}
+
+{{ if eq .Dir "blog/" }}</li>
+</ul>
+<hr>
+<p><b>Browse all Got blog posts by date:</b></p>
+{{ else }}
+<hr>
+{{ end }}

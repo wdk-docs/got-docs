@@ -1,11 +1,12 @@
 ---
-title: "缓存"
-linkTitle: ""
-weight: 6
+title: "缓存-cache"
+linkTitle: "缓存"
+weight: 13
+description: >
+  `Got`实现[RFC 7234](http://httpwg.org/specs/rfc7234.html)兼容 HTTP 缓存 它的工作原理开箱内存 并且是具有广泛的存储适配器的易插拔.
 type: "docs"
 ---
 
-`Got`实现[RFC 7234](http://httpwg.org/specs/rfc7234.html)兼容 HTTP 缓存 它的工作原理开箱内存 并且是具有广泛的存储适配器的易插拔.
 新鲜缓存条目直接从缓存中, 和陈旧的缓存条目用`If-None-Match`/`If-Modified-Since`头重新验证.
 您可以在[`cacheable-request` 文档](https://github.com/lukechilds/cacheable-request)中读取更多关于底层缓存行为 .
 对于 DNS 缓存, `Got`使用[`cacheable-lookup`](https://github.com/szmarczak/cacheable-lookup).
