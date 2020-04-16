@@ -1,6 +1,6 @@
 ---
-title: "实例-extend"
-linkTitle: "实例"
+title: "高级创建-扩展实例-extend"
+linkTitle: "扩展实例"
 weight: 5
 description: >
   让调用 REST API 的更容易通过创建利基特定`got`实例。
@@ -139,11 +139,11 @@ got.extend(a, b);
 //=> {headers: {cat: 'meow', cow: 'moo'}}
 ```
 
-## 例子
+## 合并例子
 
-什么样的情况下，你可以撰写在一起的一些例子:
+下面的例子描述了你在什么样的情况下可以编辑一些需要合并的例子:
 
-### 比规定的拒绝，导致其他站点重定向
+### 比规定的禁止，导致重定向到其他站点
 
 ```js
 const controlRedirects = got.extend({
@@ -212,7 +212,7 @@ const noUserAgent = got.extend({
 });
 ```
 
-### 自定义端点
+### 定义基础网址
 
 ```js
 const httpbin = got.extend({
@@ -220,7 +220,7 @@ const httpbin = got.extend({
 });
 ```
 
-### 签名请求
+### 设置头部签名
 
 ```js
 const crypto = require("crypto");
@@ -245,11 +245,13 @@ const signRequest = got.extend({
 });
 ```
 
-### 全部放在一起
+### 合并所有实例
 
-如果这些情况都是不同的模块，并且你不想重写它们， 用 `got.extend(...instances)`.
+如果这些实例都是不同的模块，并且你不想重写它们， 用 `got.extend(...instances)`合并.
 
-**注意**: 在`noUserAgent`实例必须在链的末端被置于作为实例，以便合并。 其他情况下，确实有`user-agent`头。
+{{% alert color="primary" %}}
+`noUserAgent`实例作为实例必须放在链的末端，以便合并。 否则`user-agent`还会有内容。
+{{% /alert %}}
 
 ```js
 const merged = got.extend(
@@ -261,7 +263,7 @@ const merged = got.extend(
 );
 
 (async () => {
-	// There's no 'user-agent' header :)
+	// 有没有'user-agent'头 :)
 	await merged("/");
 	/* HTTP Request =>
 	 * GET / HTTP/1.1
@@ -276,12 +278,12 @@ const merged = got.extend(
 		downloadLimit: MEGABYTE,
 		prefixUrl: ""
 	});
-	// CancelError: Exceeded the download limit of 1048576 bytes
+	// CancelError: 超过1048576个字节的下载限制
 
 	await merged("https://jigsaw.w3.org/HTTP/300/301.html", {
 		allowedHosts: ["google.com"],
 		prefixUrl: ""
 	});
-	// CancelError: Redirection to jigsaw.w3.org is not allowed
+	// CancelError: 不允许重定向到jigsaw.w3.org
 })();
 ```

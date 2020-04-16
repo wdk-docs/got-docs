@@ -2,10 +2,10 @@
 title: "让我们做一个插件！"
 linkTitle: "制作插件"
 weight: 23
+description: >
+  关于如何像老板一样使用`Got`的另一个例子 :electric_plug:
 type: "docs"
 ---
-
-> 关于如何使用`Got`像老板一样另一个例子 :electric_plug:
 
 好了，你已经学会了一些基本知识。那很棒！
 
@@ -17,24 +17,22 @@ type: "docs"
 
 让我们写下来的最重要的信息:
 
-1.  根端点 `https://api.github.com/`.
-2.  我们将使用 API​​ 版本 3. 该`Accept`头需要被设置为 `application/vnd.github.v3+json`.
-3.  体是一个 JSON 格式。
-4.  我们将使用 OAuth2 以授权。
-5.  我们可能会收到 `400 Bad Request` 或者 `422 Unprocessable Entity`.正文包含有关错误的详细信息.
-6.  _Pagination?_ 还没. 这将是 Got`的`一项内置功能。 当该功能推出，我们会相应地更新这个页面。
-7.  速率限制。这些标题很有意思:
+1. 根端点 `https://api.github.com/`.
+2. 我们将使用 API​​ 版本 3. 该`Accept`头需要被设置为 `application/vnd.github.v3+json`.
+3. 体是一个 JSON 格式。
+4. 我们将使用 OAuth2 以授权。
+5. 我们可能会收到 `400 Bad Request` 或者 `422 Unprocessable Entity`.正文包含有关错误的详细信息.
+6. _Pagination?_ 还没. 这将是 Got`的`一项内置功能。 当该功能推出，我们会相应地更新这个页面。
+7. 速率限制。这些标题很有意思:
 
-        - `X-RateLimit-Limit`
-        - `X-RateLimit-Remaining`
-        - `X-RateLimit-Reset`
-        - `X-GitHub-Request-Id`
+   - `X-RateLimit-Limit`
+   - `X-RateLimit-Remaining`
+   - `X-RateLimit-Reset`
+   - `X-GitHub-Request-I 另外`X-GitHub-Request-Id`可能是有用的。
 
-        另外`X-GitHub-Request-Id`可能是有用的。
+8. User-Agent 是必须的.
 
-8.  User-Agent 是必须的.
-
-    当我们拥有所有必要的信息，我们就可以开始混合 :cake:
+   当我们拥有所有必要的信息，我们就可以开始混合 :cake:
 
 ## 根端点
 
@@ -272,4 +270,4 @@ const ghGot = require("gh-got");
 })();
 ```
 
-你知道你可以在许多情况下，组合成一个更大的，更强大吗？ 查看[高级创作](advanced-creation.md)指南.
+你知道你可以在许多情况下，组合成一个更大的，更强大吗？ 查看[扩展](./api/extend.md)指南.
