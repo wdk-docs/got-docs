@@ -2,7 +2,7 @@ INHERIT: config/nav.yml
 
 site_name: Got
 site_url: https://wdk-docs.github.io/got-docs/
-site_author: Kamil Mysliwiec
+site_author: Sindre Sorhus
 site_description: Got 文档
 docs_dir: content
 site_dir: docs
@@ -106,7 +106,7 @@ plugins:
           - review
   tags:
     tags_file: tags.md
-copyright: "版权所有 © 2017-2022 MIT by Kamil Mysliwiec"
+copyright: "版权所有 © 2017-2023 MIT by Sindre Sorhus"
 
 extra:
   social:
