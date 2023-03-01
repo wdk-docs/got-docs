@@ -1,33 +1,31 @@
-[> Back to homepage](../readme.md#documentation)
-
-## Timeout options
+# Timeout options
 
 Source code: [`source/core/timed-out.ts`](../source/core/timed-out.ts)
 
-It is a good practice to set a timeout to prevent hanging requests.\
+It is a good practice to set a timeout to prevent hanging requests.  
 By default, there is no timeout set.
 
 **All numbers refer to milliseconds.**
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {timings} = await got('https://example.com', {
-	timeout: {
-		lookup: 100,
-		connect: 50,
-		secureConnect: 50,
-		socket: 1000,
-		send: 10000,
-		response: 1000
-	}
+const { timings } = await got("https://example.com", {
+  timeout: {
+    lookup: 100,
+    connect: 50,
+    secureConnect: 50,
+    socket: 1000,
+    send: 10000,
+    response: 1000,
+  },
 });
 
 // Alternatively:
-const {timings} = await got('https://example.com', {
-	timeout: {
-		request: 10000
-	}
+const { timings } = await got("https://example.com", {
+  timeout: {
+    request: 10000,
+  },
 });
 
 console.log(timings);
@@ -55,84 +53,86 @@ console.log(timings);
 // }
 ```
 
-### `timeout`
+## `timeout`
 
-**Type: `object`**
+**类型: `object`**
 
 This object describes the maximum allowed time for particular events.
 
-#### `lookup`
+### `lookup`
 
-**Type: `number`**
+**类型: `number`**
 
-Starts when a socket is assigned.\
+Starts when a socket is assigned.  
 Ends when the hostname has been resolved.
 
-Does not apply when using a Unix domain socket.\
+Does not apply when using a Unix domain socket.  
 Does not apply when passing an IP address.
 
 It is preferred to not use any greater value than `100`.
 
-#### `connect`
+### `connect`
 
-**Type: `number`**
+**类型: `number`**
 
-Starts when lookup completes.\
+Starts when lookup completes.  
 Ends when the socket is fully connected.
 
 If `lookup` does not apply to the request, this event starts when the socket is assigned and ends when the socket is connected.
 
-#### `secureConnect`
+### `secureConnect`
 
-**Type: `number`**
+**类型: `number`**
 
-Starts when `connect` completes.\
+Starts when `connect` completes.  
 Ends when the handshake process completes.
 
 This timeout applies only to HTTPS requests.
 
-#### `socket`
+### `socket`
 
-**Type: `number`**
+**类型: `number`**
 
-Starts when the socket is connected.\
+Starts when the socket is connected.  
 Resets when new data is transferred.
 
 It is the same as [`request.setTimeout(timeout)`](https://nodejs.org/api/http.html#http_request_settimeout_timeout_callback) which calls [`socket.setTimeout(timeout)`](https://nodejs.org/api/net.html#socketsettimeouttimeout-callback) after a socket is assigned to this request and is connected.
 
-#### `send`
+### `send`
 
-**Type: `number`**
+**类型: `number`**
 
-Starts when the socket is connected.\
+Starts when the socket is connected.  
 Ends when all data have been written to the socket.
 
 **Note:**
+
 > - This does not assure the data have been received by the other end!
 > - It only assures that the data have been passed to the underlying OS.
 
-#### `response`
+### `response`
 
-**Type: `number`**
+**类型: `number`**
 
-Starts when request has been flushed.\
+Starts when request has been flushed.  
 Ends when the headers are received.
 
-#### ~~`read`~~
+### ~~`read`~~
 
-**Type: `number`**
+**类型: `number`**
 
-Starts when the headers are received.\
+Starts when the headers are received.  
 Ends when the response's `end` event fires.
 
 **Note:**
+
 > - This timeout is blocked by https://github.com/nodejs/node/issues/35923
 
-#### `request`
+### `request`
 
-**Type: `number`**
+**类型: `number`**
 
-Starts when the request is initiated.\
+Starts when the request is initiated.  
 Ends when the response's `end` event fires.
 
 In other words, this is the global timeout.

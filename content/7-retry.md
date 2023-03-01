@@ -1,19 +1,20 @@
-[> Back to homepage](../readme.md#documentation)
-
-## Retry API
+# Retry API
 
 **Note:**
+
 > If you're looking for retry implementation using streams, check out the [Retry Stream API](3-streams.md#retry).
 
 **Tip:**
+
 > You can trigger a retry by throwing the [`RetryError`](8-errors.md#retryerror) in any hook.
 
 **Tip:**
+
 > The `afterResponse` hook exposes a dedicated function to retry with merged options. [Read more](9-hooks.md#afterresponse).
 
-### `retry`
+## `retry`
 
-**Type: `object`**\
+**类型: `object`**  
 **Default:**
 
 ```js
@@ -58,33 +59,35 @@
 
 This option represents the `retry` object.
 
-#### `limit`
+### `limit`
 
-**Type: `number`**
+**类型: `number`**
 
 The maximum retry count.
 
-#### `methods`
+### `methods`
 
-**Type: `string[]`**
+**类型: `string[]`**
 
 The allowed methods to retry on.
 
 **Note:**
+
 > - By default, Got does not retry on `POST`.
 
-#### `statusCodes`
+### `statusCodes`
 
-**Type: `number[]`**
+**类型: `number[]`**
 
 **Note:**
+
 > - Only [**unsuccessful**](8-errors.md#) requests are retried. In order to retry successful requests, use an [`afterResponse`](9-hooks.md#afterresponse) hook.
 
 The allowed [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) to retry on.
 
-#### `errorCodes`
+### `errorCodes`
 
-**Type: `string[]`**
+**类型: `string[]`**
 
 The allowed error codes to retry on.
 
@@ -97,70 +100,72 @@ The allowed error codes to retry on.
 - `ENETUNREACH` - No internet connection.
 - `EAI_AGAIN` - DNS lookup timed out.
 
-#### `maxRetryAfter`
+### `maxRetryAfter`
 
-**Type: `number | undefined`**\
-**Default: `options.timeout.request`**
+**类型: `number | undefined`**  
+**默认: `options.timeout.request`**
 
 The upper limit of [`retry-after` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After). If `undefined`, it will use `options.timeout` as the value.
 
 If the limit is exceeded, the request is canceled.
 
-#### `calculateDelay`
+### `calculateDelay`
 
-**Type: `Function`**
+**类型: `Function`**
 
 ```ts
-(retryObject: RetryObject) => Promisable<number>
+(retryObject: RetryObject) => Promisable<number>;
 ```
 
 ```ts
 interface RetryObject {
-	attemptCount: number;
-	retryOptions: RetryOptions;
-	error: RequestError;
-	computedValue: number;
-	retryAfter?: number;
+  attemptCount: number;
+  retryOptions: RetryOptions;
+  error: RequestError;
+  computedValue: number;
+  retryAfter?: number;
 }
 ```
 
 The function used to calculate the delay before the next request is made. Returning `0` cancels the retry.
 
 **Note:**
+
 > - This function is responsible for the entire retry mechanism, including the `limit` property. To support this, you need to check if `computedValue` is different than `0`.
 
 **Tip:**
+
 > - This is especially useful when you want to scale down the computed value.
 
 ```js
-import got from 'got';
+import got from "got";
 
-await got('https://httpbin.org/anything', {
-	retry: {
-		calculateDelay: ({computedValue}) => {
-			return computedValue / 10;
-		}
-	}
+await got("https://httpbin.org/anything", {
+  retry: {
+    calculateDelay: ({ computedValue }) => {
+      return computedValue / 10;
+    },
+  },
 });
 ```
 
-#### `backoffLimit`
+### `backoffLimit`
 
-**Type: `number`**
+**类型: `number`**
 
 The upper limit of the `computedValue`.
 
 By default, the `computedValue` is calculated in the following way:
 
 ```ts
-((2 ** (attemptCount - 1)) * 1000) + noise
+2 ** (attemptCount - 1) * 1000 + noise;
 ```
 
-The delay increases exponentially.\
+The delay increases exponentially.  
 In order to prevent this, you can set this value to a fixed value, such as `1000`.
 
-#### `noise`
+### `noise`
 
-**Type: `number`**
+**类型: `number`**
 
 The maximum acceptable retry noise in the range of `-100` to `+100`.

@@ -1,22 +1,22 @@
 INHERIT: config/nav.yml
 
-site_name: NestJS
-site_url: https://wdk-docs.github.io/nest-docs/
+site_name: Got
+site_url: https://wdk-docs.github.io/got-docs/
 site_author: Kamil Mysliwiec
-site_description: NestJS 文档
+site_description: Got 文档
 docs_dir: content
 site_dir: docs
 dev_addr: 127.0.0.1:8001
 extra_css:
   - stylesheets/extra.css
 
-repo_name: wdk-docs/nest-docs
-repo_url: https://github.com/wdk-docs/nest-docs
+repo_name: wdk-docs/got-docs
+repo_url: https://github.com/wdk-docs/got-docs
 edit_uri: edit/master/content
 
 theme:
   name: material
-  logo: assets/logo/logo-small.svg
+  logo: assets/logo/logo.svg
   favicon: assets/favicons/favicon.ico
   language: zh
   # custom_dir: overrides
@@ -53,7 +53,9 @@ markdown_extensions:
       anchor_linenums: true
       linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true

@@ -1,21 +1,24 @@
-[> Back to homepage](../readme.md#documentation)
-
-### Capturing async stack traces
+# 捕获异步堆栈跟踪
 
 **Caution:**
-> - Capturing async stack traces can severely degrade performance!
 
-**Want to skip the article? See the [Conclusion](#conclusion) where we discuss a mediocre solution.**
+> - 捕获异步堆栈跟踪会严重降低性能!
 
-We live in a world full of bugs. Software is getting more and more complicated, which makes debugging increasingly more difficult. Ever had an error with no idea where it came from? Yeah, it's often not easy to track this down.
+**想跳过这篇文章?请参阅[Conclusion](#conclusion)，我们在其中讨论了一个普通的解决方案。**
 
-You might have noticed that the `.stack` of an error sometimes look incomplete. This is often due to the execution of an async function that is triggered by a timer. Following the example:
+我们生活在一个充满虫子的世界。
+软件变得越来越复杂，这使得调试变得越来越困难。
+你是否曾经犯过错误，却不知道错误来自哪里?是的，通常不容易找到。
+
+您可能已经注意到，错误的`.stack`有时看起来不完整。
+这通常是由于计时器触发的异步函数的执行。
+示例如下:
 
 ```js
 await new Promise((resolve, reject) => {
-	setTimeout(() => {
-		reject(new Error('here'));
-	});
+  setTimeout(() => {
+    reject(new Error("here"));
+  });
 });
 ```
 
@@ -33,15 +36,15 @@ Error: here
 The stack trace does not show where the timeout was set. It's currently not possible to determine this with the native `Promise`s. However, [`bluebird`](https://github.com/petkaantonov/bluebird/) exposes an option dedicated to capturing async stack traces:
 
 ```js
-import Bluebird from 'bluebird';
+import Bluebird from "bluebird";
 
-Bluebird.config({longStackTraces: true});
+Bluebird.config({ longStackTraces: true });
 global.Promise = Bluebird;
 
 await new Promise((resolve, reject) => {
-	setTimeout(() => {
-		reject(new Error('here'));
-	});
+  setTimeout(() => {
+    reject(new Error("here"));
+  });
 });
 ```
 
@@ -65,23 +68,23 @@ From previous event:
 Now it's clear. We know that the timeout was set on line 5. Bluebird should be sufficient for Got:
 
 ```js
-import Bluebird from 'bluebird';
-import got from 'got';
+import Bluebird from "bluebird";
+import got from "got";
 
-Bluebird.config({longStackTraces: true});
+Bluebird.config({ longStackTraces: true });
 global.Promise = Bluebird;
 
 try {
-	await got('https://httpbin.org/delay/1', {
-		timeout: {
-			request: 1
-		},
-		retry: {
-			limit: 0
-		}
-	});
+  await got("https://httpbin.org/delay/1", {
+    timeout: {
+      request: 1,
+    },
+    retry: {
+      limit: 0,
+    },
+  });
 } catch (error) {
-	console.error(error.stack);
+  console.error(error.stack);
 }
 ```
 
@@ -114,35 +117,37 @@ From previous event:
 As expected, we know where the timeout has been set. Unfortunately, if we increase our retry count limit to `1`, the stack trace remains the same. That's because `bluebird` doesn't track I/O events. Please note that this should be sufficient for most cases. In order to debug further, we can use [`async_hooks`](https://nodejs.org/api/async_hooks.html) instead. A Stack Overflow user has come up with an awesome solution:
 
 ```js
-import asyncHooks from 'async_hooks';
+import asyncHooks from "async_hooks";
 
 const traces = new Map();
 
-asyncHooks.createHook({
-	init(id) {
-		const trace = {};
-		Error.captureStackTrace(trace);
-		traces.set(id, trace.stack.replace(/(^.+$\n){4}/m, '\n'));
-	},
-	destroy(id) {
-		traces.delete(id);
-	},
-}).enable();
+asyncHooks
+  .createHook({
+    init(id) {
+      const trace = {};
+      Error.captureStackTrace(trace);
+      traces.set(id, trace.stack.replace(/(^.+$\n){4}/m, "\n"));
+    },
+    destroy(id) {
+      traces.delete(id);
+    },
+  })
+  .enable();
 
 globalThis.Error = class extends Error {
-	constructor(message) {
-		super(message);
-		this.constructor.captureStackTrace(this, this.constructor);
-	}
+  constructor(message) {
+    super(message);
+    this.constructor.captureStackTrace(this, this.constructor);
+  }
 
-	static captureStackTrace(what, where) {
-		super.captureStackTrace.call(Error, what, where);
+  static captureStackTrace(what, where) {
+    super.captureStackTrace.call(Error, what, where);
 
-		const trace = traces.get(asyncHooks.executionAsyncId());
-		if (trace) {
-			what.stack += trace;
-		}
-	}
+    const trace = traces.get(asyncHooks.executionAsyncId());
+    if (trace) {
+      what.stack += trace;
+    }
+  }
 };
 ```
 
@@ -224,36 +229,36 @@ This is extremely long, and not a complete Node.js app. Just a demo. Imagine how
 All these workarounds have a large impact on performance. However, there is a possible solution to this madness. Got provides handlers, hooks, and context. We can capture the stack trace in a handler, store it in a context and expose it in a `beforeError` hook.
 
 ```js
-import got from 'got';
+import got from "got";
 
 const instance = got.extend({
-	handlers: [
-		(options, next) => {
-			Error.captureStackTrace(options.context);
-			return next(options);
-		}
-	],
-	hooks: {
-		beforeError: [
-			error => {
-				error.source = error.options.context.stack.split('\n');
-				return error;
-			}
-		]
-	}
+  handlers: [
+    (options, next) => {
+      Error.captureStackTrace(options.context);
+      return next(options);
+    },
+  ],
+  hooks: {
+    beforeError: [
+      (error) => {
+        error.source = error.options.context.stack.split("\n");
+        return error;
+      },
+    ],
+  },
 });
 
 try {
-	await instance('https://httpbin.org/delay/1', {
-		timeout: {
-			request: 100
-		},
-		retry: {
-			limit: 0
-		}
-	});
+  await instance("https://httpbin.org/delay/1", {
+    timeout: {
+      request: 100,
+    },
+    retry: {
+      limit: 0,
+    },
+  });
 } catch (error) {
-	console.error(error);
+  console.error(error);
 }
 ```
 
@@ -293,6 +298,7 @@ RequestError: Timeout awaiting 'request' for 100ms
 Yay! This is much more readable. Furthermore, we capture the stack trace only when `got` is called. This is definitely going to have some performance impact, but it will be much more performant than the other mentioned solutions.
 
 Curious to know more? Check out these links:
+
 - https://stackoverflow.com/questions/54914770/is-there-a-good-way-to-surface-error-traces-in-production-across-event-emitters
 - https://github.com/nodejs/node/issues/11370
 - https://github.com/puppeteer/puppeteer/issues/2037

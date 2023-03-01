@@ -1,14 +1,8 @@
-[> Back to homepage](../../readme.md#documentation)
-
-## Migration guides
-
-> You may think it's too hard to switch, but it's really not. 🦄
-
-### Axios
+# Axios
 
 Axios is very similar to Got. The difference is that Axios targets browsers first, while Got fully makes use of Node.js features.
 
-#### Common options
+## Common options
 
 These options remain the same as well:
 
@@ -18,7 +12,7 @@ These options remain the same as well:
 - [`maxRedirects`](../2-options.md#maxredirects)
 - [`decompress`](../2-options.md#decompress)
 
-#### Renamed options
+## Renamed options
 
 We deeply care about readability, so we renamed these options:
 
@@ -31,7 +25,7 @@ We deeply care about readability, so we renamed these options:
 - `data` → [`body`](../2-options.md#body) / [`json`](../2-options.md#json) / [`form`](../2-options.md#form)
 - `params` → [`searchParams`](../2-options.md#serachparams)
 
-#### Changes in behavior
+## Changes in behavior
 
 - `transformRequest` → [`hooks.beforeRequest`](../9-hooks.md#beforerequest)
   - The API is different.
@@ -44,7 +38,7 @@ We deeply care about readability, so we renamed these options:
 - [`responseType`](../2-options.md#responsetype)
   - Accepts `'text'`, `'json'` or `'buffer'`.
 
-#### Breaking changes
+## Breaking changes
 
 - `onUploadProgress`
   - This option does not exist. Instead, use [`got(…).on('uploadProgress', …)`](../3-streams.md#uploadprogress).
@@ -63,7 +57,7 @@ We deeply care about readability, so we renamed these options:
 - `maxBodyLength`
   - This option does not exist.
 
-#### Response
+## Response
 
 The response object is different as well:
 
@@ -76,23 +70,23 @@ The response object is different as well:
 
 The `response.headers` object remains the same.
 
-#### Interceptors
+## Interceptors
 
 Got offers [hooks](../9-hooks.md) instead, which are more flexible.
 
-#### Errors
+## Errors
 
 Errors look the same, with the difference `error.request` returns a Got stream. Furthermore, Got provides [more details](../8-errors.md) to make debugging easier.
 
-#### Cancelation
+## Cancelation
 
 While Got doesn't support [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) yet, you can use `promise.cancel()`.
 
-#### Convenience methods
+## Convenience methods
 
 Convenience methods, such as `axios.get(…)` etc. remain the same: `got.get(…)`. Instead of `axios.create(…)` use `got.extend(…)`.
 
-#### You're good to go!
+## You're good to go!
 
 Well, you have already come this far :tada:\
 Take a look at the [documentation](../../readme.md#documentation). It's worth the time to read it.\

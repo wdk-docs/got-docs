@@ -1,37 +1,35 @@
-[> Back to homepage](../readme.md#documentation)
-
-## Options
+# 选项
 
 Source code: [`source/core/options.ts`](../source/core/options.ts)
 
-Like `fetch` stores the options in a `Request` instance, Got does so in `Options`.\
+Like `fetch` stores the options in a `Request` instance, Got does so in `Options`.  
 It is made of getters and setters that provide fast option normalization and validation.
 
 **By default, Got will retry on failure. To disable this option, set [`options.retry`](7-retry.md) to `{limit: 0}`.**
 
-#### Merge behavior explained
+## 合并行为解释
 
-When an option is already set, setting it again replaces it with a deep clone by default.\
+When an option is already set, setting it again replaces it with a deep clone by default.  
 Otherwise the merge behavior is documented in the corresponding section for the option.
 
-#### How to store options
+## 如何存储选项
 
 The constructor - `new Options(url, options, defaults)` - takes the same arguments like the `got` function.
 
 ```js
-import got, {Options} from 'got';
+import got, { Options } from "got";
 
 const options = new Options({
-	prefixUrl: 'https://httpbin.org',
-	headers: {
-		foo: 'foo'
-	}
+  prefixUrl: "https://httpbin.org",
+  headers: {
+    foo: "foo",
+  },
 });
 
-options.headers.foo = 'bar';
+options.headers.foo = "bar";
 
 // Note that `Options` stores normalized options, therefore it needs to be passed as the third argument.
-const {headers} = await got('anything', undefined, options).json();
+const { headers } = await got("anything", undefined, options).json();
 console.log(headers.Foo);
 //=> 'bar'
 ```
@@ -39,37 +37,37 @@ console.log(headers.Foo);
 If a plain object is preferred, it can be used in the following way:
 
 ```js
-import got from 'got';
+import got from "got";
 
 const options = {
-	prefixUrl: 'https://httpbin.org',
-	headers: {
-		foo: 'bar'
-	}
+  prefixUrl: "https://httpbin.org",
+  headers: {
+    foo: "bar",
+  },
 };
 
-options.headers.foo = 'bar';
+options.headers.foo = "bar";
 
 // Note that `options` is a plain object, therefore it needs to be passed as the second argument.
-const {headers} = await got('anything', options).json();
+const { headers } = await got("anything", options).json();
 console.log(headers.Foo);
 //=> 'bar'
 ```
 
-Note that the constructor throws when an invalid option is provided, such as non-existing option or a typo.\
+Note that the constructor throws when an invalid option is provided, such as non-existing option or a typo.  
 In the second example, it would throw only when the promise is being executed.
 
-For TypeScript users, `got` exports a dedicated type called `OptionsInit`.\
+For TypeScript users, `got` exports a dedicated type called `OptionsInit`.  
 It is a plain object that can store the same properties as `Options`.
 
-Performance-wise there is no difference which one is used, although the constructor may be preferred as it automatically validates the data.\
-The `Options` approach may give a slight boost as it only clones the options, there is no normalization going on.\
+Performance-wise there is no difference which one is used, although the constructor may be preferred as it automatically validates the data.  
+The `Options` approach may give a slight boost as it only clones the options, there is no normalization going on.  
 It is also useful for storing the base configuration of a custom Got client.
 
-#### Resetting options
+## 重置选项
 
-Unlike Got 11, explicitly specifying `undefined` no longer keeps the parent value.\
-In order to keep the parent value, you must not set an option to `undefined`.\
+Unlike Got 11, explicitly specifying `undefined` no longer keeps the parent value.  
+In order to keep the parent value, you must not set an option to `undefined`.  
 Doing so will reset those values:
 
 ```js
@@ -90,69 +88,74 @@ In order to reset `hooks`, `retry` and `pagination`, another Got instance must b
 ```js
 const defaults = new Options();
 
-const secondInstance = instance.extend({mutableDefaults: true});
+const secondInstance = instance.extend({ mutableDefaults: true });
 secondInstance.defaults.options.hooks = defaults.hooks;
 secondInstance.defaults.options.retry = defaults.retry;
 secondInstance.defaults.options.pagination = defaults.pagination;
 ```
 
-### `url`
+## `url`
 
-**Type: <code>string | [URL](https://nodejs.org/api/url.html#url_the_whatwg_url_api)</code>**
+**类型: <code>string | [URL](https://nodejs.org/api/url.html#url_the_whatwg_url_api)</code>**
 
 The URL to request. Usually the `url` represents a [WHATWG URL](https://url.spec.whatwg.org/#url-class).
 
 ```js
-import got from 'got';
+import got from "got";
 
 // This:
-await got('https://httpbin.org/anything');
+await got("https://httpbin.org/anything");
 
 // is semantically the same as this:
-await got(new URL('https://httpbin.org/anything'));
+await got(new URL("https://httpbin.org/anything"));
 
 // as well as this:
 await got({
-	url: 'https://httpbin.org/anything'
+  url: "https://httpbin.org/anything",
 });
 ```
 
-#### **Note:**
-> - Throws if no protocol specified.
+!!! Note
 
-#### **Note:**
-> - If `url` is a string, then the `query` string will **not** be parsed as search params.\
->  This is in accordance to [the specification](https://datatracker.ietf.org/doc/html/rfc7230#section-2.7).\
->  If you want to pass search params instead, use the `searchParams` option below.
+    - Throws if no protocol specified.
+
+!!! Note
+
+    If `url` is a string, then the `query` string will **not** be parsed as search params.   
+    This is in accordance to [the specification](https://datatracker.ietf.org/doc/html/rfc7230#section-2.7).
+    If you want to pass search params instead, use the `searchParams` option below.
 
 ```js
-import got from 'got';
+import got from "got";
 
-await got('https://httpbin.org/anything?query=a b'); //=> ?query=a%20b
-await got('https://httpbin.org/anything', {searchParams: {query: 'a b'}}); //=> ?query=a+b
+await got("https://httpbin.org/anything?query=a b"); //=> ?query=a%20b
+await got("https://httpbin.org/anything", { searchParams: { query: "a b" } }); //=> ?query=a+b
 
 // The query string is overridden by `searchParams`
-await got('https://httpbin.org/anything?query=a b', {searchParams: {query: 'a b'}}); //=> ?query=a+b
+await got("https://httpbin.org/anything?query=a b", { searchParams: { query: "a b" } }); //=> ?query=a+b
 ```
 
-#### **Note:**
-> - Leading slashes are disallowed to enforce consistency and avoid confusion.\
->  For example, when the prefix URL is `https://example.com/foo` and the input is `/bar`, there's ambiguity whether the resulting URL would become `https://example.com/foo/bar` or `https://example.com/bar`. The latter is used by browsers.
+!!! Note
 
-### `searchParams`
+    Leading slashes are disallowed to enforce consistency and avoid confusion.  
+    For example, when the prefix URL is `https://example.com/foo` and the input is `/bar`, 
+    there's ambiguity whether the resulting URL would become `https://example.com/foo/bar` or `https://example.com/bar`. 
+    The latter is used by browsers.
 
-**Type: <code>string | [URLSearchParams](https://nodejs.org/api/url.html#url_class_urlsearchparams) | object&lt;string, [Primitive](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)&gt;</code>**
+## `searchParams`
+
+**类型: <code>string | [URLSearchParams](https://nodejs.org/api/url.html#url_class_urlsearchparams) | object&lt;string, [Primitive](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)&gt;</code>**
 
 [WHATWG URL Search Params](https://url.spec.whatwg.org/#interface-urlsearchparams) to be added to the request URL.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const response = await got('https://httpbin.org/anything', {
-	searchParams: {
-		hello: 'world',
-		foo: 123
-	}
+const response = await got("https://httpbin.org/anything", {
+  searchParams: {
+    hello: "world",
+    foo: 123,
+  },
 }).json();
 
 console.log(response.args);
@@ -162,30 +165,36 @@ console.log(response.args);
 If you need to pass an array, you can do it using a `URLSearchParams` instance:
 
 ```js
-import got from 'got';
+import got from "got";
 
-const searchParams = new URLSearchParams([['key', 'a'], ['key', 'b']]);
+const searchParams = new URLSearchParams([
+  ["key", "a"],
+  ["key", "b"],
+]);
 
-await got('https://httpbin.org/anything', {searchParams});
+await got("https://httpbin.org/anything", { searchParams });
 
 console.log(searchParams.toString());
 //=> 'key=a&key=b'
 ```
 
-#### **Note:**
-> - This will override the `query` string in `url`.
+!!! Note
 
-#### **Note:**
-> - `null` values are not stringified, an empty string is used instead.
-> - `undefined` values will clear the original keys.
+    This will override the `query` string in `url`.
 
-#### **Merge behavior:**
-> - Overrides existing properties.
+!!! Note
 
-### `prefixUrl`
+    - `null` values are not stringified, an empty string is used instead.
+    - `undefined` values will clear the original keys.
 
-**Type: `string`**\
-**Default: `''`**
+!!! note "合并行为"
+
+    - 覆盖现有属性。
+
+## `prefixUrl`
+
+**类型: `string`**  
+**默认: `''`**
 
 The string to be prepended to `url`.
 
@@ -193,355 +202,380 @@ The prefix can be any valid URL, either relative or [absolute](https://url.spec.
 A trailing slash `/` is optional - one will be added automatically.
 
 ```js
-import got from 'got';
+import got from "got";
 
 // This:
-const instance = got.extend({prefixUrl: 'https://httpbin.org'});
-await instance('anything');
+const instance = got.extend({ prefixUrl: "https://httpbin.org" });
+await instance("anything");
 
 // is semantically the same as this:
-await got('https://httpbin.org/anything');
+await got("https://httpbin.org/anything");
 ```
 
-#### **Note:**
-> - Changing `prefixUrl` also updates the `url` option if set.
+!!! Note
 
-#### **Note:**
-> - If you're passing an absolute URL as `url`, you need to set `prefixUrl` to an empty string.
+    Changing `prefixUrl` also updates the `url` option if set.
 
-### `signal`
+!!! Note
 
-**Type: [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)**
+    If you're passing an absolute URL as `url`, you need to set `prefixUrl` to an empty string.
+
+## `signal`
+
+**类型: [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)**
 
 You can abort the `request` using [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
 
-*Requires Node.js 16 or later.*
+_Requires Node.js 16 or later._
 
 ```js
-import got from 'got';
+import got from "got";
 
 const abortController = new AbortController();
 
-const request = got('https://httpbin.org/anything', {
-	signal: abortController.signal
+const request = got("https://httpbin.org/anything", {
+  signal: abortController.signal,
 });
 
 setTimeout(() => {
-	abortController.abort();
+  abortController.abort();
 }, 100);
 ```
 
-### `method`
+## `method`
 
-**Type: `string`**\
-**Default: `GET`**
+**类型: `string`**  
+**默认: `GET`**
 
-The [HTTP method](https://datatracker.ietf.org/doc/html/rfc7231#section-4) used to make the request.\
+The [HTTP method](https://datatracker.ietf.org/doc/html/rfc7231#section-4) used to make the request.  
 The most common methods are: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {method} = await got('https://httpbin.org/anything', {
-	method: 'POST'
+const { method } = await got("https://httpbin.org/anything", {
+  method: "POST",
 }).json();
 
 console.log(method);
 // => 'POST'
 ```
 
-### `headers`
+## `headers`
 
-**Type: `object<string, string>`**\
-**Default: `{}`**
+**类型: `object<string, string>`**  
+**默认: `{}`**
 
 The [HTTP headers](https://datatracker.ietf.org/doc/html/rfc7231#section-8.3) to be sent. Headers set to `undefined` will be omitted.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {headers} = await got.post('https://httpbin.org/anything', {
-	headers: {
-		hello: 'world'
-	}
-}).json();
+const { headers } = await got
+  .post("https://httpbin.org/anything", {
+    headers: {
+      hello: "world",
+    },
+  })
+  .json();
 
 console.log(headers);
 // => {hello: 'world'}
 ```
 
-#### **Merge behavior:**
-> - Overrides existing properties.
+!!! note "合并行为"
 
-### `isStream`
+    覆盖现有属性。
 
-**Type: `boolean`**\
-**Default: `false`**
+## `isStream`
+
+**类型: `boolean`**  
+**默认: `false`**
 
 Whether the `got` function should return a [`Request` duplex stream](3-streams.md) or a [`Promise<Response>`](1-promise.md).
 
 ```js
-import got from 'got';
+import got from "got";
 
 // This:
-const stream = got('https://httpbin.org/anything', {isStream: true});
+const stream = got("https://httpbin.org/anything", { isStream: true });
 
 // is semantically the same as this:
-const stream = got.stream('https://httpbin.org/anything');
+const stream = got.stream("https://httpbin.org/anything");
 
-stream.setEncoding('utf8');
-stream.on('data', console.log);
+stream.setEncoding("utf8");
+stream.on("data", console.log);
 ```
 
-### `body`
+## `body`
 
-**Type: `string | Buffer | stream.Readable | Generator | AsyncGenerator | FormData` or [`form-data` instance](https://github.com/form-data/form-data)**
+**类型: `string | Buffer | stream.Readable | Generator | AsyncGenerator | FormData` or [`form-data` instance](https://github.com/form-data/form-data)**
 
-The payload to send.
+要发送的有效载荷。
 
-For `string` and `Buffer` types, the `content-length` header is automatically set if the `content-length` and `transfer-encoding` headers are missing.
+对于 `string` 和 `Buffer` 类型，如果 `content-length` 和 `transfer-encoding` 头缺失， `content-length` 头将自动设置。
 
-**Since Got 12, the `content-length` header is not automatically set when `body` is an instance of [`fs.createReadStream()`](https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options).**
+**从Got 12开始，当 `body` 是[ `fs.createReadStream()` ](https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options)的实例时， `content-length` 头不会自动设置。.**
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {data} = await got.post('https://httpbin.org/anything', {
-	body: 'Hello, world!'
-}).json();
+const { data } = await got
+  .post("https://httpbin.org/anything", {
+    body: "Hello, world!",
+  })
+  .json();
 
 console.log(data);
 //=> 'Hello, world!'
 ```
 
-Since Got 12, you can use spec-compliant [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) objects as request body, such as [`formdata-node`](https://github.com/octet-stream/form-data) or [`formdata-polyfill`](https://github.com/jimmywarting/FormData):
+从Got 12开始，您可以使用符合规范的[ `FormData` ](https://developer.mozilla.org/en-US/docs/Web/API/FormData)对象作为请求体，例如[`formdata-node`](https://github.com/octet-stream/form-data)或[`formdata-polyfill`](https://github.com/jimmywarting/FormData):
 
 ```js
-import got from 'got';
-import {FormData} from 'formdata-node'; // or:
+import got from "got";
+import { FormData } from "formdata-node"; // or:
 // import {FormData} from 'formdata-polyfill/esm.min.js';
 
 const form = new FormData();
-form.set('greeting', 'Hello, world!');
+form.set("greeting", "Hello, world!");
 
-const data = await got.post('https://httpbin.org/post', {
-	body: form
-}).json();
+const data = await got
+  .post("https://httpbin.org/post", {
+    body: form,
+  })
+  .json();
 
 console.log(data.form.greeting);
 //=> 'Hello, world!'
 ```
 
-#### **Note:**
-> - If `body` is specified, then the `json` or `form` option cannot be used.
+!!! Note
 
-#### **Note:**
-> - If you use this option, `got.stream()` will be read-only.
+    如果指定了 `body` ，则不能使用 `json` 或 `form` 选项。
 
-#### **Note:**
-> - Passing `body` with `GET` will throw unless the [`allowGetBody` option](#allowgetbody) is set to `true`.
+!!! Note
 
-#### **Note:**
-> - This option is not enumerable and will not be merged with the instance defaults.
+    如果使用此选项， `got.stream()` 将是只读的。
 
-### `json`
+!!! Note
 
-**Type: JSON-serializable values**
+    除非[ `allowGetBody` 选项](#allowGetBody)设置为 `true` ，否则用 `GET` 传递 `body` 将抛出。
 
-JSON body. If set, the `content-type` header defaults to `application/json`.
+!!! Note
+
+    此选项不可枚举，并且不会与实例默认值合并。
+
+## `json`
+
+**类型: JSON-serializable values**
+
+JSON body. 如果设置， `content-type` 头默认为 `application/json` 。
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {data} = await got.post('https://httpbin.org/anything', {
-	json: {
-		hello: 'world'
-	}
-}).json();
+const { data } = await got
+  .post("https://httpbin.org/anything", {
+    json: {
+      hello: "world",
+    },
+  })
+  .json();
 
 console.log(data);
 //=> `{hello: 'world'}`
 ```
 
-### `form`
+## `form`
 
-**Type: <code>object&lt;string, [Primitive](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)&gt;</code>**
+**类型: <code>object&lt;string, [Primitive](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)&gt;</code>**
 
-The form body is converted to a query string using `(new URLSearchParams(form)).toString()`.
+使用 `(new URLSearchParams(form)).toString()` 将表单主体转换为查询字符串.
 
-If set, the `content-type` header defaults to [`application/x-www-form-urlencoded`](https://url.spec.whatwg.org/#application/x-www-form-urlencoded).
+如果设置了， `content-type` 头默认为[ `application/x-www-form-urlencoded` ](https://url.spec.whatwg.org/#application/x-www-form-urlencoded).
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {data} = await got.post('https://httpbin.org/anything', {
-	form: {
-		hello: 'world'
-	}
-}).json();
+const { data } = await got
+  .post("https://httpbin.org/anything", {
+    form: {
+      hello: "world",
+    },
+  })
+  .json();
 
 console.log(data);
 //=> 'hello=world'
 ```
 
-### `parseJson`
+## `parseJson`
 
-**Type: `(text: string) => unknown`**\
-**Default: `(text: string) => JSON.parse(text)`**
+**类型: `(text: string) => unknown`**  
+**默认: `(text: string) => JSON.parse(text)`**
 
-The function used to parse JSON responses.
+用于解析JSON响应的函数。
 
 ```js
-import got from 'got';
-import Bourne from '@hapi/bourne';
+import got from "got";
+import Bourne from "@hapi/bourne";
 
 // Preventing prototype pollution by using Bourne
-const parsed = await got('https://example.com', {
-	parseJson: text => Bourne.parse(text)
+const parsed = await got("https://example.com", {
+  parseJson: (text) => Bourne.parse(text),
 }).json();
 
 console.log(parsed);
 ```
 
-### `stringifyJson`
+## `stringifyJson`
 
-**Type: `(object: unknown) => string`**\
-**Default: `(object: unknown) => JSON.stringify(object)`**
+**类型: `(object: unknown) => string`**  
+**默认: `(object: unknown) => JSON.stringify(object)`**
 
-The function used to stringify the body of JSON requests.
+用于对JSON请求体进行字符串化的函数。
 
-**Example: ignore all properties starting with an underscore**
+**例如:忽略所有以下划线开头的属性**
 
 ```js
-import got from 'got';
+import got from "got";
 
-await got.post('https://example.com', {
-	stringifyJson: object => JSON.stringify(object, (key, value) => {
-		if (key.startsWith('_')) {
-			return;
-		}
+await got.post("https://example.com", {
+  stringifyJson: (object) =>
+    JSON.stringify(object, (key, value) => {
+      if (key.startsWith("_")) {
+        return;
+      }
 
-		return value;
-	}),
-	json: {
-		some: 'payload',
-		_ignoreMe: 1234
-	}
+      return value;
+    }),
+  json: {
+    some: "payload",
+    _ignoreMe: 1234,
+  },
 });
 ```
 
-**Example: all numbers as strings**
+**例如:所有数字都是字符串**
 
 ```js
-import got from 'got';
+import got from "got";
 
-await got.post('https://example.com', {
-	stringifyJson: object => JSON.stringify(object, (key, value) => {
-		if (typeof value === 'number') {
-			return value.toString();
-		}
+await got.post("https://example.com", {
+  stringifyJson: (object) =>
+    JSON.stringify(object, (key, value) => {
+      if (typeof value === "number") {
+        return value.toString();
+      }
 
-		return value;
-	}),
-	json: {
-		some: 'payload',
-		number: 1
-	}
+      return value;
+    }),
+  json: {
+    some: "payload",
+    number: 1,
+  },
 });
 ```
 
-### `allowGetBody`
+## `allowGetBody`
 
-**Type: `boolean`**\
-**Default: `false`**
+**类型: `boolean`**  
+**默认: `false`**
 
-Set this to `true` to allow sending body for the `GET` method.
+将此设置为 `true` 以允许为 `GET` 方法发送正文。
 
-However, the [HTTP/2 specification](https://datatracker.ietf.org/doc/html/rfc7540#section-8.1.3) says:
+然而，[HTTP/2规范](https://datatracker.ietf.org/doc/html/rfc7540#section-8.1.3)说:
 
-> An HTTP GET request includes request header fields and no payload body
+> HTTP GET请求包括请求头字段，没有有效负载主体
 
-Therefore this option has no effect when using HTTP/2.
+因此，该选项在使用HTTP/2时无效。
 
-#### **Note:**
-> - This option is only meant to interact with non-compliant servers when you have no other choice.
+!!! Note
 
-#### **Note:**
-> - The [RFC 7231](https://tools.ietf.org/html/rfc7231#section-4.3.1) doesn't specify any particular behavior for the GET method having a payload, therefore it's considered an [**anti-pattern**](https://en.wikipedia.org/wiki/Anti-pattern).
+    此选项仅用于在没有其他选择时与不兼容的服务器交互。
 
-### `timeout`
+!!! Note
 
-**Type: `object`**
+    [RFC 7231](https://tools.ietf.org/html/rfc7231#section-4.3.1)没有为具有有效负载的GET方法指定任何特定行为，因此它被认为是一个[**反模式**](https://en.wikipedia.org/wiki/Anti-pattern)。
+
+## `timeout`
+
+**类型: `object`**
 
 See the [Timeout API](6-timeout.md).
 
-#### **Merge behavior:**
-> - Overrides existing properties.
+!!! note "合并行为"
 
-### `retry`
+    覆盖现有属性。
 
-**Type: `object`**
+## `retry`
+
+**类型: `object`**
 
 See the [Retry API](7-retry.md).
 
-#### **Merge behavior:**
-> - Overrides existing properties.
+!!! note "合并行为"
 
-### `hooks`
+    覆盖现有属性。
 
-**Type: `object`**
+## `hooks`
+
+**类型: `object`**
 
 See the [Hooks API](9-hooks.md).
 
-#### **Merge behavior:**
-> - Merges arrays via `[...hooksArray, ...next]`
+!!! note "合并行为"
 
-### `encoding`
+    Merges arrays via `[...hooksArray, ...next]`
 
-**Type: `string`**\
-**Default: `'utf8'`**
+## `encoding`
+
+**类型: `string`**  
+**默认: `'utf8'`**
 
 [Encoding](https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings) to be used on [`setEncoding`](https://nodejs.org/api/stream.html#stream_readable_setencoding_encoding) of the response data.
 
 To get a [`Buffer`](https://nodejs.org/api/buffer.html), you need to set `responseType` to `'buffer'` instead. Don't set this option to `null`.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const response = await got('https://httpbin.org/anything', {
-	encoding: 'base64'
+const response = await got("https://httpbin.org/anything", {
+  encoding: "base64",
 }).text();
 
 console.log(response);
 //=> base64 string
 ```
 
-#### **Note:**
-> - This option does not affect streams! Instead, do:
+!!! Note
+
+    This option does not affect streams! Instead, do:
 
 ```js
-import got from 'got';
+import got from "got";
 
-const stream = got.stream('https://httpbin.org/anything');
+const stream = got.stream("https://httpbin.org/anything");
 
-stream.setEncoding('base64');
-stream.on('data', console.log);
+stream.setEncoding("base64");
+stream.on("data", console.log);
 ```
 
-### `responseType`
+## `responseType`
 
-**Type: `'text' | 'json' | 'buffer'`**\
-**Default: `'text'`**
+**类型: `'text' | 'json' | 'buffer'`**  
+**默认: `'text'`**
 
 The parsing method.
 
-The promise also has `.text()`, `.json()` and `.buffer()` methods which return another Got promise for the parsed body.\
+The promise also has `.text()`, `.json()` and `.buffer()` methods which return another Got promise for the parsed body.  
 It's like setting the options to `{responseType: 'json', resolveBodyOnly: true}` but without affecting the main Got promise.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const responsePromise = got('https://httpbin.org/anything');
+const responsePromise = got("https://httpbin.org/anything");
 const bufferPromise = responsePromise.buffer();
 const jsonPromise = responsePromise.json();
 
@@ -551,305 +585,312 @@ const [response, buffer, json] = await Promise.all([responsePromise, bufferPromi
 // `json` is an object
 ```
 
-#### **Note:**
-> - When using streams, this option is ignored.
+!!! Note
 
-#### **Note:**
-> - `'buffer'` will return the raw body buffer. Any modifications will also alter the result of `.text()` and `.json()`. Before overwriting the buffer, please copy it first via `Buffer.from(buffer)`.\
->  See https://github.com/nodejs/node/issues/27080
+    When using streams, this option is ignored.
 
-### `resolveBodyOnly`
+!!! Note
 
-**Type: `boolean`**\
-**Default: `false`**
+    `'buffer'` will return the raw body buffer. Any modifications will also alter the result of `.text()` and `.json()`. Before overwriting the buffer, please copy it first via `Buffer.from(buffer)`.  
+>   See https://github.com/nodejs/node/issues/27080
+
+## `resolveBodyOnly`
+
+**类型: `boolean`**  
+**默认: `false`**
 
 If `true`, the promise will return the [Response body](3-streams.md#response-1) instead of the [Response object](3-streams.md#response-1).
 
 ```js
-import got from 'got';
+import got from "got";
 
-const url = 'https://httpbin.org/anything';
+const url = "https://httpbin.org/anything";
 
 // This:
 const body = await got(url).json();
 
 // is semantically the same as this:
-const body = await got(url, {responseType: 'json', resolveBodyOnly: true});
+const body = await got(url, { responseType: "json", resolveBodyOnly: true });
 ```
 
-### `context`
+## `context`
 
-**Type: `object<string, unknown>`**\
-**Default: `{}`**
+**类型: `object<string, unknown>`**  
+**默认: `{}`**
 
-**Note:**
-> - Non-enumerable properties inside are **not** merged.
+!!! Note
 
-Contains user data. It's very useful for storing auth tokens:
+    内部的不可枚举属性**没有**合并。
+
+包含用户数据。它对于存储认证令牌非常有用:
 
 ```js
-import got from 'got';
+import got from "got";
 
 const instance = got.extend({
-	hooks: {
-		beforeRequest: [
-			options => {
-				if (typeof options.context.token !== 'string') {
-					throw new Error('Token required');
-				}
+  hooks: {
+    beforeRequest: [
+      (options) => {
+        if (typeof options.context.token !== "string") {
+          throw new Error("Token required");
+        }
 
-				options.headers.token = options.context.token;
-			}
-		]
-	}
+        options.headers.token = options.context.token;
+      },
+    ],
+  },
 });
 
 const context = {
-	token: 'secret'
+  token: "secret",
 };
 
-const {headers} = await instance('https://httpbin.org/headers', {context}).json();
+const { headers } = await instance("https://httpbin.org/headers", { context }).json();
 
 console.log(headers);
 //=> {token: 'secret', …}
 ```
 
-This option is enumerable. In order to define non-enumerable properties inside, do the following:
+这个选项是可枚举的。为了在内部定义不可枚举的属性，执行以下操作:
 
 ```js
-import got from 'got';
+import got from "got";
 
 const context = {};
 
 Object.defineProperties(context, {
-	token: {
-		value: 'secret',
-		enumerable: false,
-		configurable: true,
-		writable: true
-	}
+  token: {
+    value: "secret",
+    enumerable: false,
+    configurable: true,
+    writable: true,
+  },
 });
 
-const instance = got.extend({context});
+const instance = got.extend({ context });
 
 console.log(instance.defaults.options.context);
 //=> {}
 ```
 
-#### **Merge behavior:**
-> - Overrides existing properties.
+!!! note "合并行为"
 
-### `cookieJar`
+    覆盖现有属性。
 
-**Type: <code>object | [tough.cookieJar](https://github.com/salesforce/tough-cookie#cookiejar)</code>**
+## `cookieJar`
 
-#### **Note:**
-> - Setting this option will result in the `cookie` header being overwritten.
+**类型: <code>object | [tough.cookieJar](https://github.com/salesforce/tough-cookie#cookiejar)</code>**
 
-Cookie support. Handles parsing and storing automatically.
+!!! Note
+
+    设置此选项将导致 `cookie` 报头被覆盖。
+
+Cookie的支持。自动处理解析和存储。
 
 ```js
-import got from 'got';
-import {CookieJar} from 'tough-cookie';
+import got from "got";
+import { CookieJar } from "tough-cookie";
 
 const cookieJar = new CookieJar();
 
-await cookieJar.setCookie('foo=bar', 'https://example.com');
-await got('https://example.com', {cookieJar});
+await cookieJar.setCookie("foo=bar", "https://example.com");
+await got("https://example.com", { cookieJar });
 ```
 
-#### `cookieJar.setCookie`
+## `cookieJar.setCookie`
 
-**Type: `(rawCookie: string, url: string) => void | Promise<void>`**
+**类型: `(rawCookie: string, url: string) => void | Promise<void>`**
 
 See [ToughCookie API](https://github.com/salesforce/tough-cookie#setcookiecookieorstring-currenturl-options-cberrcookie) for more information.
 
-#### `cookieJar.getCookieString`
+## `cookieJar.getCookieString`
 
-**Type: `(currentUrl: string) => string | Promise<string>`**
+**类型: `(currentUrl: string) => string | Promise<string>`**
 
 See [ToughCookie API](https://github.com/salesforce/tough-cookie#getcookiestring) for more information.
 
-### `ignoreInvalidCookies`
+## `ignoreInvalidCookies`
 
-**Type: `boolean`**\
-**Default: `false`**
+**类型: `boolean`**  
+**默认: `false`**
 
-Ignore invalid cookies instead of throwing an error.\
+Ignore invalid cookies instead of throwing an error.  
 Only useful when the `cookieJar` option has been set.
 
-#### **Note:**
-> - This is not recommended! Use at your own risk.
+!!! Note
 
-### `followRedirect`
+    This is not recommended! Use at your own risk.
 
-**Type: `boolean`**\
-**Default: `true`**
+## `followRedirect`
+
+**类型: `boolean`**  
+**默认: `true`**
 
 Defines if redirect responses should be followed automatically.
 
-#### **Note:**
-> - If a `303` is sent by the server in response to any request type (POST, DELETE, etc.), Got will request the resource pointed to in the location header via GET.\
->  This is in accordance with the [specification](https://tools.ietf.org/html/rfc7231#section-6.4.4). You can optionally turn on this behavior also for other redirect codes - see [`methodRewriting`](#methodrewriting).
+!!! Note
+
+    If a `303` is sent by the server in response to any request type (POST, DELETE, etc.), Got will request the resource pointed to in the location header via GET.  
+>   This is in accordance with the [specification](https://tools.ietf.org/html/rfc7231#section-6.4.4). You can optionally turn on this behavior also for other redirect codes - see [`methodRewriting`](#methodrewriting).
 
 ```js
-import got from 'got';
+import got from "got";
 
-const instance = got.extend({followRedirect: false});
+const instance = got.extend({ followRedirect: false });
 
-const response = await instance('http://google.com');
+const response = await instance("http://google.com");
 
 console.log(response.headers.location);
 //=> 'https://google.com'
 ```
 
-### `maxRedirects`
+## `maxRedirects`
 
-**Type: `number`**\
-**Default: `10`**
+**类型: `number`**  
+**默认: `10`**
 
 If exceeded, the request will be aborted and a [`MaxRedirectsError`](8-errors.md#maxredirectserror) will be thrown.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const instance = got.extend({maxRedirects: 3});
+const instance = got.extend({ maxRedirects: 3 });
 
 try {
-	await instance('https://nghttp2.org/httpbin/absolute-redirect/5');
+  await instance("https://nghttp2.org/httpbin/absolute-redirect/5");
 } catch (error) {
-	//=> 'Redirected 3 times. Aborting.'
-	console.log(error.message);
+  //=> 'Redirected 3 times. Aborting.'
+  console.log(error.message);
 }
 ```
 
-### `decompress`
+## `decompress`
 
-**Type: `boolean`**\
-**Default: `true`**
+**类型: `boolean`**  
+**默认: `true`**
 
 Decompress the response automatically. This will set the `accept-encoding` header to `gzip, deflate, br`.
 
 If disabled, a compressed response is returned as a `Buffer`. This may be useful if you want to handle decompression yourself.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const response = await got('https://google.com');
+const response = await got("https://google.com");
 
-console.log(response.headers['content-encoding']);
+console.log(response.headers["content-encoding"]);
 //=> 'gzip'
 ```
 
-### `dnsLookup`
+## `dnsLookup`
 
-**Type: `Function`**\
-**Default: [`dns.lookup`](https://nodejs.org/api/dns.html#dns_dns_lookup_hostname_options_callback)**
+**类型: `Function`**  
+**默认: [`dns.lookup`](https://nodejs.org/api/dns.html#dns_dns_lookup_hostname_options_callback)**
 
 Custom DNS resolution logic.
 
 The function signature is the same as `dns.lookup`.
 
-### `dnsCache`
+## `dnsCache`
 
-**Type: <code>[CacheableLookup](https://github.com/szmarczak/cacheable-lookup) | false</code>**
+**类型: <code>[CacheableLookup](https://github.com/szmarczak/cacheable-lookup) | false</code>**
 
-An instance of `CacheableLookup` used for making DNS lookups.\
+An instance of `CacheableLookup` used for making DNS lookups.  
 Useful when making lots of requests to different public hostnames.
 
-**Note:**
-> - This should stay disabled when making requests to internal hostnames such as localhost, database.local etc.
-> - CacheableLookup uses `dns.resolver4(…)` and `dns.resolver6(…)` under the hood and falls back to `dns.lookup(…)` when the first two fail, which may lead to additional delay.
+!!! note
 
-### `dnsLookupIpVersion`
+    - This should stay disabled when making requests to internal hostnames such as localhost, database.local etc.
+    - CacheableLookup uses `dns.resolver4(…)` and `dns.resolver6(…)` under the hood and falls back to `dns.lookup(…)` when the first two fail, which may lead to additional delay.
 
-**Type: `4 | 6`**\
-**Default: `undefined`**
+## `dnsLookupIpVersion`
+
+**类型: `4 | 6`**  
+**默认: `undefined`**
 
 The IP version to use. Specifying `undefined` will use the default configuration.
 
-### `request`
+## `request`
 
-**Type: <code>Function<[ClientRequest](https://nodejs.org/api/http.html#http_class_http_clientrequest) | [IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)> | AsyncFunction<[ClientRequest](https://nodejs.org/api/http.html#http_class_http_clientrequest) | [IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)></code>**\
-**Default: `http.request | https.request` *(depending on the protocol)***
+**类型: <code>Function<[ClientRequest](https://nodejs.org/api/http.html#http_class_http_clientrequest) | [IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)> | AsyncFunction<[ClientRequest](https://nodejs.org/api/http.html#http_class_http_clientrequest) | [IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)></code>**  
+**默认: `http.request | https.request` _(depending on the protocol)_**
 
 Custom request function.
 
 The main purpose of this is to [support HTTP/2 using a wrapper](https://github.com/szmarczak/http2-wrapper).
 
-### `cache`
+## `cache`
 
-**Type: `object | false`**\
-**Default: `false`**
+**类型: `object | false`**  
+**默认: `false`**
 
 [Cache adapter instance](cache.md) for storing cached response data.
 
-### `cacheOptions`
+## `cacheOptions`
 
-**Type: `object`**\
-**Default: `{}`**
+**类型: `object`**  
+**默认: `{}`**
 
 [Cache options](https://github.com/kornelski/http-cache-semantics#constructor-options) used for the specified request.
 
-### `http2`
+## `http2`
 
-**Type: `boolean`**\
-**Default: `false`**
+**类型: `boolean`**  
+**默认: `false`**
 
-**Note:**
-> - This option requires Node.js 15.10.0 or newer as HTTP/2 support on older Node.js versions is very buggy.
+!!! note
+
+    This option requires Node.js 15.10.0 or newer as HTTP/2 support on older Node.js versions is very buggy.
 
 If `true`, the `request` option will default to `http2wrapper.auto` and the entire `agent` object will be passed.
 
-**Note:**
-> - ALPN negotiation will have place in order to determine if the server actually supports HTTP/2. If it doesn't, HTTP/1.1 will be used.
+!!! note
 
-**Note:**
-> - Setting the `request` option to `https.request` will disable HTTP/2 usage. It is required to use `http2wrapper.auto`.
+    ALPN negotiation will have place in order to determine if the server actually supports HTTP/2. If it doesn't, HTTP/1.1 will be used.
 
-**Note:**
-> - There is no direct [`h2c`](https://datatracker.ietf.org/doc/html/rfc7540#section-3.1) support. However, you can provide a `h2session` option in a `beforeRequest` hook. See [an example](examples/h2c.js).
+!!! note
+
+    Setting the `request` option to `https.request` will disable HTTP/2 usage. It is required to use `http2wrapper.auto`.
+
+!!! note
+
+    There is no direct [`h2c`](https://datatracker.ietf.org/doc/html/rfc7540#section-3.1) support. However, you can provide a `h2session` option in a `beforeRequest` hook. See [an example](examples/h2c.js).
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {headers} = await got(
-	'https://httpbin.org/anything',
-	{
-		http2: true
-	}
-);
+const { headers } = await got("https://httpbin.org/anything", {
+  http2: true,
+});
 
-console.log(headers[':status']);
+console.log(headers[":status"]);
 //=> 200
 ```
 
-**Note:**
-> - The current Got version may use an older version of [`http2-wrapper`](https://github.com/szmarczak/http2-wrapper).\
-> If you prefer to use the newest one, set both `request` to `http2wrapper.auto` and `http2` to `true`.
+!!! note
+
+    The current Got version may use an older version of [`http2-wrapper`](https://github.com/szmarczak/http2-wrapper).  
+    If you prefer to use the newest one, set both `request` to `http2wrapper.auto` and `http2` to `true`.
 
 ```js
-import http2wrapper from 'http2-wrapper';
-import got from 'got';
+import http2wrapper from "http2-wrapper";
+import got from "got";
 
-const {headers} = await got(
-	'https://httpbin.org/anything',
-	{
-		http2: true,
-		request: http2wrapper.auto
-	}
-);
+const { headers } = await got("https://httpbin.org/anything", {
+  http2: true,
+  request: http2wrapper.auto,
+});
 
-console.log(headers[':status']);
+console.log(headers[":status"]);
 //=> 200
 ```
 
 See the [`http2-wrapper` docs](https://github.com/szmarczak/http2-wrapper) to learn more about Agent and Proxy support.
 
-### `agent`
+## `agent`
 
-**Type: `object`**\
-**Default: `{}`**
+**类型: `object`**  
+**默认: `{}`**
 
 An object with `http`, `https` and `http2` properties.
 
@@ -863,88 +904,90 @@ Got will automatically resolve the protocol and use the corresponding agent. It 
 }
 ```
 
-**Note:**
-> The HTTP/2 `Agent` must be an instance of [`http2wrapper.Agent`](https://github.com/szmarczak/http2-wrapper#new-http2agentoptions)
+!!! note
 
-### `throwHttpErrors`
+    The HTTP/2 `Agent` must be an instance of [`http2wrapper.Agent`](https://github.com/szmarczak/http2-wrapper#new-http2agentoptions)
 
-**Type: `boolean`**\
-**Default: `true`**
+## `throwHttpErrors`
+
+**类型: `boolean`**  
+**默认: `true`**
 
 If `true`, it will [throw](8-errors.md#httperror) when the status code is not `2xx` / `3xx`.
 
 If this is disabled, requests that encounter an error status code will be resolved with the response instead of throwing. This may be useful if you are checking for resource availability and are expecting error responses.
 
-### `username`
+## `username`
 
-**Type: `string`**\
-**Default: `''`**
+**类型: `string`**  
+**默认: `''`**
 
 The `username` used for [Basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
 
-### `password`
+## `password`
 
-**Type: `string`**\
-**Default: `''`**
+**类型: `string`**  
+**默认: `''`**
 
 The `password` used for [Basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
 
-### `localAddress`
+## `localAddress`
 
-**Type: `string | undefined`**\
-**Default: `undefined`**
+**类型: `string | undefined`**  
+**默认: `undefined`**
 
 The local IP address used to make the request.
 
-### `createConnection`
+## `createConnection`
 
-**Type: `Function | undefined`**\
-**Default: `undefined`**
+**类型: `Function | undefined`**  
+**默认: `undefined`**
 
 The function used to retrieve a `net.Socket` instance when the `agent` option is not used.
 
-### `https`
+## `https`
 
-**Type: `object`**
+**类型: `object`**
 
 See [Advanced HTTPS API](5-https.md).
 
-### `pagination`
+## `pagination`
 
-**Type: `object`**
+**类型: `object`**
 
 See [Pagination API](4-pagination.md).
 
-### `setHost`
+## `setHost`
 
-**Type: `boolean`**\
-**Default: `true`**
+**类型: `boolean`**  
+**默认: `true`**
 
 Specifies whether or not to automatically add the `Host` header.
 
-### `maxHeaderSize`
+## `maxHeaderSize`
 
-**Type: `number | undefined`**\
-**Default: `undefined`**
+**类型: `number | undefined`**  
+**默认: `undefined`**
 
 Optionally overrides the value of [`--max-http-header-size`](https://nodejs.org/api/cli.html#cli_max_http_header_size_size) (default 16KB: `16384`).
 
-### `methodRewriting`
+## `methodRewriting`
 
-**Type: `boolean`**\
-**Default: `false`**
+**类型: `boolean`**  
+**默认: `false`**
 
 Specifies if the HTTP request method should be [rewritten as `GET`](https://tools.ietf.org/html/rfc7231#section-6.4) on redirects.
 
 As the [specification](https://tools.ietf.org/html/rfc7231#section-6.4) prefers to rewrite the HTTP method only on `303` responses, this is Got's default behavior. Setting `methodRewriting` to `true` will also rewrite `301` and `302` responses, as allowed by the spec. This is the behavior followed by `curl` and browsers.
 
-**Note:**
-> - Got never performs method rewriting on `307` and `308` responses, as this is [explicitly prohibited by the specification](https://www.rfc-editor.org/rfc/rfc7231#section-6.4.7).
+!!! note
 
-### `enableUnixSockets`
+    Got never performs method rewriting on `307` and `308` responses, as this is [explicitly prohibited by the specification](https://www.rfc-editor.org/rfc/rfc7231#section-6.4.7).
 
-**Type: `boolean`**\
-**Default: `true`**
+## `enableUnixSockets`
+
+**类型: `boolean`**  
+**默认: `true`**
 
 When enabled, requests can also be sent via [UNIX Domain Sockets](https://serverfault.com/questions/124517/what-is-the-difference-between-unix-sockets-and-tcp-ip-sockets). Please note that in the upcoming major release (Got v13) this default will be changed to `false` for security reasons.
 
@@ -958,46 +1001,47 @@ Use the following URL scheme: `PROTOCOL://unix:SOCKET:PATH`
 - `PATH` - Request path, for example: `/v2/keys`
 
 ```js
-import got from 'got';
+import got from "got";
 
-await got('http://unix:/var/run/docker.sock:/containers/json', {enableUnixSockets: true});
+await got("http://unix:/var/run/docker.sock:/containers/json", { enableUnixSockets: true });
 
 // Or without protocol (HTTP by default)
-await got('unix:/var/run/docker.sock:/containers/json', {enableUnixSockets: true});
+await got("unix:/var/run/docker.sock:/containers/json", { enableUnixSockets: true });
 
 // Disable Unix sockets
-const gotUnixSocketsDisabled = got.extend({enableUnixSockets: false});
+const gotUnixSocketsDisabled = got.extend({ enableUnixSockets: false });
 
 // RequestError: Using UNIX domain sockets but option `enableUnixSockets` is not enabled
-await gotUnixSocketsDisabled('http://unix:/var/run/docker.sock:/containers/json');
+await gotUnixSocketsDisabled("http://unix:/var/run/docker.sock:/containers/json");
 ```
 
-## Methods
+# Methods
 
-### `options.merge(other: Options | OptionsInit)`
+## `options.merge(other: Options | OptionsInit)`
 
 Merges `other` into the current instance.
 
-If you look at the [source code](../source/core/options.ts), you will notice that internally there is a `this._merging` property.\
+If you look at the [source code](../source/core/options.ts), you will notice that internally there is a `this._merging` property.  
 Setters work a bit differently when it's `true`.
 
-### `options.toJSON()`
+## `options.toJSON()`
 
 Returns a new plain object that can be stored as [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#tojson_behavior).
 
-### `options.createNativeRequestOptions()`
+## `options.createNativeRequestOptions()`
 
 Creates a new object for native Node.js HTTP request options.
 
 In other words, this translates Got options into Node.js options.
 
-**Note:**
-> - Some other stuff, such as timeouts, is handled internally by Got.
+!!! note
 
-### `options.getRequestFunction()`
+    Some other stuff, such as timeouts, is handled internally by Got.
+
+## `options.getRequestFunction()`
 
 Returns a [`http.request`-like](https://nodejs.org/api/http.html#http_http_request_url_options_callback) function used to make the request.
 
-### `options.freeze()`
+## `options.freeze()`
 
 Makes the entire `Options` instance read-only.

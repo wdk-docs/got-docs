@@ -1,18 +1,29 @@
 nav:
-  - 1-promise.md
-  - 10-instances.md
-  - Improve docs
-  - 2-options.md
-  - 3-streams.md
-  - 4-pagination.md
-  - 5-https.md
-  - 6-timeout.md
-  - 7-retry.md
-  - 8-errors.md
-  - 9-hooks.md
-  - async-stack-traces.md
-  - cache.md
-  - lets-make-a-plugin.md
-  - quick-start.md
-  - tips.md
-  - typescript.md
+  - 首页:
+      - README.md
+      - quick-start.md
+      - lets-make-a-plugin.md
+      - cache.md
+      - async-stack-traces.md
+      - tips.md
+      - typescript.md
+  - 接口:
+      - 1-promise.md
+      - 2-options.md
+      - 3-streams.md
+      - 4-pagination.md
+      - 5-https.md
+      - 6-timeout.md
+      - 7-retry.md
+      - 8-errors.md
+      - 9-hooks.md
+      - 10-instances.md
+  - 迁移指南:
+      - ./migration-guides/README.md
+      - ./migration-guides/axios.md
+      - ./migration-guides/nodejs.md
+      - ./migration-guides/request.md
+  - 示例:
+      - ./examples/index.md
+    
+    

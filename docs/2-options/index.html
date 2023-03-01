@@ -1,0 +1,2793 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Got 文档">
+      
+      
+        <meta name="author" content="Kamil Mysliwiec">
+      
+      
+        <link rel="canonical" href="https://wdk-docs.github.io/got-docs/2-options/">
+      
+      <link rel="icon" href="../assets/favicons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>选项 - Got</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Got" class="md-header__button md-logo" aria-label="Got" data-md-component="logo">
+      
+  <img src="../assets/logo/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Got
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              选项
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wdk-docs/got-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wdk-docs/got-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        首页
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../1-promise/" class="md-tabs__link md-tabs__link--active">
+        接口
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../migration-guides/" class="md-tabs__link">
+        迁移指南
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../examples/" class="md-tabs__link">
+        示例
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Got" class="md-nav__button md-logo" aria-label="Got" data-md-component="logo">
+      
+  <img src="../assets/logo/logo.svg" alt="logo">
+
+    </a>
+    Got
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wdk-docs/got-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wdk-docs/got-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="..">首页</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="首页" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          首页
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        快速入门指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lets-make-a-plugin/" class="md-nav__link">
+        插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cache/" class="md-nav__link">
+        缓存
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../async-stack-traces/" class="md-nav__link">
+        捕获异步堆栈跟踪
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        技巧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript/" class="md-nav__link">
+        TypeScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          接口
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="接口" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          接口
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-promise/" class="md-nav__link">
+        Promise API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          选项
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        选项
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    合并行为解释
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    如何存储选项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    重置选项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    url
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searchparams" class="md-nav__link">
+    searchParams
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefixurl" class="md-nav__link">
+    prefixUrl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    signal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    headers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isstream" class="md-nav__link">
+    isStream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#body" class="md-nav__link">
+    body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    json
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form" class="md-nav__link">
+    form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsejson" class="md-nav__link">
+    parseJson
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stringifyjson" class="md-nav__link">
+    stringifyJson
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowgetbody" class="md-nav__link">
+    allowGetBody
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    timeout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    retry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    hooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsetype" class="md-nav__link">
+    responseType
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolvebodyonly" class="md-nav__link">
+    resolveBodyOnly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookiejar" class="md-nav__link">
+    cookieJar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookiejarsetcookie" class="md-nav__link">
+    cookieJar.setCookie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookiejargetcookiestring" class="md-nav__link">
+    cookieJar.getCookieString
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoreinvalidcookies" class="md-nav__link">
+    ignoreInvalidCookies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#followredirect" class="md-nav__link">
+    followRedirect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maxredirects" class="md-nav__link">
+    maxRedirects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decompress" class="md-nav__link">
+    decompress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dnslookup" class="md-nav__link">
+    dnsLookup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dnscache" class="md-nav__link">
+    dnsCache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dnslookupipversion" class="md-nav__link">
+    dnsLookupIpVersion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    cache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheoptions" class="md-nav__link">
+    cacheOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http2" class="md-nav__link">
+    http2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throwhttperrors" class="md-nav__link">
+    throwHttpErrors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    username
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localaddress" class="md-nav__link">
+    localAddress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createconnection" class="md-nav__link">
+    createConnection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    https
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    pagination
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sethost" class="md-nav__link">
+    setHost
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maxheadersize" class="md-nav__link">
+    maxHeaderSize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodrewriting" class="md-nav__link">
+    methodRewriting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enableunixsockets" class="md-nav__link">
+    enableUnixSockets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-streams/" class="md-nav__link">
+        Stream API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-pagination/" class="md-nav__link">
+        Pagination API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-https/" class="md-nav__link">
+        Advanced HTTPS API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-timeout/" class="md-nav__link">
+        Timeout options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-retry/" class="md-nav__link">
+        Retry API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-hooks/" class="md-nav__link">
+        Hooks API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-instances/" class="md-nav__link">
+        Instances
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../migration-guides/">迁移指南</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="迁移指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          迁移指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration-guides/axios/" class="md-nav__link">
+        Axios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration-guides/nodejs/" class="md-nav__link">
+        Node.js
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration-guides/request/" class="md-nav__link">
+        Request
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../examples/">示例</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="示例" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          示例
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    合并行为解释
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    如何存储选项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    重置选项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    url
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searchparams" class="md-nav__link">
+    searchParams
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefixurl" class="md-nav__link">
+    prefixUrl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    signal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    headers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isstream" class="md-nav__link">
+    isStream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#body" class="md-nav__link">
+    body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    json
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form" class="md-nav__link">
+    form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsejson" class="md-nav__link">
+    parseJson
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stringifyjson" class="md-nav__link">
+    stringifyJson
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowgetbody" class="md-nav__link">
+    allowGetBody
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    timeout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    retry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    hooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding" class="md-nav__link">
+    encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responsetype" class="md-nav__link">
+    responseType
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolvebodyonly" class="md-nav__link">
+    resolveBodyOnly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookiejar" class="md-nav__link">
+    cookieJar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookiejarsetcookie" class="md-nav__link">
+    cookieJar.setCookie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookiejargetcookiestring" class="md-nav__link">
+    cookieJar.getCookieString
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoreinvalidcookies" class="md-nav__link">
+    ignoreInvalidCookies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#followredirect" class="md-nav__link">
+    followRedirect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maxredirects" class="md-nav__link">
+    maxRedirects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decompress" class="md-nav__link">
+    decompress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dnslookup" class="md-nav__link">
+    dnsLookup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dnscache" class="md-nav__link">
+    dnsCache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dnslookupipversion" class="md-nav__link">
+    dnsLookupIpVersion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    cache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheoptions" class="md-nav__link">
+    cacheOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http2" class="md-nav__link">
+    http2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throwhttperrors" class="md-nav__link">
+    throwHttpErrors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#username" class="md-nav__link">
+    username
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localaddress" class="md-nav__link">
+    localAddress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createconnection" class="md-nav__link">
+    createConnection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    https
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    pagination
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sethost" class="md-nav__link">
+    setHost
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maxheadersize" class="md-nav__link">
+    maxHeaderSize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodrewriting" class="md-nav__link">
+    methodRewriting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enableunixsockets" class="md-nav__link">
+    enableUnixSockets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  <a href="https://github.com/wdk-docs/got-docs/edit/master/content/2-options.md" title="编辑此页" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="_1">选项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Source code: <a href="../source/core/options.ts"><code>source/core/options.ts</code></a></p>
+<p>Like <code>fetch</code> stores the options in a <code>Request</code> instance, Got does so in <code>Options</code>.<br />
+It is made of getters and setters that provide fast option normalization and validation.</p>
+<p><strong>By default, Got will retry on failure. To disable this option, set <a href="../7-retry/"><code>options.retry</code></a> to <code>{limit: 0}</code>.</strong></p>
+<h2 id="_2">合并行为解释<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>When an option is already set, setting it again replaces it with a deep clone by default.<br />
+Otherwise the merge behavior is documented in the corresponding section for the option.</p>
+<h2 id="_3">如何存储选项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>The constructor - <code>new Options(url, options, defaults)</code> - takes the same arguments like the <code>got</code> function.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Options</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Options</span><span class="p">({</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nx">prefixUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nx">options</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1">// Note that `Options` stores normalized options, therefore it needs to be passed as the third argument.</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">.</span><span class="nx">Foo</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c1">//=&gt; &#39;bar&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>If a plain object is preferred, it can be used in the following way:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nx">prefixUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nx">options</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="c1">// Note that `options` is a plain object, therefore it needs to be passed as the second argument.</span><span class="w"></span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">.</span><span class="nx">Foo</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1">//=&gt; &#39;bar&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Note that the constructor throws when an invalid option is provided, such as non-existing option or a typo.<br />
+In the second example, it would throw only when the promise is being executed.</p>
+<p>For TypeScript users, <code>got</code> exports a dedicated type called <code>OptionsInit</code>.<br />
+It is a plain object that can store the same properties as <code>Options</code>.</p>
+<p>Performance-wise there is no difference which one is used, although the constructor may be preferred as it automatically validates the data.<br />
+The <code>Options</code> approach may give a slight boost as it only clones the options, there is no normalization going on.<br />
+It is also useful for storing the base configuration of a custom Got client.</p>
+<h2 id="_4">重置选项<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Unlike Got 11, explicitly specifying <code>undefined</code> no longer keeps the parent value.<br />
+In order to keep the parent value, you must not set an option to <code>undefined</code>.<br />
+Doing so will reset those values:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">searchParams</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">}});</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">cookieJar</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">}});</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">responseType</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">}});</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">prefixUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">agent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">http</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="nx">http2</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">}});</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="err">…</span><span class="p">}});</span><span class="w"></span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">rejectUnauthorized</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="err">…</span><span class="p">}});</span><span class="w"></span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">cacheOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">immutableMinTimeToLive</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="err">…</span><span class="p">}});</span><span class="w"></span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;user-agent&#39;</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="err">…</span><span class="p">}});</span><span class="w"></span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nx">instance</span><span class="p">(</span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">timeout</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="err">…</span><span class="p">}});</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>In order to reset <code>hooks</code>, <code>retry</code> and <code>pagination</code>, another Got instance must be created:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">defaults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Options</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">secondInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">instance</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"> </span><span class="nx">mutableDefaults</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nx">secondInstance</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">hooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defaults</span><span class="p">.</span><span class="nx">hooks</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="nx">secondInstance</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">retry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defaults</span><span class="p">.</span><span class="nx">retry</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="nx">secondInstance</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">pagination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defaults</span><span class="p">.</span><span class="nx">pagination</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="url"><code>url</code><a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string | <a href="https://nodejs.org/api/url.html#url_the_whatwg_url_api">URL</a></code></strong></p>
+<p>The URL to request. Usually the <code>url</code> represents a <a href="https://url.spec.whatwg.org/#url-class">WHATWG URL</a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// This:</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// is semantically the same as this:</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">URL</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">));</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">// as well as this:</span><span class="w"></span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">({</span><span class="w"></span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">  </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="p">});</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>Throws if no protocol specified.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code>url</code> is a string, then the <code>query</code> string will <strong>not</strong> be parsed as search params. <br />
+This is in accordance to <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-2.7">the specification</a>.
+If you want to pass search params instead, use the <code>searchParams</code> option below.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything?query=a b&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//=&gt; ?query=a%20b</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">searchParams</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;a b&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">//=&gt; ?query=a+b</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1">// The query string is overridden by `searchParams`</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything?query=a b&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">searchParams</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;a b&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">//=&gt; ?query=a+b</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Leading slashes are disallowed to enforce consistency and avoid confusion.<br />
+For example, when the prefix URL is <code>https://example.com/foo</code> and the input is <code>/bar</code>, 
+there's ambiguity whether the resulting URL would become <code>https://example.com/foo/bar</code> or <code>https://example.com/bar</code>. 
+The latter is used by browsers.</p>
+</div>
+<h2 id="searchparams"><code>searchParams</code><a class="headerlink" href="#searchparams" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string | <a href="https://nodejs.org/api/url.html#url_class_urlsearchparams">URLSearchParams</a> | object&lt;string, <a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html">Primitive</a>&gt;</code></strong></p>
+<p><a href="https://url.spec.whatwg.org/#interface-urlsearchparams">WHATWG URL Search Params</a> to be added to the request URL.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">  </span><span class="nx">searchParams</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="nx">hello</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;world&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="mf">123</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="p">}).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">args</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="c1">//=&gt; {hello: &#39;world&#39;, foo: 123}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>If you need to pass an array, you can do it using a <code>URLSearchParams</code> instance:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">searchParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">([</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">  </span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">  </span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="p">]);</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">searchParams</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">searchParams</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="c1">//=&gt; &#39;key=a&amp;key=b&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will override the <code>query</code> string in <code>url</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><code>null</code> values are not stringified, an empty string is used instead.</li>
+<li><code>undefined</code> values will clear the original keys.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">合并行为</p>
+<ul>
+<li>覆盖现有属性。</li>
+</ul>
+</div>
+<h2 id="prefixurl"><code>prefixUrl</code><a class="headerlink" href="#prefixurl" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string</code></strong><br />
+<strong>默认: <code>''</code></strong></p>
+<p>The string to be prepended to <code>url</code>.</p>
+<p>The prefix can be any valid URL, either relative or <a href="https://url.spec.whatwg.org/#absolute-url-string">absolute</a>.
+A trailing slash <code>/</code> is optional - one will be added automatically.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1">// This:</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"> </span><span class="nx">prefixUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org&quot;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;anything&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="c1">// is semantically the same as this:</span><span class="w"></span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changing <code>prefixUrl</code> also updates the <code>url</code> option if set.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you're passing an absolute URL as <code>url</code>, you need to set <code>prefixUrl</code> to an empty string.</p>
+</div>
+<h2 id="signal"><code>signal</code><a class="headerlink" href="#signal" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal"><code>AbortSignal</code></a></strong></p>
+<p>You can abort the <code>request</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortController"><code>AbortController</code></a>.</p>
+<p><em>Requires Node.js 16 or later.</em></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">abortController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AbortController</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">  </span><span class="nx">signal</span><span class="o">:</span><span class="w"> </span><span class="nx">abortController</span><span class="p">.</span><span class="nx">signal</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">  </span><span class="nx">abortController</span><span class="p">.</span><span class="nx">abort</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="p">},</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="method"><code>method</code><a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string</code></strong><br />
+<strong>默认: <code>GET</code></strong></p>
+<p>The <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-4">HTTP method</a> used to make the request.<br />
+The most common methods are: <code>GET</code>, <code>HEAD</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">method</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">}).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">method</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="c1">// =&gt; &#39;POST&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="headers"><code>headers</code><a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object&lt;string, string&gt;</code></strong><br />
+<strong>默认: <code>{}</code></strong></p>
+<p>The <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-8.3">HTTP headers</a> to be sent. Headers set to <code>undefined</code> will be omitted.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">  </span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">      </span><span class="nx">hello</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;world&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span><span class="p">})</span><span class="w"></span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">  </span><span class="p">.</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="c1">// =&gt; {hello: &#39;world&#39;}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">合并行为</p>
+<p>覆盖现有属性。</p>
+</div>
+<h2 id="isstream"><code>isStream</code><a class="headerlink" href="#isstream" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>false</code></strong></p>
+<p>Whether the <code>got</code> function should return a <a href="../3-streams/"><code>Request</code> duplex stream</a> or a <a href="../1-promise/"><code>Promise&lt;Response&gt;</code></a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="c1">// This:</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">isStream</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="c1">// is semantically the same as this:</span><span class="w"></span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="nx">stream</span><span class="p">.</span><span class="nx">setEncoding</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="nx">stream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="body"><code>body</code><a class="headerlink" href="#body" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string | Buffer | stream.Readable | Generator | AsyncGenerator | FormData</code> or <a href="https://github.com/form-data/form-data"><code>form-data</code> instance</a></strong></p>
+<p>要发送的有效载荷。</p>
+<p>对于 <code>string</code> 和 <code>Buffer</code> 类型，如果 <code>content-length</code> 和 <code>transfer-encoding</code> 头缺失， <code>content-length</code> 头将自动设置。</p>
+<p><strong>从Got 12开始，当 <code>body</code> 是<a href="https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options"> <code>fs.createReadStream()</code> </a>的实例时， <code>content-length</code> 头不会自动设置。.</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="w"></span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">  </span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">  </span><span class="p">})</span><span class="w"></span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">  </span><span class="p">.</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="c1">//=&gt; &#39;Hello, world!&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>从Got 12开始，您可以使用符合规范的<a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData"> <code>FormData</code> </a>对象作为请求体，例如<a href="https://github.com/octet-stream/form-data"><code>formdata-node</code></a>或<a href="https://github.com/jimmywarting/FormData"><code>formdata-polyfill</code></a>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FormData</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;formdata-node&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// or:</span><span class="w"></span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="c1">// import {FormData} from &#39;formdata-polyfill/esm.min.js&#39;;</span><span class="w"></span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="nx">form</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;greeting&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="w"></span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">  </span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/post&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">form</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">  </span><span class="p">})</span><span class="w"></span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">  </span><span class="p">.</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">greeting</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="c1">//=&gt; &#39;Hello, world!&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果指定了 <code>body</code> ，则不能使用 <code>json</code> 或 <code>form</code> 选项。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果使用此选项， <code>got.stream()</code> 将是只读的。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>除非<a href="#allowGetBody"> <code>allowGetBody</code> 选项</a>设置为 <code>true</code> ，否则用 <code>GET</code> 传递 <code>body</code> 将抛出。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>此选项不可枚举，并且不会与实例默认值合并。</p>
+</div>
+<h2 id="json"><code>json</code><a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
+<p><strong>类型: JSON-serializable values</strong></p>
+<p>JSON body. 如果设置， <code>content-type</code> 头默认为 <code>application/json</code> 。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="w"></span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="nx">json</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">      </span><span class="nx">hello</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;world&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">  </span><span class="p">})</span><span class="w"></span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">  </span><span class="p">.</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="c1">//=&gt; `{hello: &#39;world&#39;}`</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="form"><code>form</code><a class="headerlink" href="#form" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object&lt;string, <a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html">Primitive</a>&gt;</code></strong></p>
+<p>使用 <code>(new URLSearchParams(form)).toString()</code> 将表单主体转换为查询字符串.</p>
+<p>如果设置了， <code>content-type</code> 头默认为<a href="https://url.spec.whatwg.org/#application/x-www-form-urlencoded"> <code>application/x-www-form-urlencoded</code> </a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="w"></span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">  </span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">    </span><span class="nx">form</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">      </span><span class="nx">hello</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;world&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">  </span><span class="p">})</span><span class="w"></span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">  </span><span class="p">.</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="c1">//=&gt; &#39;hello=world&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="parsejson"><code>parseJson</code><a class="headerlink" href="#parsejson" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>(text: string) =&gt; unknown</code></strong><br />
+<strong>默认: <code>(text: string) =&gt; JSON.parse(text)</code></strong></p>
+<p>用于解析JSON响应的函数。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span>
+<span class="normal"><a href="#__codelineno-17-7">7</a></span>
+<span class="normal"><a href="#__codelineno-17-8">8</a></span>
+<span class="normal"><a href="#__codelineno-17-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">Bourne</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@hapi/bourne&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="c1">// Preventing prototype pollution by using Bourne</span><span class="w"></span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">parsed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">  </span><span class="nx">parseJson</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Bourne</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">text</span><span class="p">),</span><span class="w"></span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="p">}).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">parsed</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="stringifyjson"><code>stringifyJson</code><a class="headerlink" href="#stringifyjson" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>(object: unknown) =&gt; string</code></strong><br />
+<strong>默认: <code>(object: unknown) =&gt; JSON.stringify(object)</code></strong></p>
+<p>用于对JSON请求体进行字符串化的函数。</p>
+<p><strong>例如:忽略所有以下划线开头的属性</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span>
+<span class="normal"><a href="#__codelineno-18-13">13</a></span>
+<span class="normal"><a href="#__codelineno-18-14">14</a></span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span>
+<span class="normal"><a href="#__codelineno-18-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">  </span><span class="nx">stringifyJson</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">object</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">    </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="w">    </span><span class="p">}),</span><span class="w"></span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="w">  </span><span class="nx">json</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="w">    </span><span class="nx">some</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;payload&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="w">    </span><span class="nx">_ignoreMe</span><span class="o">:</span><span class="w"> </span><span class="mf">1234</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="p">});</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p><strong>例如:所有数字都是字符串</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span>
+<span class="normal"><a href="#__codelineno-19-12">12</a></span>
+<span class="normal"><a href="#__codelineno-19-13">13</a></span>
+<span class="normal"><a href="#__codelineno-19-14">14</a></span>
+<span class="normal"><a href="#__codelineno-19-15">15</a></span>
+<span class="normal"><a href="#__codelineno-19-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">  </span><span class="nx">stringifyJson</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">object</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">    </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;number&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="w">    </span><span class="p">}),</span><span class="w"></span>
+<a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="w">  </span><span class="nx">json</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-19-13" name="__codelineno-19-13"></a><span class="w">    </span><span class="nx">some</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;payload&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-19-14" name="__codelineno-19-14"></a><span class="w">    </span><span class="nx">number</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-19-16" name="__codelineno-19-16"></a><span class="p">});</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="allowgetbody"><code>allowGetBody</code><a class="headerlink" href="#allowgetbody" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>false</code></strong></p>
+<p>将此设置为 <code>true</code> 以允许为 <code>GET</code> 方法发送正文。</p>
+<p>然而，<a href="https://datatracker.ietf.org/doc/html/rfc7540#section-8.1.3">HTTP/2规范</a>说:</p>
+<blockquote>
+<p>HTTP GET请求包括请求头字段，没有有效负载主体</p>
+</blockquote>
+<p>因此，该选项在使用HTTP/2时无效。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>此选项仅用于在没有其他选择时与不兼容的服务器交互。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="https://tools.ietf.org/html/rfc7231#section-4.3.1">RFC 7231</a>没有为具有有效负载的GET方法指定任何特定行为，因此它被认为是一个<a href="https://en.wikipedia.org/wiki/Anti-pattern"><strong>反模式</strong></a>。</p>
+</div>
+<h2 id="timeout"><code>timeout</code><a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object</code></strong></p>
+<p>See the <a href="../6-timeout/">Timeout API</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">合并行为</p>
+<p>覆盖现有属性。</p>
+</div>
+<h2 id="retry"><code>retry</code><a class="headerlink" href="#retry" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object</code></strong></p>
+<p>See the <a href="../7-retry/">Retry API</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">合并行为</p>
+<p>覆盖现有属性。</p>
+</div>
+<h2 id="hooks"><code>hooks</code><a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object</code></strong></p>
+<p>See the <a href="../9-hooks/">Hooks API</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">合并行为</p>
+<p>Merges arrays via <code>[...hooksArray, ...next]</code></p>
+</div>
+<h2 id="encoding"><code>encoding</code><a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string</code></strong><br />
+<strong>默认: <code>'utf8'</code></strong></p>
+<p><a href="https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings">Encoding</a> to be used on <a href="https://nodejs.org/api/stream.html#stream_readable_setencoding_encoding"><code>setEncoding</code></a> of the response data.</p>
+<p>To get a <a href="https://nodejs.org/api/buffer.html"><code>Buffer</code></a>, you need to set <code>responseType</code> to <code>'buffer'</code> instead. Don't set this option to <code>null</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span>
+<span class="normal"><a href="#__codelineno-20-5">5</a></span>
+<span class="normal"><a href="#__codelineno-20-6">6</a></span>
+<span class="normal"><a href="#__codelineno-20-7">7</a></span>
+<span class="normal"><a href="#__codelineno-20-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">  </span><span class="nx">encoding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;base64&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="p">}).</span><span class="nx">text</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="c1">//=&gt; base64 string</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option does not affect streams! Instead, do:</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="nx">stream</span><span class="p">.</span><span class="nx">setEncoding</span><span class="p">(</span><span class="s2">&quot;base64&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="nx">stream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="responsetype"><code>responseType</code><a class="headerlink" href="#responsetype" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>'text' | 'json' | 'buffer'</code></strong><br />
+<strong>默认: <code>'text'</code></strong></p>
+<p>The parsing method.</p>
+<p>The promise also has <code>.text()</code>, <code>.json()</code> and <code>.buffer()</code> methods which return another Got promise for the parsed body.<br />
+It's like setting the options to <code>{responseType: 'json', resolveBodyOnly: true}</code> but without affecting the main Got promise.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">responsePromise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bufferPromise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">responsePromise</span><span class="p">.</span><span class="nx">buffer</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">jsonPromise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">responsePromise</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">response</span><span class="p">,</span><span class="w"> </span><span class="nx">buffer</span><span class="p">,</span><span class="w"> </span><span class="nx">json</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">responsePromise</span><span class="p">,</span><span class="w"> </span><span class="nx">bufferPromise</span><span class="p">,</span><span class="w"> </span><span class="nx">jsonPromise</span><span class="p">]);</span><span class="w"></span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="c1">// `response` is an instance of Got Response</span><span class="w"></span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="c1">// `buffer` is an instance of Buffer</span><span class="w"></span>
+<a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="c1">// `json` is an object</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using streams, this option is ignored.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>'buffer'</code> will return the raw body buffer. Any modifications will also alter the result of <code>.text()</code> and <code>.json()</code>. Before overwriting the buffer, please copy it first via <code>Buffer.from(buffer)</code>.  </p>
+</div>
+<blockquote>
+<p>See <a href="https://github.com/nodejs/node/issues/27080">https://github.com/nodejs/node/issues/27080</a></p>
+</blockquote>
+<h2 id="resolvebodyonly"><code>resolveBodyOnly</code><a class="headerlink" href="#resolvebodyonly" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>false</code></strong></p>
+<p>If <code>true</code>, the promise will return the <a href="../3-streams/#response-1">Response body</a> instead of the <a href="../3-streams/#response-1">Response object</a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span>
+<span class="normal"><a href="#__codelineno-23-6">6</a></span>
+<span class="normal"><a href="#__codelineno-23-7">7</a></span>
+<span class="normal"><a href="#__codelineno-23-8">8</a></span>
+<span class="normal"><a href="#__codelineno-23-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="c1">// This:</span><span class="w"></span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="c1">// is semantically the same as this:</span><span class="w"></span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">responseType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">resolveBodyOnly</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="context"><code>context</code><a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object&lt;string, unknown&gt;</code></strong><br />
+<strong>默认: <code>{}</code></strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>内部的不可枚举属性**没有**合并。</p>
+</div>
+<p>包含用户数据。它对于存储认证令牌非常有用:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span>
+<span class="normal"><a href="#__codelineno-24-14">14</a></span>
+<span class="normal"><a href="#__codelineno-24-15">15</a></span>
+<span class="normal"><a href="#__codelineno-24-16">16</a></span>
+<span class="normal"><a href="#__codelineno-24-17">17</a></span>
+<span class="normal"><a href="#__codelineno-24-18">18</a></span>
+<span class="normal"><a href="#__codelineno-24-19">19</a></span>
+<span class="normal"><a href="#__codelineno-24-20">20</a></span>
+<span class="normal"><a href="#__codelineno-24-21">21</a></span>
+<span class="normal"><a href="#__codelineno-24-22">22</a></span>
+<span class="normal"><a href="#__codelineno-24-23">23</a></span>
+<span class="normal"><a href="#__codelineno-24-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"></span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">    </span><span class="nx">beforeRequest</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="w">      </span><span class="p">(</span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">token</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">          </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Token required&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="w">        </span><span class="nx">options</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">token</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="w">      </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="w">    </span><span class="p">],</span><span class="w"></span>
+<a id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-24-16" name="__codelineno-24-16"></a>
+<a id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-24-18" name="__codelineno-24-18"></a><span class="w">  </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;secret&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-24-19" name="__codelineno-24-19"></a><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-24-20" name="__codelineno-24-20"></a>
+<a id="__codelineno-24-21" name="__codelineno-24-21"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/headers&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="p">}).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-24-22" name="__codelineno-24-22"></a>
+<a id="__codelineno-24-23" name="__codelineno-24-23"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-24-24" name="__codelineno-24-24"></a><span class="c1">//=&gt; {token: &#39;secret&#39;, …}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>这个选项是可枚举的。为了在内部定义不可枚举的属性，执行以下操作:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span>
+<span class="normal"><a href="#__codelineno-25-11">11</a></span>
+<span class="normal"><a href="#__codelineno-25-12">12</a></span>
+<span class="normal"><a href="#__codelineno-25-13">13</a></span>
+<span class="normal"><a href="#__codelineno-25-14">14</a></span>
+<span class="normal"><a href="#__codelineno-25-15">15</a></span>
+<span class="normal"><a href="#__codelineno-25-16">16</a></span>
+<span class="normal"><a href="#__codelineno-25-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperties</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="w">  </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;secret&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="w">    </span><span class="nx">enumerable</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="w">    </span><span class="nx">configurable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="w">    </span><span class="nx">writable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-25-11" name="__codelineno-25-11"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-25-12" name="__codelineno-25-12"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-25-13" name="__codelineno-25-13"></a>
+<a id="__codelineno-25-14" name="__codelineno-25-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"> </span><span class="nx">context</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-25-15" name="__codelineno-25-15"></a>
+<a id="__codelineno-25-16" name="__codelineno-25-16"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">instance</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-25-17" name="__codelineno-25-17"></a><span class="c1">//=&gt; {}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">合并行为</p>
+<p>覆盖现有属性。</p>
+</div>
+<h2 id="cookiejar"><code>cookieJar</code><a class="headerlink" href="#cookiejar" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object | <a href="https://github.com/salesforce/tough-cookie#cookiejar">tough.cookieJar</a></code></strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>设置此选项将导致 <code>cookie</code> 报头被覆盖。</p>
+</div>
+<p>Cookie的支持。自动处理解析和存储。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span>
+<span class="normal"><a href="#__codelineno-26-6">6</a></span>
+<span class="normal"><a href="#__codelineno-26-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CookieJar</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tough-cookie&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cookieJar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CookieJar</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="k">await</span><span class="w"> </span><span class="nx">cookieJar</span><span class="p">.</span><span class="nx">setCookie</span><span class="p">(</span><span class="s2">&quot;foo=bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://example.com&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cookieJar</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="cookiejarsetcookie"><code>cookieJar.setCookie</code><a class="headerlink" href="#cookiejarsetcookie" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>(rawCookie: string, url: string) =&gt; void | Promise&lt;void&gt;</code></strong></p>
+<p>See <a href="https://github.com/salesforce/tough-cookie#setcookiecookieorstring-currenturl-options-cberrcookie">ToughCookie API</a> for more information.</p>
+<h2 id="cookiejargetcookiestring"><code>cookieJar.getCookieString</code><a class="headerlink" href="#cookiejargetcookiestring" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>(currentUrl: string) =&gt; string | Promise&lt;string&gt;</code></strong></p>
+<p>See <a href="https://github.com/salesforce/tough-cookie#getcookiestring">ToughCookie API</a> for more information.</p>
+<h2 id="ignoreinvalidcookies"><code>ignoreInvalidCookies</code><a class="headerlink" href="#ignoreinvalidcookies" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>false</code></strong></p>
+<p>Ignore invalid cookies instead of throwing an error.<br />
+Only useful when the <code>cookieJar</code> option has been set.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not recommended! Use at your own risk.</p>
+</div>
+<h2 id="followredirect"><code>followRedirect</code><a class="headerlink" href="#followredirect" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>true</code></strong></p>
+<p>Defines if redirect responses should be followed automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a <code>303</code> is sent by the server in response to any request type (POST, DELETE, etc.), Got will request the resource pointed to in the location header via GET.  </p>
+</div>
+<blockquote>
+<p>This is in accordance with the <a href="https://tools.ietf.org/html/rfc7231#section-6.4.4">specification</a>. You can optionally turn on this behavior also for other redirect codes - see <a href="#methodrewriting"><code>methodRewriting</code></a>.</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
+<span class="normal"><a href="#__codelineno-27-2">2</a></span>
+<span class="normal"><a href="#__codelineno-27-3">3</a></span>
+<span class="normal"><a href="#__codelineno-27-4">4</a></span>
+<span class="normal"><a href="#__codelineno-27-5">5</a></span>
+<span class="normal"><a href="#__codelineno-27-6">6</a></span>
+<span class="normal"><a href="#__codelineno-27-7">7</a></span>
+<span class="normal"><a href="#__codelineno-27-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"> </span><span class="nx">followRedirect</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;http://google.com&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">location</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="c1">//=&gt; &#39;https://google.com&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="maxredirects"><code>maxRedirects</code><a class="headerlink" href="#maxredirects" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>number</code></strong><br />
+<strong>默认: <code>10</code></strong></p>
+<p>If exceeded, the request will be aborted and a <a href="../8-errors/#maxredirectserror"><code>MaxRedirectsError</code></a> will be thrown.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-28-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-28-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-28-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-28-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-28-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-28-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"> </span><span class="nx">maxRedirects</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;https://nghttp2.org/httpbin/absolute-redirect/5&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="w">  </span><span class="c1">//=&gt; &#39;Redirected 3 times. Aborting.&#39;</span><span class="w"></span>
+<a id="__codelineno-28-9" name="__codelineno-28-9"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-28-10" name="__codelineno-28-10"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="decompress"><code>decompress</code><a class="headerlink" href="#decompress" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>true</code></strong></p>
+<p>Decompress the response automatically. This will set the <code>accept-encoding</code> header to <code>gzip, deflate, br</code>.</p>
+<p>If disabled, a compressed response is returned as a <code>Buffer</code>. This may be useful if you want to handle decompression yourself.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span>
+<span class="normal"><a href="#__codelineno-29-5">5</a></span>
+<span class="normal"><a href="#__codelineno-29-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://google.com&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s2">&quot;content-encoding&quot;</span><span class="p">]);</span><span class="w"></span>
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="c1">//=&gt; &#39;gzip&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="dnslookup"><code>dnsLookup</code><a class="headerlink" href="#dnslookup" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>Function</code></strong><br />
+<strong>默认: <a href="https://nodejs.org/api/dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup</code></a></strong></p>
+<p>Custom DNS resolution logic.</p>
+<p>The function signature is the same as <code>dns.lookup</code>.</p>
+<h2 id="dnscache"><code>dnsCache</code><a class="headerlink" href="#dnscache" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code><a href="https://github.com/szmarczak/cacheable-lookup">CacheableLookup</a> | false</code></strong></p>
+<p>An instance of <code>CacheableLookup</code> used for making DNS lookups.<br />
+Useful when making lots of requests to different public hostnames.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>This should stay disabled when making requests to internal hostnames such as localhost, database.local etc.</li>
+<li>CacheableLookup uses <code>dns.resolver4(…)</code> and <code>dns.resolver6(…)</code> under the hood and falls back to <code>dns.lookup(…)</code> when the first two fail, which may lead to additional delay.</li>
+</ul>
+</div>
+<h2 id="dnslookupipversion"><code>dnsLookupIpVersion</code><a class="headerlink" href="#dnslookupipversion" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>4 | 6</code></strong><br />
+<strong>默认: <code>undefined</code></strong></p>
+<p>The IP version to use. Specifying <code>undefined</code> will use the default configuration.</p>
+<h2 id="request"><code>request</code><a class="headerlink" href="#request" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>Function&lt;<a href="https://nodejs.org/api/http.html#http_class_http_clientrequest">ClientRequest</a> | <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage">IncomingMessage</a>&gt; | AsyncFunction&lt;<a href="https://nodejs.org/api/http.html#http_class_http_clientrequest">ClientRequest</a> | <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage">IncomingMessage</a>&gt;</code></strong><br />
+<strong>默认: <code>http.request | https.request</code> <em>(depending on the protocol)</em></strong></p>
+<p>Custom request function.</p>
+<p>The main purpose of this is to <a href="https://github.com/szmarczak/http2-wrapper">support HTTP/2 using a wrapper</a>.</p>
+<h2 id="cache"><code>cache</code><a class="headerlink" href="#cache" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object | false</code></strong><br />
+<strong>默认: <code>false</code></strong></p>
+<p><a href="../cache/">Cache adapter instance</a> for storing cached response data.</p>
+<h2 id="cacheoptions"><code>cacheOptions</code><a class="headerlink" href="#cacheoptions" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object</code></strong><br />
+<strong>默认: <code>{}</code></strong></p>
+<p><a href="https://github.com/kornelski/http-cache-semantics#constructor-options">Cache options</a> used for the specified request.</p>
+<h2 id="http2"><code>http2</code><a class="headerlink" href="#http2" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>false</code></strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option requires Node.js 15.10.0 or newer as HTTP/2 support on older Node.js versions is very buggy.</p>
+</div>
+<p>If <code>true</code>, the <code>request</code> option will default to <code>http2wrapper.auto</code> and the entire <code>agent</code> object will be passed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ALPN negotiation will have place in order to determine if the server actually supports HTTP/2. If it doesn't, HTTP/1.1 will be used.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting the <code>request</code> option to <code>https.request</code> will disable HTTP/2 usage. It is required to use <code>http2wrapper.auto</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no direct <a href="https://datatracker.ietf.org/doc/html/rfc7540#section-3.1"><code>h2c</code></a> support. However, you can provide a <code>h2session</code> option in a <code>beforeRequest</code> hook. See <a href="../examples/h2c.js">an example</a>.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span>
+<span class="normal"><a href="#__codelineno-30-3">3</a></span>
+<span class="normal"><a href="#__codelineno-30-4">4</a></span>
+<span class="normal"><a href="#__codelineno-30-5">5</a></span>
+<span class="normal"><a href="#__codelineno-30-6">6</a></span>
+<span class="normal"><a href="#__codelineno-30-7">7</a></span>
+<span class="normal"><a href="#__codelineno-30-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">  </span><span class="nx">http2</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">[</span><span class="s2">&quot;:status&quot;</span><span class="p">]);</span><span class="w"></span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="c1">//=&gt; 200</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current Got version may use an older version of <a href="https://github.com/szmarczak/http2-wrapper"><code>http2-wrapper</code></a>.<br />
+If you prefer to use the newest one, set both <code>request</code> to <code>http2wrapper.auto</code> and <code>http2</code> to <code>true</code>.</p>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-31-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-31-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-31-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-31-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-31-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-31-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-31-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-31-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-31-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">http2wrapper</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;http2-wrapper&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w">  </span><span class="nx">http2</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="w">  </span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="nx">http2wrapper</span><span class="p">.</span><span class="nx">auto</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-31-8" name="__codelineno-31-8"></a>
+<a id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">[</span><span class="s2">&quot;:status&quot;</span><span class="p">]);</span><span class="w"></span>
+<a id="__codelineno-31-10" name="__codelineno-31-10"></a><span class="c1">//=&gt; 200</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>See the <a href="https://github.com/szmarczak/http2-wrapper"><code>http2-wrapper</code> docs</a> to learn more about Agent and Proxy support.</p>
+<h2 id="agent"><code>agent</code><a class="headerlink" href="#agent" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object</code></strong><br />
+<strong>默认: <code>{}</code></strong></p>
+<p>An object with <code>http</code>, <code>https</code> and <code>http2</code> properties.</p>
+<p>Got will automatically resolve the protocol and use the corresponding agent. It defaults to:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span>
+<span class="normal"><a href="#__codelineno-32-2">2</a></span>
+<span class="normal"><a href="#__codelineno-32-3">3</a></span>
+<span class="normal"><a href="#__codelineno-32-4">4</a></span>
+<span class="normal"><a href="#__codelineno-32-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="w">    </span><span class="nx">http</span><span class="o">:</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">globalAgent</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">    </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="nx">https</span><span class="p">.</span><span class="nx">globalAgent</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">    </span><span class="nx">http2</span><span class="o">:</span><span class="w"> </span><span class="nx">http2</span><span class="p">.</span><span class="nx">globalAgent</span><span class="w"></span>
+<a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The HTTP/2 <code>Agent</code> must be an instance of <a href="https://github.com/szmarczak/http2-wrapper#new-http2agentoptions"><code>http2wrapper.Agent</code></a></p>
+</div>
+<h2 id="throwhttperrors"><code>throwHttpErrors</code><a class="headerlink" href="#throwhttperrors" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>true</code></strong></p>
+<p>If <code>true</code>, it will <a href="../8-errors/#httperror">throw</a> when the status code is not <code>2xx</code> / <code>3xx</code>.</p>
+<p>If this is disabled, requests that encounter an error status code will be resolved with the response instead of throwing. This may be useful if you are checking for resource availability and are expecting error responses.</p>
+<h2 id="username"><code>username</code><a class="headerlink" href="#username" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string</code></strong><br />
+<strong>默认: <code>''</code></strong></p>
+<p>The <code>username</code> used for <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication">Basic authentication</a>.</p>
+<h2 id="password"><code>password</code><a class="headerlink" href="#password" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string</code></strong><br />
+<strong>默认: <code>''</code></strong></p>
+<p>The <code>password</code> used for <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication">Basic authentication</a>.</p>
+<h2 id="localaddress"><code>localAddress</code><a class="headerlink" href="#localaddress" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>string | undefined</code></strong><br />
+<strong>默认: <code>undefined</code></strong></p>
+<p>The local IP address used to make the request.</p>
+<h2 id="createconnection"><code>createConnection</code><a class="headerlink" href="#createconnection" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>Function | undefined</code></strong><br />
+<strong>默认: <code>undefined</code></strong></p>
+<p>The function used to retrieve a <code>net.Socket</code> instance when the <code>agent</code> option is not used.</p>
+<h2 id="https"><code>https</code><a class="headerlink" href="#https" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object</code></strong></p>
+<p>See <a href="../5-https/">Advanced HTTPS API</a>.</p>
+<h2 id="pagination"><code>pagination</code><a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>object</code></strong></p>
+<p>See <a href="../4-pagination/">Pagination API</a>.</p>
+<h2 id="sethost"><code>setHost</code><a class="headerlink" href="#sethost" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>true</code></strong></p>
+<p>Specifies whether or not to automatically add the <code>Host</code> header.</p>
+<h2 id="maxheadersize"><code>maxHeaderSize</code><a class="headerlink" href="#maxheadersize" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>number | undefined</code></strong><br />
+<strong>默认: <code>undefined</code></strong></p>
+<p>Optionally overrides the value of <a href="https://nodejs.org/api/cli.html#cli_max_http_header_size_size"><code>--max-http-header-size</code></a> (default 16KB: <code>16384</code>).</p>
+<h2 id="methodrewriting"><code>methodRewriting</code><a class="headerlink" href="#methodrewriting" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>false</code></strong></p>
+<p>Specifies if the HTTP request method should be <a href="https://tools.ietf.org/html/rfc7231#section-6.4">rewritten as <code>GET</code></a> on redirects.</p>
+<p>As the <a href="https://tools.ietf.org/html/rfc7231#section-6.4">specification</a> prefers to rewrite the HTTP method only on <code>303</code> responses, this is Got's default behavior. Setting <code>methodRewriting</code> to <code>true</code> will also rewrite <code>301</code> and <code>302</code> responses, as allowed by the spec. This is the behavior followed by <code>curl</code> and browsers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Got never performs method rewriting on <code>307</code> and <code>308</code> responses, as this is <a href="https://www.rfc-editor.org/rfc/rfc7231#section-6.4.7">explicitly prohibited by the specification</a>.</p>
+</div>
+<h2 id="enableunixsockets"><code>enableUnixSockets</code><a class="headerlink" href="#enableunixsockets" title="Permanent link">&para;</a></h2>
+<p><strong>类型: <code>boolean</code></strong><br />
+<strong>默认: <code>true</code></strong></p>
+<p>When enabled, requests can also be sent via <a href="https://serverfault.com/questions/124517/what-is-the-difference-between-unix-sockets-and-tcp-ip-sockets">UNIX Domain Sockets</a>. Please note that in the upcoming major release (Got v13) this default will be changed to <code>false</code> for security reasons.</p>
+<blockquote>
+<p><strong>Warning</strong>
+Make sure you do your own URL sanitizing if you accept untrusted user input for the URL.</p>
+</blockquote>
+<p>Use the following URL scheme: <code>PROTOCOL://unix:SOCKET:PATH</code></p>
+<ul>
+<li><code>PROTOCOL</code> - <code>http</code> or <code>https</code></li>
+<li><code>SOCKET</code> - Absolute path to a UNIX domain socket, for example: <code>/var/run/docker.sock</code></li>
+<li><code>PATH</code> - Request path, for example: <code>/v2/keys</code></li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-33-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-33-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-33-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-33-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-33-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-33-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-33-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-33-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-33-10">10</a></span>
+<span class="normal"><a href="#__codelineno-33-11">11</a></span>
+<span class="normal"><a href="#__codelineno-33-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;http://unix:/var/run/docker.sock:/containers/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">enableUnixSockets</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="c1">// Or without protocol (HTTP by default)</span><span class="w"></span>
+<a id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;unix:/var/run/docker.sock:/containers/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">enableUnixSockets</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-33-7" name="__codelineno-33-7"></a>
+<a id="__codelineno-33-8" name="__codelineno-33-8"></a><span class="c1">// Disable Unix sockets</span><span class="w"></span>
+<a id="__codelineno-33-9" name="__codelineno-33-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">gotUnixSocketsDisabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"> </span><span class="nx">enableUnixSockets</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-33-10" name="__codelineno-33-10"></a>
+<a id="__codelineno-33-11" name="__codelineno-33-11"></a><span class="c1">// RequestError: Using UNIX domain sockets but option `enableUnixSockets` is not enabled</span><span class="w"></span>
+<a id="__codelineno-33-12" name="__codelineno-33-12"></a><span class="k">await</span><span class="w"> </span><span class="nx">gotUnixSocketsDisabled</span><span class="p">(</span><span class="s2">&quot;http://unix:/var/run/docker.sock:/containers/json&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h1 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h1>
+<h2 id="optionsmergeother-options-optionsinit"><code>options.merge(other: Options | OptionsInit)</code><a class="headerlink" href="#optionsmergeother-options-optionsinit" title="Permanent link">&para;</a></h2>
+<p>Merges <code>other</code> into the current instance.</p>
+<p>If you look at the <a href="../source/core/options.ts">source code</a>, you will notice that internally there is a <code>this._merging</code> property.<br />
+Setters work a bit differently when it's <code>true</code>.</p>
+<h2 id="optionstojson"><code>options.toJSON()</code><a class="headerlink" href="#optionstojson" title="Permanent link">&para;</a></h2>
+<p>Returns a new plain object that can be stored as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#tojson_behavior">JSON</a>.</p>
+<h2 id="optionscreatenativerequestoptions"><code>options.createNativeRequestOptions()</code><a class="headerlink" href="#optionscreatenativerequestoptions" title="Permanent link">&para;</a></h2>
+<p>Creates a new object for native Node.js HTTP request options.</p>
+<p>In other words, this translates Got options into Node.js options.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some other stuff, such as timeouts, is handled internally by Got.</p>
+</div>
+<h2 id="optionsgetrequestfunction"><code>options.getRequestFunction()</code><a class="headerlink" href="#optionsgetrequestfunction" title="Permanent link">&para;</a></h2>
+<p>Returns a <a href="https://nodejs.org/api/http.html#http_http_request_url_options_callback"><code>http.request</code>-like</a> function used to make the request.</p>
+<h2 id="optionsfreeze"><code>options.freeze()</code><a class="headerlink" href="#optionsfreeze" title="Permanent link">&para;</a></h2>
+<p>Makes the entire <code>Options</code> instance read-only.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../1-promise/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Promise API" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Promise API
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../3-streams/" class="md-footer__link md-footer__link--next" aria-label="下一页: Stream API" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Stream API
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      版权所有 © 2017-2022 MIT by Kamil Mysliwiec
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://twitter.com/kammysliwiec" target="_blank" rel="noopener" title="Kamil Mysliwiec Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://github.com/kamilmysliwiec" target="_blank" rel="noopener" title="Kamil Mysliwiec Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.facebook.com/kammysliwiec/" target="_blank" rel="noopener" title="Kamil Mysliwiec Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://kamilmysliwiec.com" target="_blank" rel="noopener" title="Kamil Mysliwiec Blog | Full-Stack Software Engineer" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

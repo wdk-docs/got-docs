@@ -1,104 +1,107 @@
-# Quick Start Guide
+# 快速入门指南
 
-## Getting and posting data with promises
+## 获得和发布数据
 
-The simplest `GET` request:
+最简单的`GET`请求:
 
 ```js
-import got from 'got';
+import got from "got";
 
-const url = 'https://httpbin.org/anything';
+const url = "https://httpbin.org/anything";
 const response = await got(url);
 ```
 
-The call returns a <code>Promise<[Response](3-streams.md#response-1)></code>. If the body contains JSON, it can be retrieved directly:
+调用返回<code>Promise<[Response](3-streams.md#response-1)></code>。
+如果主体包含 JSON，则可以直接检索:
 
 ```js
-import got from 'got';
+import got from "got";
 
-const url = 'https://httpbin.org/anything';
+const url = "https://httpbin.org/anything";
 const data = await got(url).json();
 ```
 
-The similar <code>[got.text](1-promise.md#promisetext)</code> method returns plain text.
+类似的<code>[got.text](1-promise.md#promisetext)</code>方法返回纯文本。
 
-All `got` methods accept an options object for passing extra configuration, such as headers:
+所有`got`方法都接受一个 options 对象来传递额外的配置，比如头信息:
 
 ```js
-import got from 'got';
+import got from "got";
 
-const url = 'https://httpbin.org/anything';
+const url = "https://httpbin.org/anything";
 
 const options = {
-	headers: {
-		'Custom-Header': 'Quick start',
-	},
-	timeout: {
-		send: 3500
-	},
+  headers: {
+    "Custom-Header": "Quick start",
+  },
+  timeout: {
+    send: 3500,
+  },
 };
 
 const data = await got(url, options).json();
 ```
 
-A `POST` request is very similar:
+一个 `POST` 请求非常类似:
 
 ```js
-import got from 'got';
+import got from "got";
 
-const url = 'https://httpbin.org/anything';
+const url = "https://httpbin.org/anything";
 
 const options = {
-	json: {
-		documentName: 'Quick Start',
-	},
+  json: {
+    documentName: "Quick Start",
+  },
 };
 
 const data = await got.post(url, options);
 ```
 
-The request body is passed in the options object. The `json` property will automatically set headers accordingly. Custom headers can be added exactly as above.
+请求体在 options 对象中传递。
+`json`属性将自动相应地设置标题。
+可以像上面一样添加自定义标头。
 
-## Using streams
+## 使用流
 
-The [Stream API](3-streams.md) allows to leverage [Node.js Streams](https://nodejs.dev/learn/nodejs-streams) capabilities:
+[Stream API](3-streams.md)允许利用[Node.js Streams](https://nodejs.dev/learn/nodejs-streams)功能:
 
 ```js
-import fs from 'node:fs';
-import {pipeline} from 'node:stream/promises';
-import got from 'got';
+import fs from "node:fs";
+import { pipeline } from "node:stream/promises";
+import got from "got";
 
-const url = 'https://httpbin.org/anything';
+const url = "https://httpbin.org/anything";
 
 const options = {
-	json: {
-		documentName: 'Quick Start',
-	},
+  json: {
+    documentName: "Quick Start",
+  },
 };
 
 const gotStream = got.stream.post(url, options);
 
-const outStream = fs.createWriteStream('anything.json');
+const outStream = fs.createWriteStream("anything.json");
 
 try {
-	await pipeline(gotStream, outStream);
+  await pipeline(gotStream, outStream);
 } catch (error) {
-	console.error(error);
+  console.error(error);
 }
 ```
 
-## Options
+## 选项
 
-Options can be set at the client level and reused in subsequent queries:
+选项可以在客户端级别设置，并在后续查询中重用:
 
 ```js
-import got from 'got';
+import got from "got";
 
 const options = {
-	prefixUrl: 'https://httpbin.org',
-	headers: {
-		Authorization: getTokenFromVault(),
-	},
+  prefixUrl: "https://httpbin.org",
+  headers: {
+    Authorization: getTokenFromVault(),
+  },
 };
 
 const client = got.extend(options);
@@ -106,75 +109,74 @@ const client = got.extend(options);
 export default client;
 ```
 
-Some noticeable common options are:
-- [`searchParams`](2-options.md#searchparams): A query string object.
-- [`prefixUrl`](2-options.md#prefixurl): Prepended to query paths. Paths must be relative to prefix, i.e. not begin with a `/`.
-- [`method`](2-options.md#method): The HTTP method name.
-- [`headers`](2-options.md#headers): Query headers.
+一些常见的选项是:
+
+- [`searchParams`](2-options.md#searchparams): 查询字符串对象。
+- [`prefixUrl`](2-options.md#prefixurl): 前置查询路径。路径必须相对于前缀，即不能以`/`开头。
+- [`method`](2-options.md#method): HTTP 方法名。
+- [`headers`](2-options.md#headers): 查询头。
 - [`json`](2-options.md#json): JSON body.
-- [`form`](2-options.md#form): A form query string object.
+- [`form`](2-options.md#form): 一个表单查询字符串对象。
 
-See the documentation for other [options](2-options.md#options).
+有关其他[选项](2-options.md#options)，请参阅文档.
 
-## Errors
+## 错误
 
-Both Promise and Stream APIs throw errors with metadata.
+Promise 和 Stream api 都使用元数据抛出错误。
 
 ```js
-import got from 'got';
+import got from "got";
 
 try {
-	const data = await got.get('https://httpbin.org/status/404');
+  const data = await got.get("https://httpbin.org/status/404");
 } catch (error) {
-	console.error(error.response.statusCode);
+  console.error(error.response.statusCode);
 }
 ```
 
 ```js
-import got from 'got';
+import got from "got";
 
-const stream = got.stream
-	.get('https://httpbin.org/status/404')
-	.once('error', error => {
-		console.error(error.response.statusCode);
-	});
+const stream = got.stream.get("https://httpbin.org/status/404").once("error", (error) => {
+  console.error(error.response.statusCode);
+});
 ```
 
-## Miscellaneous
+## 杂项
 
-The HTTP method name can also be given as an option, this may be convenient when it is known only at runtime:
+HTTP 方法名也可以作为一个选项给出，当它只在运行时才知道时，这可能会很方便:
 
 ```js
-import got from 'got';
+import got from "got";
 
-const url = 'https://httpbin.org/anything';
+const url = "https://httpbin.org/anything";
 
-const method = 'POST';
+const method = "POST";
 
 const options = {
-	method,
-	json: {
-		documentName: 'Quick Start',
-	},
+  method,
+  json: {
+    documentName: "Quick Start",
+  },
 };
 
 const data = await got(url, options);
 ```
 
-For most apps, HTTP clients just do `GET` and `POST` queries (`PUT`, `PATCH` or `DELETE` methods work similarly).
-The following sections will give some pointers to more advanced usage.
+对于大多数应用程序，HTTP 客户端只做`GET`和`POST`查询(`PUT`，`PATCH`或`DELETE`方法工作类似)。
+下面的部分将提供一些更高级的用法。
 
-### Timeouts
+### 超时
 
-By default, requests have no timeout. It is a good practice to set one:
+默认情况下，请求没有超时。一个好的做法是设置一个:
 
 ```js
-import got from 'got';
+import got from "got";
 
 const options = {
-	timeout: {
-		request: 10000,
-	},
+  timeout: {
+    request: 10000,
+  },
 };
 
 const client = got.extend(options);
@@ -182,44 +184,43 @@ const client = got.extend(options);
 export default client;
 ```
 
-The above sets a global timeout of 10000 milliseconds for all requests issued by the exported `client`. Like all options, timeouts can also be set at the request level. See the [`timeout` option](6-timeout.md#timeout-options).
+上面为导出的`client`发出的所有请求设置了 10000 毫秒的全局超时。
+与所有选项一样，超时也可以设置在请求级别。
+参见[`timeout` 选项](6-timeout.md#timeout-options)。
 
-### Retries
+### 重试
 
-A failed request is retried twice. The retry policy may be tuned with a [`retry`](7-retry.md#retry) options object.
+失败的请求将重试两次。
+重试策略可以通过[`retry`](7-retry.md#retry)选项对象进行调优。
 
 ```js
-import got from 'got';
+import got from "got";
 
 const options = {
-	retry: {
-		limit: 5,
-		errorCodes: [
-			'ETIMEDOUT'
-		],
-	},
+  retry: {
+    limit: 5,
+    errorCodes: ["ETIMEDOUT"],
+  },
 };
 ```
 
-Retries with stream are a little trickier, see [`stream.on('retry', …)`](3-streams.md#streamonretry-).
+stream 的重试就有点棘手了[`stream.on('retry', …)`](3-streams.md#streamonretry-).
 
-### Hooks
+### 钩子
 
-Hooks are custom functions called on some request events:
+钩子是在一些请求事件上调用的自定义函数:
 
 ```js
-import got from 'got';
+import got from "got";
 
 const logRetry = (error, retryCount) => {
-	console.error(`Retrying after error ${error.code}, retry #: ${retryCount}`);
+  console.error(`Retrying after error ${error.code}, retry #: ${retryCount}`);
 };
 
 const options = {
-	hooks: {
-		beforeRetry: [
-			logRetry,
-		],
-	},
+  hooks: {
+    beforeRetry: [logRetry],
+  },
 };
 
 const client = got.extend(options);
@@ -227,8 +228,12 @@ const client = got.extend(options);
 export default client;
 ```
 
-*Note that hooks are given as arrays*, thus multiple hooks can be given. See documentation for other possible [hooks](9-hooks.md#hooks-api).
+_注意，钩子以数组的形式给出_, 因此可以给出多个钩子。参见文档了解其他可能的[钩子](9-hooks.md#hooks-api).
 
-### Going further
+### 走得更远
 
-There is a lot more to discover in the [documentation](../readme.md#documentation) and [tips](tips.md#tips). Among others, `Got` can handle [cookies](tips.md#cookies), [pagination](4-pagination.md#pagination-api), [cache](cache.md#cache). Please read the documentation before implementing something that is already done by `Got` :innocent:.
+在[documentation](../readme.md#documentation)和[tips](tips.md#tips)中还有很多需要发现的地方。
+其中，`Got`可以处理[cookies](tips.md#cookies)， [pagination](4-pagination.md#pagination-api)， [cache](cache.md#cache)。
+在实现`Got` :innocent:已经完成的操作之前，请阅读文档。
+
+

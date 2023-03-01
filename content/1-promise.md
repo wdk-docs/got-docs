@@ -1,53 +1,46 @@
-[> Back to homepage](../readme.md#documentation)
-
-## Promise API
+# Promise API
 
 Source code: [`source/as-promise/index.ts`](../source/as-promise/index.ts)
 
-The main Got function returns a [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).\
+The main Got function returns a [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).  
 Although in order to support cancelation, [`PCancelable`](https://github.com/sindresorhus/p-cancelable) is used instead of pure `Promise`.
 
-### <code>got(url: string | URL, options?: [OptionsInit](typescript.md#optionsinit), defaults?: [Options](2-options.md))</code>
+## <code>got(url: string | URL, options?: [OptionsInit](typescript.md#optionsinit), defaults?: [Options](2-options.md))</code>
 
 **Returns: <code>Promise<[Response](response.md)>**</code>
 
 The most common way is to pass the URL as the first argument, then the options as the second.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {headers} = await got(
-	'https://httpbin.org/anything',
-	{
-		headers: {
-			foo: 'bar'
-		}
-	}
-).json();
+const { headers } = await got("https://httpbin.org/anything", {
+  headers: {
+    foo: "bar",
+  },
+}).json();
 ```
 
-### <code>got(options: [OptionsInit](typescript.md#optionsinit))</code>
+## <code>got(options: [OptionsInit](typescript.md#optionsinit))</code>
 
 **Returns: <code>Promise<[Response](3-streams.md#response-1)>**</code>
 
 Alternatively, you can pass only options containing a `url` property.
 
 ```js
-import got from 'got';
+import got from "got";
 
-const {headers} = await got(
-	{
-		url: 'https://httpbin.org/anything',
-		headers: {
-			foo: 'bar'
-		}
-	}
-).json();
+const { headers } = await got({
+  url: "https://httpbin.org/anything",
+  headers: {
+    foo: "bar",
+  },
+}).json();
 ```
 
 This is semantically the same as the first approach.
 
-### `promise.json<T>()`
+## `promise.json<T>()`
 
 **Returns: `Promise<T>`**
 
@@ -55,7 +48,7 @@ A shortcut method that gives a Promise returning a JSON object.
 
 It is semantically the same as settings [`options.resolveBodyOnly`](2-options.md#resolvebodyonly) to `true` and [`options.responseType`](2-options.md#responsetype) to `'json'`.
 
-### `promise.buffer()`
+## `promise.buffer()`
 
 **Returns: `Promise<Buffer>`**
 
@@ -63,7 +56,7 @@ A shortcut method that gives a Promise returning a [Buffer](https://nodejs.org/a
 
 It is semantically the same as settings [`options.resolveBodyOnly`](2-options.md#resolvebodyonly) to `true` and [`options.responseType`](2-options.md#responsetype) to `'buffer'`.
 
-### `promise.text()`
+## `promise.text()`
 
 **Returns: `Promise<string>`**
 
@@ -71,45 +64,45 @@ A shortcut method that gives a Promise returning a string.
 
 It is semantically the same as settings [`options.resolveBodyOnly`](2-options.md#resolvebodyonly) to `true` and [`options.responseType`](2-options.md#responsetype) to `'text'`.
 
-### `promise.cancel(reason?: string)`
+## `promise.cancel(reason?: string)`
 
 Cancels the request and optionally provide a reason.
 
-The cancellation is synchronous.\
+The cancellation is synchronous.  
 Calling it after the promise has settled or multiple times does nothing.
 
 This will cause the promise to reject with [`CancelError`](8-errors.md#cancelerror).
 
-### `promise.isCanceled`
+## `promise.isCanceled`
 
-**Type: `boolean`**
+**类型: `boolean`**
 
 Whether the promise is canceled.
 
-### `promise.on(event, handler)`
+## `promise.on(event, handler)`
 
 The events are the same as in [Stream API](3-streams.md#events).
 
-### `promise.off(event, handler)`
+## `promise.off(event, handler)`
 
 Removes listener registered with [`promise.on`](1-promise.md#promiseonevent-handler)
 
 ```js
-import {createReadStream} from 'node:fs';
-import got from 'got';
+import { createReadStream } from "node:fs";
+import got from "got";
 
 const ongoingRequestPromise = got.post(uploadUrl, {
-    body: createReadStream('sample.txt')
+  body: createReadStream("sample.txt"),
 });
 
 const eventListener = (progress: Progress) => {
-    console.log(progress);
+  console.log(progress);
 };
 
-ongoingRequestPromise.on('uploadProgress', eventListener);
+ongoingRequestPromise.on("uploadProgress", eventListener);
 
 setTimeout(() => {
-    ongoingRequestPromise.off('uploadProgress', eventListener);
+  ongoingRequestPromise.off("uploadProgress", eventListener);
 }, 500);
 
 await ongoingRequestPromise;
