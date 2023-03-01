@@ -1,6 +1,6 @@
 INHERIT: config/nav.yml
 
-site_name: Got
+site_name: Got 文档
 site_url: https://wdk-docs.github.io/got-docs/
 site_author: Sindre Sorhus
 site_description: Got 文档
@@ -111,17 +111,20 @@ copyright: "版权所有 © 2017-2023 MIT by Sindre Sorhus"
 extra:
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/kammysliwiec
-      name: Kamil Mysliwiec Twitter
+      link: https://twitter.com/sindresorhus
+      name: Sindre Sorhus Twitter
     - icon: fontawesome/brands/github
-      link: https://github.com/kamilmysliwiec
-      name: Kamil Mysliwiec Github
-    - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/kammysliwiec/
-      name: Kamil Mysliwiec Facebook
+      link: https://github.com/sindresorhus
+      name: Sindre Sorhus Github
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/sindresorhus
+      name: Sindre Sorhus Instagram
     - icon: fontawesome/brands/blogger
-      link: https://kamilmysliwiec.com
-      name: Kamil Mysliwiec Blog | Full-Stack Software Engineer
+      link: https://sindresorhus.com/apps
+      name: Sindre Sorhus Blog 
+    - icon: fontawesome/brands/mastodon
+      link: https://mastodon.social/@sindresorhus
+      name: Sindre Sorhus Mastodon
   version_warning: !!python/object/apply:os.getenv ["VERSION_WARNING"]
   knative_version: !!python/object/apply:os.getenv ["KNATIVE_VERSION"]
   branch: !!python/object/apply:os.getenv ["SAMPLES_BRANCH", "main"]
