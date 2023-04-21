@@ -1,6 +1,6 @@
 # Promise API
 
-Source code: [`source/as-promise/index.ts`](../source/as-promise/index.ts)
+源码: [`source/as-promise/index.ts`](../source/as-promise/index.ts)
 
 The main Got function returns a [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).  
 Although in order to support cancelation, [`PCancelable`](https://github.com/sindresorhus/p-cancelable) is used instead of pure `Promise`.

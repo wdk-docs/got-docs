@@ -1,6 +1,6 @@
 # Timeout options
 
-Source code: [`source/core/timed-out.ts`](../source/core/timed-out.ts)
+源码: [`source/core/timed-out.ts`](../source/core/timed-out.ts)
 
 It is a good practice to set a timeout to prevent hanging requests.  
 By default, there is no timeout set.

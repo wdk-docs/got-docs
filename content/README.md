@@ -10,7 +10,7 @@
 	<p>
 		<p>
 			<sup>
-				Sindre's open source work is supported by the community.<br>Special thanks to:
+				Sindre的开源工作得到了社区的支持。<br>特别感谢:
 			</sup>
 		</p>
 		<br>
@@ -23,9 +23,9 @@
 			<div>
 				<img src="https://sindresorhus.com/assets/thanks/strapi-logo-white-bg.png" width="200" alt="Strapi">
 			</div>
-			<b>Strapi is the leading open-source headless CMS.</b>
+			<b>Strapi是领先的开源无头CMS。</b>
 			<div>
-				<sup>It’s 100% JavaScript, fully customizable, and developer-first.</sup>
+				<sup>它是100%的JavaScript，完全可定制，并且以开发人员为先。</sup>
 			</div>
 		</a>
 		<br>
@@ -39,9 +39,9 @@
 			<b>Paperwork that makes the data work.</b>
 			<div>
 				<sub>
-				Easy APIs for paperwork. PDF generation, e-signature and embeddable no-code webforms.
+				文书工作的简单api。PDF生成，电子签名和可嵌入的无代码web表单。
 				<br>
-				The easiest way to build paperwork automation into your product.
+				将文书工作自动化构建到产品中最简单的方法。
 				</sub>
 			</div>
 		</a>
@@ -50,12 +50,12 @@
 				<img src="https://sindresorhus.com/assets/thanks/anvil-logo-dark.svg" width="200" alt="Anvil">
 			</div>
 			<br>
-			<b>Paperwork that makes the data work.</b>
+			<b>使数据工作的文书工作。</b>
 			<div>
 				<sub>
-				Easy APIs for paperwork. PDF generation, e-signature and embeddable no-code webforms.
+				文书工作的简单api。PDF生成，电子签名和可嵌入的无代码web表单。
 				<br>
-				The easiest way to build paperwork automation into your product.
+				将文书工作自动化构建到产品中最简单的方法。
 				</sub>
 			</div>
 		</a>
@@ -68,39 +68,44 @@
 	<br>
 </div>
 
-> Human-friendly and powerful HTTP request library for Node.js
+> 人性化和强大的 HTTP 请求库的 Node.js
 
 <!-- [![Coverage Status](https://codecov.io/gh/sindresorhus/got/branch/main/graph/badge.svg)](https://codecov.io/gh/sindresorhus/got/branch/main) -->
 
 [![Downloads](https://img.shields.io/npm/dm/got.svg)](https://npmjs.com/got)
 [![Install size](https://packagephobia.com/badge?p=got)](https://packagephobia.com/result?p=got)
 
-[See how Got compares to other HTTP libraries](#comparison)
+[了解 get 与其他 HTTP 库的比较](#comparison)
 
 ---
 
-For browser usage, we recommend [Ky](https://github.com/sindresorhus/ky) by the same people.
+对于浏览器使用，我们推荐同样的人[Ky](https://github.com/sindresorhus/ky)。
 
 ---
 
-**Support questions should be asked [here](https://github.com/sindresorhus/got/discussions).**
+**支持问题应该问[这里](https://github.com/sindresorhus/got/discussions).**
 
-## Install
+## 安装
 
 ```sh
 npm install got
 ```
 
-**Warning:** This package is native [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and no longer provides a CommonJS export. If your project uses CommonJS, you'll have to [convert to ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) or use the [dynamic `import()`](https://v8.dev/features/dynamic-import) function. Please don't open issues for questions regarding CommonJS / ESM. We will only backport critical security issues to Got v11, not features or bug fixes.
+!!! Warning
 
-## Take a peek
+    这个包是原生的[ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)，不再提供CommonJS导出。
+    如果你的项目使用CommonJS，你将不得不[转换为ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)或使用[dynamic  `import()` ](https://v8.dev/features/dynamic-import)函数。
+    请不要打开关于CommonJS / ESM的问题。
+    我们只会将关键的安全问题移植到Got v11，而不是功能或错误修复。
 
-**A [quick start](documentation/quick-start.md) guide is available.**
+## 看一眼
+
+**[快速入门](quick-start.md)指南可用。**
 
 ### JSON mode
 
-Got has a dedicated option for handling JSON payload.\
-Furthermore, the promise exposes a `.json<T>()` function that returns `Promise<T>`.
+Got 有一个专门的选项来处理 JSON 有效负载
+此外，promise 暴露了一个`.json<T>()`函数，该函数返回 `Promise<T>`。
 
 ```js
 import got from "got";
@@ -117,21 +122,21 @@ console.log(data);
 //=> {"hello": "world"}
 ```
 
-For advanced JSON usage, check out the [`parseJson`](documentation/2-options.md#parsejson) and [`stringifyJson`](documentation/2-options.md#stringifyjson) options.
+对于高级 JSON 用法，请查看[ `parseJson` ](documentation/2-options.md# parseJson)和[ `stringifyJson` ](documentation/2-options.md# stringifyJson)选项。
 
-**For more useful tips like this, visit the [Tips](documentation/tips.md) page.**
+**要了解更多有用的技巧，请访问[tips](tips.md)页面。**
 
 ## Highlights
 
-- [Used by 8K+ packages and 4M+ repos](https://github.com/sindresorhus/got/network/dependents)
-- [Actively maintained](https://github.com/sindresorhus/got/graphs/contributors)
-- [Trusted by many companies](#widely-used)
+- [用于 8K+包和 4M+回购](https://github.com/sindresorhus/got/network/dependents)
+- [积极维护](https://github.com/sindresorhus/got/graphs/contributors)
+- [深受众多公司信赖](#widely-used)
 
-## Documentation
+## 文档
 
-By default, Got will retry on failure. To disable this option, set [`options.retry.limit`](documentation/7-retry.md#retry) to 0.
+默认情况下，Got 将在失败时重试。要禁用此选项，请将[ `options.retry.limit` ](documentation/7-retry.md#retry)设置为 0。
 
-#### Main API
+#### 主要 API
 
 - [x] [Promise API](documentation/1-promise.md)
 - [x] [Options](documentation/2-options.md)
@@ -141,13 +146,13 @@ By default, Got will retry on failure. To disable this option, set [`options.ret
 - [x] [HTTP/2 support](documentation/2-options.md#http2)
 - [x] [`Response` class](documentation/3-streams.md#response-2)
 
-#### Timeouts and retries
+#### 超时并重试
 
 - [x] [Advanced timeout handling](documentation/6-timeout.md)
 - [x] [Retries on failure](documentation/7-retry.md)
 - [x] [Errors with metadata](documentation/8-errors.md)
 
-#### Advanced creation
+#### 先进的创造
 
 - [x] [Hooks](documentation/9-hooks.md)
 - [x] [Instances](documentation/10-instances.md)
@@ -155,13 +160,13 @@ By default, Got will retry on failure. To disable this option, set [`options.ret
 - [x] [Plugins](documentation/lets-make-a-plugin.md)
 - [x] [Compose](documentation/examples/advanced-creation.js)
 
-#### Cache, Proxy and UNIX sockets
+#### 缓存，代理和 UNIX socket
 
 - [x] [RFC compliant caching](documentation/cache.md)
 - [x] [Proxy support](documentation/tips.md#proxying)
 - [x] [Unix Domain Sockets](documentation/2-options.md#enableunixsockets)
 
-#### Integration
+#### 集成
 
 - [x] [TypeScript support](documentation/typescript.md)
 - [x] [AWS](documentation/tips.md#aws)
@@ -169,14 +174,14 @@ By default, Got will retry on failure. To disable this option, set [`options.ret
 
 ---
 
-### Migration guides
+### 迁移向导
 
 - [Request migration guide](documentation/migration-guides/request.md)
   - [_(Note that Request is unmaintained)_](https://github.com/request/request/issues/3142)
 - [Axios](documentation/migration-guides/axios.md)
 - [Node.js](documentation/migration-guides/nodejs.md)
 
-## Got plugins
+## Got 插件
 
 - [`got4aws`](https://github.com/SamVerschueren/got4aws) - Got convenience wrapper to interact with AWS v4 signed APIs
 - [`gh-got`](https://github.com/sindresorhus/gh-got) - Got convenience wrapper to interact with the GitHub API
@@ -186,12 +191,12 @@ By default, Got will retry on failure. To disable this option, set [`options.ret
 - [`got-scraping`](https://github.com/apify/got-scraping) - Got wrapper specifically designed for web scraping purposes
 - [`got-ssrf`](https://github.com/JaneJeon/got-ssrf) - Got wrapper to protect server-side requests against SSRF attacks
 
-### Legacy
+### 遗产
 
-- [travis-got](https://github.com/samverschueren/travis-got) - Got convenience wrapper to interact with the Travis API
-- [graphql-got](https://github.com/kevva/graphql-got) - Got convenience wrapper to interact with GraphQL
+- [travis-got](https://github.com/samverschueren/travis-got) - Got 方便包装与特拉维斯 API 交互
+- [graphql-got](https://github.com/kevva/graphql-got) - Got 方便的包装与 GraphQL 交互
 
-## Comparison
+## 比较
 
 |                       |        `got`        |  [`node-fetch`][n0]  |        [`ky`][k0]        |   [`axios`][a0]    |   [`superagent`][s0]   |
 | --------------------- | :-----------------: | :------------------: | :----------------------: | :----------------: | :--------------------: |
@@ -387,13 +392,13 @@ By default, Got will retry on failure. To disable this option, set [`options.ret
 
 [installsizeofthedependencies]: https://packagephobia.com/result?p=@sindresorhus/is@4.0.1,@szmarczak/http-timer@4.0.5,@types/cacheable-request@6.0.1,@types/responselike@1.0.0,cacheable-lookup@6.0.0,cacheable-request@7.0.2,decompress-response@6.0.0,get-stream@6.0.1,http2-wrapper@2.0.5,lowercase-keys@2.0.0,p-cancelable@2.1.1,responselike@2.0.0
 
-## Maintainers
+## 维护人员
 
 | [![Sindre Sorhus](https://github.com/sindresorhus.png?size=100)](https://sindresorhus.com) | [![Szymon Marczak](https://github.com/szmarczak.png?size=100)](https://github.com/szmarczak) |
 | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
 | [Sindre Sorhus](https://sindresorhus.com)                                                  | [Szymon Marczak](https://github.com/szmarczak)                                               |
 
-###### Former
+###### 前
 
 - [Vsevolod Strukchinsky](https://github.com/floatdrop)
 - [Alexander Tesfamichael](https://github.com/alextes)
@@ -403,7 +408,7 @@ By default, Got will retry on failure. To disable this option, set [`options.ret
 
 <a name="widely-used"></a>
 
-## These amazing companies are using Got
+## 这些了不起的公司正在使用 Got
 
 <table>
 <tbody>
@@ -477,11 +482,15 @@ By default, Got will retry on failure. To disable this option, set [`options.ret
 
 <br>
 
-> Segment is a happy user of Got! Got powers the main backend API that our app talks to. It's used by our in-house RPC client that we use to communicate with all microservices.
+> 段是一个快乐的用户!Got 为应用程序对话的主后端 API 提供了动力。它被我们的内部 RPC 客户端使用，我们用它来与所有微服务通信。
 >
 > — <a href="https://github.com/vadimdemedes">Vadim Demedes</a>
 
-> Antora, a static site generator for creating documentation sites, uses Got to download the UI bundle. In Antora, the UI bundle (aka theme) is maintained as a separate project. That project exports the UI as a zip file we call the UI bundle. The main site generator downloads that UI from a URL using Got and streams it to vinyl-zip to extract the files. Those files go on to be used to create the HTML pages and supporting assets.
+> Antora 是一个用于创建文档站点的静态站点生成器，它使用 Got 来下载 UI 包。
+> 在 Antora 中，UI 包(又名主题)是作为一个单独的项目维护的。
+> 该项目将 UI 导出为 zip 文件，我们称之为 UI 包。
+> 主站点生成器使用 Got 从 URL 下载该 UI，并将其传输到 vinyl-zip 以提取文件。
+> 这些文件将继续用于创建 HTML 页面和支持资产。
 >
 > — <a href="https://github.com/mojavelinux">Dan Allen</a>
 
@@ -521,7 +530,7 @@ By default, Got will retry on failure. To disable this option, set [`options.ret
 >
 > — <a href="https://github.com/mnmkng">Ondra Urban</a>
 
-## For enterprise
+## 为企业
 
 Available as part of the Tidelift Subscription.
 

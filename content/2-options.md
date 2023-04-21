@@ -1,20 +1,20 @@
 # 选项
 
-Source code: [`source/core/options.ts`](../source/core/options.ts)
+源码: [`source/core/options.ts`](../source/core/options.ts)
 
-Like `fetch` stores the options in a `Request` instance, Got does so in `Options`.  
-It is made of getters and setters that provide fast option normalization and validation.
+就像' fetch '在' Request '实例中存储选项一样，Got 在' options '实例中存储选项。
+它由 getter 和 setter 组成，提供快速的选项规范化和验证。
 
-**By default, Got will retry on failure. To disable this option, set [`options.retry`](7-retry.md) to `{limit: 0}`.**
+**默认情况下，Got 将在失败时重试。若要禁用此选项，请执行以下操作, 设置 [`options.retry`](7-retry.md) 为 `{limit: 0}`.**
 
 ## 合并行为解释
 
-When an option is already set, setting it again replaces it with a deep clone by default.  
-Otherwise the merge behavior is documented in the corresponding section for the option.
+当已经设置了一个选项时，在默认情况下，再次设置它将用深度克隆替换它。
+否则，合并行为将在选项的相应部分中进行记录。
 
 ## 如何存储选项
 
-The constructor - `new Options(url, options, defaults)` - takes the same arguments like the `got` function.
+构造函数 - `new Options(url, options, defaults)` - 接受与' got '函数相同的参数。
 
 ```js
 import got, { Options } from "got";
@@ -34,7 +34,7 @@ console.log(headers.Foo);
 //=> 'bar'
 ```
 
-If a plain object is preferred, it can be used in the following way:
+如果首选一个普通对象，它可以以以下方式使用:
 
 ```js
 import got from "got";
@@ -54,21 +54,21 @@ console.log(headers.Foo);
 //=> 'bar'
 ```
 
-Note that the constructor throws when an invalid option is provided, such as non-existing option or a typo.  
-In the second example, it would throw only when the promise is being executed.
+注意，当提供了无效的选项时，构造函数会抛出，比如不存在的选项或输入错误。
+在第二个例子中，它只在执行承诺时抛出。
 
-For TypeScript users, `got` exports a dedicated type called `OptionsInit`.  
-It is a plain object that can store the same properties as `Options`.
+对于 TypeScript 用户，' got '导出一个名为' OptionsInit '的专用类型。
+它是一个普通对象，可以存储与“Options”相同的属性。
 
-Performance-wise there is no difference which one is used, although the constructor may be preferred as it automatically validates the data.  
-The `Options` approach may give a slight boost as it only clones the options, there is no normalization going on.  
-It is also useful for storing the base configuration of a custom Got client.
+在性能方面，使用哪一个没有区别，尽管构造函数可能是首选的，因为它会自动验证数据。
+`Options`方法可能会有轻微的提升，因为它只是克隆选项，没有标准化。
+它对于存储自定义 Got 客户端的基本配置也很有用。
 
 ## 重置选项
 
-Unlike Got 11, explicitly specifying `undefined` no longer keeps the parent value.  
-In order to keep the parent value, you must not set an option to `undefined`.  
-Doing so will reset those values:
+与 Got 11 不同，显式指定' undefined '不再保留父值。
+为了保持父值，你不能将一个选项设置为' undefined '。
+这样做将重置这些值:
 
 ```js
 instance(…, {searchParams: undefined}});
@@ -83,7 +83,7 @@ instance(…, {headers: {'user-agent': undefined, …}});
 instance(…, {timeout: {request: undefined, …}});
 ```
 
-In order to reset `hooks`, `retry` and `pagination`, another Got instance must be created:
+为了重置' hooks '， ' retry '和' pagination '，必须创建另一个 Got 实例:
 
 ```js
 const defaults = new Options();
@@ -98,7 +98,7 @@ secondInstance.defaults.options.pagination = defaults.pagination;
 
 **类型: <code>string | [URL](https://nodejs.org/api/url.html#url_the_whatwg_url_api)</code>**
 
-The URL to request. Usually the `url` represents a [WHATWG URL](https://url.spec.whatwg.org/#url-class).
+要请求的 URL。通常' url '表示一个[WHATWG url](https://url.spec.whatwg.org/#url-class).
 
 ```js
 import got from "got";
@@ -117,13 +117,13 @@ await got({
 
 !!! Note
 
-    - Throws if no protocol specified.
+    - 如果没有指定协议则抛出。
 
 !!! Note
 
-    If `url` is a string, then the `query` string will **not** be parsed as search params.   
-    This is in accordance to [the specification](https://datatracker.ietf.org/doc/html/rfc7230#section-2.7).
-    If you want to pass search params instead, use the `searchParams` option below.
+    如果' url '是一个字符串，那么' query '字符串将不会被解析为搜索参数。
+    这符合[规范](https://datatracker.ietf.org/doc/html/rfc7230#section-2.7)。
+    如果你想传递搜索参数，使用下面的' searchParams '选项。
 
 ```js
 import got from "got";
@@ -132,21 +132,23 @@ await got("https://httpbin.org/anything?query=a b"); //=> ?query=a%20b
 await got("https://httpbin.org/anything", { searchParams: { query: "a b" } }); //=> ?query=a+b
 
 // The query string is overridden by `searchParams`
-await got("https://httpbin.org/anything?query=a b", { searchParams: { query: "a b" } }); //=> ?query=a+b
+await got("https://httpbin.org/anything?query=a b", {
+  searchParams: { query: "a b" },
+}); //=> ?query=a+b
 ```
 
 !!! Note
 
-    Leading slashes are disallowed to enforce consistency and avoid confusion.  
-    For example, when the prefix URL is `https://example.com/foo` and the input is `/bar`, 
-    there's ambiguity whether the resulting URL would become `https://example.com/foo/bar` or `https://example.com/bar`. 
-    The latter is used by browsers.
+    不允许使用前导斜杠，以加强一致性并避免混淆。
+    例如，当前缀URL是' https://example.com/foo '，输入是' /bar '时，
+    结果URL会变成' https://example.com/foo/bar '还是' https://example.com/bar '是不明确的。
+    后者由浏览器使用。
 
 ## `searchParams`
 
 **类型: <code>string | [URLSearchParams](https://nodejs.org/api/url.html#url_class_urlsearchparams) | object&lt;string, [Primitive](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)&gt;</code>**
 
-[WHATWG URL Search Params](https://url.spec.whatwg.org/#interface-urlsearchparams) to be added to the request URL.
+[WHATWG URL 搜索参数](https://url.spec.whatwg.org/#interface-urlsearchparams)要添加到请求 URL 中。
 
 ```js
 import got from "got";
@@ -162,7 +164,7 @@ console.log(response.args);
 //=> {hello: 'world', foo: 123}
 ```
 
-If you need to pass an array, you can do it using a `URLSearchParams` instance:
+如果你需要传递一个数组，你可以使用' URLSearchParams '实例:
 
 ```js
 import got from "got";
@@ -180,12 +182,12 @@ console.log(searchParams.toString());
 
 !!! Note
 
-    This will override the `query` string in `url`.
+    这将覆盖' url '中的' query '字符串。
 
 !!! Note
 
-    - `null` values are not stringified, an empty string is used instead.
-    - `undefined` values will clear the original keys.
+    - ' null '值不进行字符串化，而是使用空字符串。
+    - ' undefined '值将清除原始键。
 
 !!! note "合并行为"
 
@@ -196,10 +198,10 @@ console.log(searchParams.toString());
 **类型: `string`**  
 **默认: `''`**
 
-The string to be prepended to `url`.
+要加在' url '前面的字符串。
 
-The prefix can be any valid URL, either relative or [absolute](https://url.spec.whatwg.org/#absolute-url-string).
-A trailing slash `/` is optional - one will be added automatically.
+前缀可以是任何有效的 URL，无论是相对 URL 还是[绝对 URL](https://url.spec.whatwg.org/#absolute-url-string)。
+后面的斜杠' / '是可选的，会自动添加。
 
 ```js
 import got from "got";
@@ -214,11 +216,11 @@ await got("https://httpbin.org/anything");
 
 !!! Note
 
-    Changing `prefixUrl` also updates the `url` option if set.
+    更改' prefixUrl '也更新' url '选项如果设置。
 
 !!! Note
 
-    If you're passing an absolute URL as `url`, you need to set `prefixUrl` to an empty string.
+    如果你传递一个绝对URL作为' URL '，你需要设置' prefixUrl '为一个空字符串。
 
 ## `signal`
 
@@ -315,7 +317,7 @@ stream.on("data", console.log);
 
 对于 `string` 和 `Buffer` 类型，如果 `content-length` 和 `transfer-encoding` 头缺失， `content-length` 头将自动设置。
 
-**从Got 12开始，当 `body` 是[ `fs.createReadStream()` ](https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options)的实例时， `content-length` 头不会自动设置。.**
+**从 Got 12 开始，当 `body` 是[ `fs.createReadStream()` ](https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options)的实例时， `content-length` 头不会自动设置。.**
 
 ```js
 import got from "got";
@@ -330,7 +332,7 @@ console.log(data);
 //=> 'Hello, world!'
 ```
 
-从Got 12开始，您可以使用符合规范的[ `FormData` ](https://developer.mozilla.org/en-US/docs/Web/API/FormData)对象作为请求体，例如[`formdata-node`](https://github.com/octet-stream/form-data)或[`formdata-polyfill`](https://github.com/jimmywarting/FormData):
+从 Got 12 开始，您可以使用符合规范的[ `FormData` ](https://developer.mozilla.org/en-US/docs/Web/API/FormData)对象作为请求体，例如[`formdata-node`](https://github.com/octet-stream/form-data)或[`formdata-polyfill`](https://github.com/jimmywarting/FormData):
 
 ```js
 import got from "got";
@@ -415,7 +417,7 @@ console.log(data);
 **类型: `(text: string) => unknown`**  
 **默认: `(text: string) => JSON.parse(text)`**
 
-用于解析JSON响应的函数。
+用于解析 JSON 响应的函数。
 
 ```js
 import got from "got";
@@ -434,7 +436,7 @@ console.log(parsed);
 **类型: `(object: unknown) => string`**  
 **默认: `(object: unknown) => JSON.stringify(object)`**
 
-用于对JSON请求体进行字符串化的函数。
+用于对 JSON 请求体进行字符串化的函数。
 
 **例如:忽略所有以下划线开头的属性**
 
@@ -485,11 +487,11 @@ await got.post("https://example.com", {
 
 将此设置为 `true` 以允许为 `GET` 方法发送正文。
 
-然而，[HTTP/2规范](https://datatracker.ietf.org/doc/html/rfc7540#section-8.1.3)说:
+然而，[HTTP/2 规范](https://datatracker.ietf.org/doc/html/rfc7540#section-8.1.3)说:
 
-> HTTP GET请求包括请求头字段，没有有效负载主体
+> HTTP GET 请求包括请求头字段，没有有效负载主体
 
-因此，该选项在使用HTTP/2时无效。
+因此，该选项在使用 HTTP/2 时无效。
 
 !!! Note
 
@@ -579,7 +581,11 @@ const responsePromise = got("https://httpbin.org/anything");
 const bufferPromise = responsePromise.buffer();
 const jsonPromise = responsePromise.json();
 
-const [response, buffer, json] = await Promise.all([responsePromise, bufferPromise, jsonPromise]);
+const [response, buffer, json] = await Promise.all([
+  responsePromise,
+  bufferPromise,
+  jsonPromise,
+]);
 // `response` is an instance of Got Response
 // `buffer` is an instance of Buffer
 // `json` is an object
@@ -591,8 +597,9 @@ const [response, buffer, json] = await Promise.all([responsePromise, bufferPromi
 
 !!! Note
 
-    `'buffer'` will return the raw body buffer. Any modifications will also alter the result of `.text()` and `.json()`. Before overwriting the buffer, please copy it first via `Buffer.from(buffer)`.  
->   See https://github.com/nodejs/node/issues/27080
+    `'buffer'` will return the raw body buffer. Any modifications will also alter the result of `.text()` and `.json()`. Before overwriting the buffer, please copy it first via `Buffer.from(buffer)`.
+
+> See https://github.com/nodejs/node/issues/27080
 
 ## `resolveBodyOnly`
 
@@ -645,7 +652,9 @@ const context = {
   token: "secret",
 };
 
-const { headers } = await instance("https://httpbin.org/headers", { context }).json();
+const { headers } = await instance("https://httpbin.org/headers", {
+  context,
+}).json();
 
 console.log(headers);
 //=> {token: 'secret', …}
@@ -685,7 +694,7 @@ console.log(instance.defaults.options.context);
 
     设置此选项将导致 `cookie` 报头被覆盖。
 
-Cookie的支持。自动处理解析和存储。
+Cookie 的支持。自动处理解析和存储。
 
 ```js
 import got from "got";
@@ -730,8 +739,9 @@ Defines if redirect responses should be followed automatically.
 
 !!! Note
 
-    If a `303` is sent by the server in response to any request type (POST, DELETE, etc.), Got will request the resource pointed to in the location header via GET.  
->   This is in accordance with the [specification](https://tools.ietf.org/html/rfc7231#section-6.4.4). You can optionally turn on this behavior also for other redirect codes - see [`methodRewriting`](#methodrewriting).
+    If a `303` is sent by the server in response to any request type (POST, DELETE, etc.), Got will request the resource pointed to in the location header via GET.
+
+> This is in accordance with the [specification](https://tools.ietf.org/html/rfc7231#section-6.4.4). You can optionally turn on this behavior also for other redirect codes - see [`methodRewriting`](#methodrewriting).
 
 ```js
 import got from "got";
@@ -869,7 +879,7 @@ console.log(headers[":status"]);
 
 !!! note
 
-    The current Got version may use an older version of [`http2-wrapper`](https://github.com/szmarczak/http2-wrapper).  
+    The current Got version may use an older version of [`http2-wrapper`](https://github.com/szmarczak/http2-wrapper).
     If you prefer to use the newest one, set both `request` to `http2wrapper.auto` and `http2` to `true`.
 
 ```js
@@ -1003,16 +1013,22 @@ Use the following URL scheme: `PROTOCOL://unix:SOCKET:PATH`
 ```js
 import got from "got";
 
-await got("http://unix:/var/run/docker.sock:/containers/json", { enableUnixSockets: true });
+await got("http://unix:/var/run/docker.sock:/containers/json", {
+  enableUnixSockets: true,
+});
 
 // Or without protocol (HTTP by default)
-await got("unix:/var/run/docker.sock:/containers/json", { enableUnixSockets: true });
+await got("unix:/var/run/docker.sock:/containers/json", {
+  enableUnixSockets: true,
+});
 
 // Disable Unix sockets
 const gotUnixSocketsDisabled = got.extend({ enableUnixSockets: false });
 
 // RequestError: Using UNIX domain sockets but option `enableUnixSockets` is not enabled
-await gotUnixSocketsDisabled("http://unix:/var/run/docker.sock:/containers/json");
+await gotUnixSocketsDisabled(
+  "http://unix:/var/run/docker.sock:/containers/json"
+);
 ```
 
 # Methods

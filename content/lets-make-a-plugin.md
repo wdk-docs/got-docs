@@ -4,37 +4,35 @@
 
 好了，你们已经学了一些基础知识。太好了!
 
-When it comes to advanced usage, custom instances are really helpful.
-For example, take a look at [`gh-got`](https://github.com/sindresorhus/gh-got).
-It looks pretty complicated, but... it's simple and extremely useful.
+当涉及到高级用法时，自定义实例非常有用。
+例如，看看[`gh-got`](https://github.com/sindresorhus/gh-got)。
+看起来很复杂，但是……这很简单，而且非常有用。
 
-Before we start, we need to find the [GitHub API docs](https://developer.github.com/v3/).
+在我们开始之前，我们需要找到[GitHub API 文档](https://developer.github.com/v3/)。
 
-Let's write down the most important information:
+让我们写下最重要的信息:
 
 1. The root endpoint is `https://api.github.com/`.
-2. We will use version 3 of the API.\
-   The `Accept` header needs to be set to `application/vnd.github.v3+json`.
+2. We will use version 3 of the API. The `Accept` header needs to be set to `application/vnd.github.v3+json`.
 3. The body is in a JSON format.
 4. We will use OAuth2 for authorization.
-5. We may receive `400 Bad Request` or `422 Unprocessable Entity`.\
-   The body contains detailed information about the error.
+5. We may receive `400 Bad Request` or `422 Unprocessable Entity`. The body contains detailed information about the error.
 6. _Pagination?_ Yeah! Supported natively by Got.
 7. Rate limiting. These headers are interesting:
 
-- `X-RateLimit-Limit`
-- `X-RateLimit-Remaining`
-- `X-RateLimit-Reset`
+   - `X-RateLimit-Limit`
+   - `X-RateLimit-Remaining`
+   - `X-RateLimit-Reset`
 
-Also `X-GitHub-Request-Id` may be useful for debugging.
+     Also `X-GitHub-Request-Id` may be useful for debugging.
 
 8. The `User-Agent` header is required.
 
-When we have all the necessary info, we can start mixing :cake:
+当我们有了所有必要的信息，我们可以开始搅拌 :cake:
 
 ## 根端点
 
-Not much to do here. Just extend an instance and provide the `prefixUrl` option:
+这里没什么可做的。只需要扩展一个实例并提供`prefixUrl`选项:
 
 ```js
 import got from "got";
@@ -48,7 +46,7 @@ export default instance;
 
 ## v3 API
 
-GitHub needs to know which API version we are using. We'll use the `Accept` header for that:
+GitHub 需要知道我们正在使用哪个 API 版本。我们将使用`Accept`头文件:
 
 ```js
 import got from "got";
@@ -65,7 +63,7 @@ export default instance;
 
 ## JSON body
 
-We'll use [`options.responseType`](2-options.md#responsetype):
+我们会用到它[`options.responseType`](2-options.md#responsetype):
 
 ```js
 import got from "got";
@@ -83,9 +81,12 @@ export default instance;
 
 ## 授权
 
-It's common to set some environment variables, for example, `GITHUB_TOKEN`. You can modify the tokens in all your apps easily, right? Cool. What about... we want to provide a unique token for each app. Then we will need to create a new option - it will default to the environment variable, but you can easily override it.
+通常会设置一些环境变量，例如`GITHUB_TOKEN`。
+你可以很容易地修改所有应用中的令牌，对吧?酷。是什么……
+我们想为每个应用程序提供一个唯一的令牌。然后我们将需要创建一个新选项-它将默认为环境变量，但你可以很容易地覆盖它。
 
-Got performs option validation and doesn't know that `token` is a wanted option so it will throw. We can handle it inside an `init` hook and save it in `options.context`.
+Got 执行选项验证，不知道`token`是一个需要的选项，所以它会抛出。
+我们可以在一个`init`钩子中处理它，并将它保存在`options.context`中。
 
 ```js
 import got from "got";
@@ -114,12 +115,14 @@ const instance = got.extend({
 export default instance;
 ```
 
-For the rest we will use a handler. We could use hooks, but this way it will be more readable. Having `beforeRequest`, `beforeError` and `afterResponse` hooks for just a few lines of code would complicate things unnecessarily.
+对于其余部分，我们将使用处理程序。
+我们可以使用钩子，但这样会更易于阅读。
+在几行代码中使用`beforeerequest`， `beforeError`和`afterResponse`钩子会使事情不必要地复杂化。
 
-**Tip:**
+!!! tip
 
-> - It's a good practice to use hooks when your plugin gets complicated.
-> - Try not to overload the handler function, but don't abuse hooks either.
+      - 当你的插件变得复杂时，使用钩子是一个很好的实践。
+      - 尽量不要重载处理程序函数，但也不要滥用钩子。
 
 ```js
 import got from "got";
@@ -161,7 +164,7 @@ export default instance;
 
 ## 错误
 
-We should name our errors, just to know if the error is from the API response. Superb errors, here we come!
+我们应该为错误命名，以便知道错误是否来自 API 响应。超级错误，我们来了!
 
 ```js
 ...
@@ -310,7 +313,9 @@ import ghGot from "gh-got";
 const response = await ghGot("users/sindresorhus");
 const creationDate = new Date(response.created_at);
 
-console.log(`Sindre's GitHub profile was created on ${creationDate.toGMTString()}`);
+console.log(
+  `Sindre's GitHub profile was created on ${creationDate.toGMTString()}`
+);
 // => Sindre's GitHub profile was created on Sun, 20 Dec 2009 22:57:02 GMT
 ```
 
@@ -331,7 +336,7 @@ for await (const commitData of pagination) {
 }
 ```
 
-That's... astonishing! We don't have to implement pagination on our own. Got handles it all.
+这是……惊人的!我们不必自己实现分页。一切都搞定了。
 
 ## 在最后
 
