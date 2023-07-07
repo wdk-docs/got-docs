@@ -1,15 +1,15 @@
-# Promise API
+# 同步 API
 
 源码: [`source/as-promise/index.ts`](../source/as-promise/index.ts)
 
-The main Got function returns a [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise).  
-Although in order to support cancelation, [`PCancelable`](https://github.com/sindresorhus/p-cancelable) is used instead of pure `Promise`.
+主Got函数返回一个[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
+虽然为了支持取消，使用[`PCancelable`](https://github.com/sindresorhus/p-cancelable)代替纯`Promise`。
 
 ## <code>got(url: string | URL, options?: [OptionsInit](typescript.md#optionsinit), defaults?: [Options](2-options.md))</code>
 
-**Returns: <code>Promise<[Response](response.md)>**</code>
+**返回: <code>Promise<[Response](response.md)>**</code>
 
-The most common way is to pass the URL as the first argument, then the options as the second.
+最常见的方法是将URL作为第一个参数传递，然后将选项作为第二个参数传递。
 
 ```js
 import got from "got";
@@ -66,12 +66,12 @@ It is semantically the same as settings [`options.resolveBodyOnly`](2-options.md
 
 ## `promise.cancel(reason?: string)`
 
-Cancels the request and optionally provide a reason.
+取消请求，并可选择提供原因。
 
-The cancellation is synchronous.  
-Calling it after the promise has settled or multiple times does nothing.
+取消是同步的。
+在承诺已经完成或多次之后调用它没有任何作用。
 
-This will cause the promise to reject with [`CancelError`](8-errors.md#cancelerror).
+这将导致promise以[`CancelError`](8-errors.md#cancelerror)拒绝。
 
 ## `promise.isCanceled`
 

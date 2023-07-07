@@ -1,16 +1,17 @@
-# Retry API
+# 重试 API
 
-**Note:**
+!!! note
 
-> If you're looking for retry implementation using streams, check out the [Retry Stream API](3-streams.md#retry).
+	如果你正在寻找使用流的重试实现，请查看[重试流API](3-streams.md#retry)。
 
-**Tip:**
+!!! tip
 
-> You can trigger a retry by throwing the [`RetryError`](8-errors.md#retryerror) in any hook.
+	你可以在任何钩子中抛出 [`RetryError`](8-errors.md#retryerror)来触发重试。
 
-**Tip:**
+!!! tip
 
-> The `afterResponse` hook exposes a dedicated function to retry with merged options. [Read more](9-hooks.md#afterresponse).
+	`afterResponse`钩子公开了一个专用函数，用于使用合并选项进行重试。
+	 [了解更多](9-hooks.md#afterresponse).
 
 ## `retry`
 
@@ -71,17 +72,17 @@ The maximum retry count.
 
 The allowed methods to retry on.
 
-**Note:**
+!!! note
 
-> - By default, Got does not retry on `POST`.
+	By default, Got does not retry on `POST`.
 
 ### `statusCodes`
 
 **类型: `number[]`**
 
-**Note:**
+!!! note
 
-> - Only [**unsuccessful**](8-errors.md#) requests are retried. In order to retry successful requests, use an [`afterResponse`](9-hooks.md#afterresponse) hook.
+	Only [**unsuccessful**](8-errors.md#) requests are retried. In order to retry successful requests, use an [`afterResponse`](9-hooks.md#afterresponse) hook.
 
 The allowed [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) to retry on.
 
@@ -129,13 +130,13 @@ interface RetryObject {
 
 The function used to calculate the delay before the next request is made. Returning `0` cancels the retry.
 
-**Note:**
+!!! note
 
-> - This function is responsible for the entire retry mechanism, including the `limit` property. To support this, you need to check if `computedValue` is different than `0`.
+	This function is responsible for the entire retry mechanism, including the `limit` property. To support this, you need to check if `computedValue` is different than `0`.
 
-**Tip:**
+!!! tip
 
-> - This is especially useful when you want to scale down the computed value.
+	This is especially useful when you want to scale down the computed value.
 
 ```js
 import got from "got";

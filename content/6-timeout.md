@@ -1,4 +1,4 @@
-# Timeout options
+# 超时选项
 
 源码: [`source/core/timed-out.ts`](../source/core/timed-out.ts)
 

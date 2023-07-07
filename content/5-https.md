@@ -1,54 +1,54 @@
-# Advanced HTTPS API
+# 高级 HTTPS API
 
 ## `https`
 
 **类型: `object`**
 
-This option represents the options used to make HTTPS requests.
+此选项表示用于发出HTTPS请求的选项。
 
 ### `alpnProtocols`
 
 **类型: `string[]`**  
 **默认: `['http/1.1']`**
 
-Acceptable [ALPN](https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation) protocols.
-
-If the `http2` option is `true`, this defaults to `['h2', 'http/1.1']`.
+可接受的[ALPN](https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation)协议。
+如果`http2`选项为`true`，则默认为`['h2', 'http/1.1']`。
 
 ### `rejectUnauthorized`
 
 **类型: `boolean`**  
 **默认: `true`**
 
-If `true`, it will throw on invalid certificates, such as expired or self-signed ones.
+如果为`true`，它将抛出无效证书，例如过期或自签名证书。
 
 ### `checkServerIdentity`
 
 **类型: `(hostname: string, certificate: DetailedPeerCertificate) => Error | undefined`**  
 **默认: `tls.checkServerIdentity`**
 
-Custom check of the certificate. Useful for pinning certificates.
+证书的自定义检查。用于固定证书。
 
-The function must return `undefined` if the check succeeded.  
-If it failed, an `Error` should be returned.
 
-**Note:**
+如果检查成功，函数必须返回`undefined`。
+如果失败，应该返回`Error`。
 
-> - In order to have the function called, the certificate must not be expired, self-signed nor with an untrusted-root.
+!!! note
 
-Check [Node.js docs](https://nodejs.org/api/https.html#https_https_request_url_options_callback) for an example.
+    为了调用该函数，证书不能过期、不能自签名，也不能使用不可信的根。
+
+参考[Node.js文档](https://nodejs.org/api/https.html#https_https_request_url_options_callback)。
 
 ### `certificateAuthority`
 
 **类型: `string | Buffer | string[] | Buffer[]`**
 
-**Note:**
+!!! Note
 
-> - The option has been renamed from the [`ca` TLS option](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options) for better readability.
+    该选项已从[`ca` TLS option](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)重命名为更好的可读性。
 
-Overrides trusted [CA](https://en.wikipedia.org/wiki/Certificate_authority) certificates.
+覆盖受信任的[CA](https://en.wikipedia.org/wiki/Certificate_authority)证书。
 
-Defaults to CAs provided by [Mozilla](https://ccadb-public.secure.force.com/mozilla/IncludedCACertificateReport).
+默认为[Mozilla](https://ccadb-public.secure.force.com/mozilla/IncludedCACertificateReport)提供的CAs.
 
 ```js
 import got from "got";
@@ -65,41 +65,43 @@ await got("https://example.com", {
 
 **类型: `string | Buffer | string[] | Buffer[] | object[]`**
 
-Private keys in [PEM format](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail).
+[PEM格式](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail)私钥.
 
-Multiple keys with different passphrases can be provided as an array of `{pem: <string | Buffer>, passphrase: <string>}`.
+具有不同密码短语的多个密钥可以以`{pem: <string | Buffer>, passphrase: <string>}`数组的形式提供。
 
-**Note:**
+!!! note
 
-> - Encrypted keys will be decrypted with `https.passphrase`.
+    加密的密钥将使用`https.passphrase`进行解密。
 
 ### `passphrase`
 
 **类型: `string`**
 
-Shared passphrase used for a single private key and/or a PFX.
+用于单个私钥和/或PFX的共享密码短语。
 
 ### `certificate`
 
 **类型: `string | Buffer | string[] | Buffer[]`**
 
-**Note:**
+!!! note
 
-> - The option has been renamed from the [`cert` TLS option](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options) for better readability.
+    该选项已从[`cert` TLS 选项](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)重命名为更好的可读性。
 
-[Certificate chains](https://en.wikipedia.org/wiki/X.509#Certificate_chains_and_cross-certification) in [PEM format](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail).
+[PEM格式](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail)的证书链[https://en.wikipedia.org/wiki/X.509#Certificate_chains_and_cross-certification]。
 
-One certificate chain should be provided per private key.
+每个私钥应该提供一个证书链。
 
-When providing multiple certificate chains, they do not have to be in the same order as their private keys in `https.key`.
+当提供多个证书链时，它们不必与“https.key”中的私钥顺序相同。
 
 ### `pfx`
 
 **类型: `string | Buffer | string[] | Buffer[] | object[]`**
 
-[PFX or PKCS12](https://en.wikipedia.org/wiki/PKCS_12) encoded private key and certificate chain. Using `https.pfx` is an alternative to providing `https.key` and `https.certificate` individually. A PFX is usually encrypted, then `https.passphrase` will be used to decrypt it.
+[PFX或PKCS12](https://en.wikipedia.org/wiki/PKCS_12)编码的私钥和证书链。
+使用`https.pfx`是单独提供`https.key`和`https.certificate`的另一种选择。
+PFX通常是加密的，然后使用`https.passphrase`来解密它。
 
-Multiple PFX can be be provided as an array of unencrypted buffers or an array of objects like:
+多个PFX可以作为未加密缓冲区数组或对象数组提供，如:
 
 ```ts
 {
@@ -112,29 +114,29 @@ Multiple PFX can be be provided as an array of unencrypted buffers or an array o
 
 **类型: `string | Buffer | string[] | Buffer[]`**
 
-**Note:**
+!!! note
 
-> - The option has been renamed from the [`crl` TLS option](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options) for better readability.
+    该选项已从[`crl` TLS 选项](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options) 重命名为更好的可读性。
 
-## Other HTTPS options
+## 其他HTTPS选项
 
-[Documentation for the below options.](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+[以下选项的文档](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
 - `ciphers`
 - `dhparam`
-- `signatureAlgorithms` (renamed from `sigalgs`)
+- `signatureAlgorithms` (从`sigalgs`重命名)
 - `minVersion`
 - `maxVersion`
 - `honorCipherOrder`
-- `tlsSessionLifetime` (renamed from `sessionTimeout`)
+- `tlsSessionLifetime` (从`sessionTimeout`重命名)
 - `ecdhCurve`
 
-## Examples
+## 示例
 
 ```js
 import got from "got";
 
-// Single key with certificate
+// 带证书的单密钥
 await got("https://example.com", {
   https: {
     key: fs.readFileSync("./client_key.pem"),
@@ -142,7 +144,7 @@ await got("https://example.com", {
   },
 });
 
-// Multiple keys with certificates (out of order)
+// 带有证书的多个密钥(顺序混乱)
 await got("https://example.com", {
   https: {
     key: [fs.readFileSync("./client_key1.pem"), fs.readFileSync("./client_key2.pem")],
@@ -150,7 +152,7 @@ await got("https://example.com", {
   },
 });
 
-// Single key with passphrase
+// 单密钥与密码短语
 await got("https://example.com", {
   https: {
     key: fs.readFileSync("./client_key.pem"),
@@ -159,7 +161,7 @@ await got("https://example.com", {
   },
 });
 
-// Multiple keys with different passphrases
+// 具有不同密码的多个密钥
 await got("https://example.com", {
   https: {
     key: [
@@ -170,7 +172,7 @@ await got("https://example.com", {
   },
 });
 
-// Single encrypted PFX with passphrase
+// 带密码短语的单个加密PFX
 await got("https://example.com", {
   https: {
     pfx: fs.readFileSync("./fake.pfx"),
@@ -178,7 +180,7 @@ await got("https://example.com", {
   },
 });
 
-// Multiple encrypted PFX's with different passphrases
+// 使用不同密码的多个加密PFX
 await got("https://example.com", {
   https: {
     pfx: [
@@ -194,7 +196,7 @@ await got("https://example.com", {
   },
 });
 
-// Multiple encrypted PFX's with single passphrase
+// 多个加密PFX的单一密码短语
 await got("https://example.com", {
   https: {
     passphrase: "passphrase",

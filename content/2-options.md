@@ -2,8 +2,8 @@
 
 源码: [`source/core/options.ts`](../source/core/options.ts)
 
-就像' fetch '在' Request '实例中存储选项一样，Got 在' options '实例中存储选项。
-它由 getter 和 setter 组成，提供快速的选项规范化和验证。
+就像 `fetch` 在 `Request` 实例中存储选项一样，Got 在 `options` 实例中存储选项。
+它由 `getter` 和 `setter` 组成，提供快速的选项规范化和验证。
 
 **默认情况下，Got 将在失败时重试。若要禁用此选项，请执行以下操作, 设置 [`options.retry`](7-retry.md) 为 `{limit: 0}`.**
 
@@ -198,10 +198,10 @@ console.log(searchParams.toString());
 **类型: `string`**  
 **默认: `''`**
 
-要加在' url '前面的字符串。
+要加在 `url` 前面的字符串。
 
 前缀可以是任何有效的 URL，无论是相对 URL 还是[绝对 URL](https://url.spec.whatwg.org/#absolute-url-string)。
-后面的斜杠' / '是可选的，会自动添加。
+后面的斜杠 `/` 是可选的，会自动添加。
 
 ```js
 import got from "got";
@@ -226,9 +226,9 @@ await got("https://httpbin.org/anything");
 
 **类型: [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)**
 
-You can abort the `request` using [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
+你可以使用[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)来中止请求.
 
-_Requires Node.js 16 or later._
+_需要Node.js 16或更高版本._
 
 ```js
 import got from "got";

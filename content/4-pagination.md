@@ -1,4 +1,4 @@
-# Pagination API
+# 分页 API
 
 源码: [`source/create.ts`](../source/create.ts)
 
