@@ -1,8 +1,10 @@
 # 缓存
 
-Got implements [RFC 7234](https://httpwg.org/specs/rfc7234.html) compliant HTTP caching which works out of the box in-memory and is easily pluggable with a wide range of storage adapters. Fresh cache entries are served directly from the cache, and stale cache entries are revalidated with `If-None-Match` / `If-Modified-Since` headers. You can read more about the underlying cache behavior in the [`cacheable-request` documentation](https://github.com/lukechilds/cacheable-request).
+Got实现了[RFC 7234](https://httpwg.org/specs/rfc7234.html)兼容的HTTP缓存，它可以在内存中开箱即用，并且可以很容易地插入各种存储适配器。
+新的缓存条目直接从缓存中提供，过时的缓存条目使用`If-None-Match` / `If-Modified-Since` 头重新验证。
+你可以在[`cacheable-request` 文档](https://github.com/lukechilds/cacheable-request)中阅读更多关于底层缓存行为的信息。
 
-You can use the JavaScript `Map` type as an in-memory cache:
+你可以使用JavaScript的`Map`类型作为内存缓存:
 
 ```js
 import got from "got";
@@ -18,7 +20,8 @@ console.log(response.isFromCache);
 //=> true
 ```
 
-Got uses [Keyv](https://github.com/lukechilds/keyv) internally to support a wide range of storage adapters. For something more scalable you could use an [official Keyv storage adapter](https://github.com/lukechilds/keyv#official-storage-adapters):
+Got在内部使用[Keyv](https://github.com/lukechilds/keyv)来支持各种存储适配器。
+对于更可伸缩的东西，您可以使用[官方Keyv存储适配器](https://github.com/lukechilds/keyv#official-storage-adapters):)
 
 ```
 $ npm install @keyv/redis
@@ -33,9 +36,9 @@ const redis = new KeyvRedis("redis://user:pass@localhost:6379");
 await got("https://sindresorhus.com", { cache: redis });
 ```
 
-Got supports anything that follows the Map API, so it's easy to write your own storage adapter or use a third-party solution.
+Got支持任何遵循Map API的东西，因此编写自己的存储适配器或使用第三方解决方案都很容易。
 
-For example, the following are all valid storage adapters:
+例如，以下都是有效的存储适配器:
 
 ```js
 const storageAdapter = new Map();
@@ -59,9 +62,9 @@ await got("https://sindresorhus.com", { cache: storageAdapter });
 
 View the [Keyv docs](https://github.com/lukechilds/keyv) for more information on how to use storage adapters.
 
-### Advanced caching mechanisms
+### 高级缓存机制
 
-The `request` function may return an instance of `IncomingMessage`-like class.
+`request` 函数可能返回一个`IncomingMessage`类的实例。
 
 ```js
 import https from "node:https";

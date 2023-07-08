@@ -1,9 +1,9 @@
 # 技巧
 
-## Timeout
+## 超时
 
-Each request can have a maximum allowed time to run.\
-In order to use this, specify the `request` timeout option.
+每个请求可以有一个最大允许运行时间。
+为了使用此功能，请指定`request`超时选项。
 
 ```js
 import got from "got";
@@ -15,13 +15,13 @@ const body = await got("https://httpbin.org/anything", {
 });
 ```
 
-For more specific timeouts, visit the [Timeout API](6-timeout.md).
+有关更具体的超时，请访问[超时 API](6-timeout.md).
 
-## Retries
+## 重试
 
-By default, Got makes a new retry on a failed request if possible.
+默认情况下，如果可能，Got会对失败的请求进行新的重试。
 
-It is possible to disable this feature entirely by setting the amount of maximum allowed retries to `0`.
+通过将允许的最大重试次数设置为`0`，可以完全禁用此功能。
 
 ```js
 import got from "got";
@@ -33,12 +33,13 @@ const noRetryGot = got.extend({
 });
 ```
 
-In order to specify retriable errors, use the [Retry API](7-retry.md).
+要指定可检索的错误，请使用[重试API](7-retry.md).
 
 ## Cookies
 
-Got supports cookies out of box. There is no need to parse them manually.\
-In order to use cookies, pass a `CookieJar` instance from the [`tough-cookie`](https://github.com/salesforce/tough-cookie) package.
+Got 支持 cookies 开箱即用。
+不需要手动解析它们。
+为了使用cookie，从[`tough-cookie`](https://github.com/salesforce/tough-cookie)包中传递一个`CookieJar`实例。
 
 ```js
 import got from "got";
@@ -52,10 +53,10 @@ await got("https://httpbin.org/anything", { cookieJar });
 
 ## AWS
 
-Requests to AWS services need to have their headers signed.\
-This can be accomplished by using the [`got4aws`](https://github.com/SamVerschueren/got4aws) package.
+对AWS服务的请求需要对其标头进行签名。
+这可以通过使用 [`got4aws`](https://github.com/SamVerschueren/got4aws)包来完成。
 
-This is an example for querying an [`API Gateway`](https://docs.aws.amazon.com/apigateway/api-reference/signing-requests/) with a signed request.
+这是一个使用签名请求查询[`API 网关`](https://docs.aws.amazon.com/apigateway/api-reference/signing-requests/) 的示例。
 
 ```js
 import got4aws from "got4aws";
@@ -67,11 +68,11 @@ const response = await got("https://<api-id>.execute-api.<api-region>.amazonaws.
 });
 ```
 
-## Pagination
+## 分页
 
-When working with large datasets, it's very efficient to use pagination.\
-By default, Got uses the [`Link` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) to retrieve the next page.\
-However, this behavior can be customized, see the [Pagination API](4-pagination.md).
+在处理大型数据集时，使用分页是非常有效的
+默认情况下，Got使用[`Link` 头](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link)来检索下一页。
+但是，这种行为可以自定义，参见[分页API](4-pagination.md)。
 
 ```js
 const countLimit = 50;
@@ -89,29 +90,35 @@ for await (const commitData of pagination) {
 
 <a name="unix"></a>
 
-## UNIX Domain Sockets
+## UNIX域套接字
 
-See the [`enableUnixSockets` option](./2-options.md#enableunixsockets).
+参考[`enableUnixSockets` 选项](./2-options.md#enableunixsockets).
 
-## Testing
+## 测试
 
-Got uses the native [`http`](https://nodejs.org/api/http.html) module, which depends on the native [`net`](https://nodejs.org/api/net.html) module.\
-This means there are two possible ways to test:
 
-1. Use a mocking library like [`nock`](https://github.com/nock/nock),
-2. Create a server.
 
-The first approach should cover all common use cases.\
-Bear in mind that it overrides the native `http` module, so bugs may occur due to the differences.
+Got使用本机[`http`](https://nodejs.org/api/http.html)模块，该模块依赖于本机[`net`](https://nodejs.org/api/net.html)模块。
+这意味着有两种可能的测试方法:
 
-The most solid way is to create a server.\
-There may be cases where `nock` won't be sufficient or lacks functionality.
+1. 使用像[`nock`]这样的mock库(https://github.com/nock/nock),
+2. 创建服务器。
+
+第一种方法应该涵盖所有常见的用例
+请记住，它覆盖了本地的`http`模块，因此可能会由于差异而出现bug。
+
+最可靠的方法是创建一个服务器
+在某些情况下，`nock` 可能不够或缺乏功能。
 
 ### Nock
 
 By default `nock` mocks only one request.\
 Got will [retry](7-retry.md) on failed requests by default, causing a `No match for request ...` error.\
 The solution is to either disable retrying (set `options.retry.limit` to `0`) or call `.persist()` on the mocked request.
+
+默认情况下，`nock`只模拟一个请求。
+默认情况下，Got将对失败的请求进行[retry](7-retry.md)，导致`No match for request ...`的错误。
+解决方案是禁用重试(将`options.retry.limit`设置为`0`)或在模拟请求上调用`.persist()`。
 
 ```js
 import got from "got";
@@ -132,15 +139,17 @@ try {
 scope.persist(false);
 ```
 
-## Proxying
+## 代理
 
-**Note:**
+!!! note
 
-> - The popular [`tunnel`](https://www.npmjs.com/package/tunnel) package is unmaintained. Use at your own risk.
-> - The [`proxy-agent`](https://www.npmjs.com/package/proxy-agent) family doesn't follow newest Node.js features and lacks support.
+    流行的[`tunnel`](https://www.npmjs.com/package/tunnel)包未维护。使用风险自负。  
+    [`proxy-agent`](https://www.npmjs.com/package/proxy-agent)家族不遵循最新的Node.js特性，缺乏支持。
 
-Although there isn't a perfect, bug-free package, [Apify](https://apify.com/)'s solution is a modern one.\
-See [`got-scraping/src/agent/h1-proxy-agent.ts`](https://github.com/apify/got-scraping/blob/2ec7f9148917a6a38d6d1c8c695606767c46cce5/src/agent/h1-proxy-agent.ts). It has the same API as `hpagent`.
+
+虽然没有一个完美的、没有错误的软件包，但[Apify](https://apify.com/)解决方案是一个现代的解决方案
+查看[`got-scraping/src/agent/h1-proxy-agent.ts`](https://github.com/apify/got-scraping/blob/2ec7f9148917a6a38d6d1c8c695606767c46cce5/src/agent/h1-proxy-agent.ts)。
+它具有与`hpagent`相同的API。
 
 [`hpagent`](https://github.com/delvedor/hpagent) is a modern package as well. In contrast to `tunnel`, it allows keeping the internal sockets alive to be reused.
 
@@ -167,10 +176,11 @@ Alternatively, use [`global-agent`](https://github.com/gajus/global-agent) to co
 If you're using HTTP/2, the [`http2-wrapper`](https://github.com/szmarczak/http2-wrapper/#proxy-support) package provides proxy support out-of-box.\
 [Learn more.](https://github.com/szmarczak/http2-wrapper#proxy-support)
 
-## Retry without an agent
+## 在没有代理的情况下重试
 
-If you're using proxies, you may run into connection issues.\
-One way out is to disable proxies when retrying. The solution for the Stream API looks like this:
+如果使用代理，可能会遇到连接问题。
+一种解决方法是在重试时禁用代理。
+流API的解决方案是这样的:
 
 ```js
 import https from "https";
@@ -222,13 +232,15 @@ fn();
 
 ## `h2c`
 
-There is no direct [`h2c`](https://datatracker.ietf.org/doc/html/rfc7540#section-3.1) support.
+没有直接的[`h2c`](https://datatracker.ietf.org/doc/html/rfc7540#section-3.1)支持。
 
-However, you can provide a `h2session` option in a `beforeRequest` hook. See [an example](examples/h2c.js).
+然而，你可以在`beforeRequest`钩子中提供一个`h2session`选项。
+参见[例子](examples/h2c.js)。
 
-## Uppercase headers
+## 大写标头
 
-Got always normalizes the headers, therefore passing an `Uppercase-Header` will transform it into `uppercase-header`. To fix this, you need to pass a wrapped agent:
+Got总是将标头规范化，因此传递`Uppercase-Header`会将其转换为`uppercase-header`。
+要解决这个问题，你需要传递一个包装代理:
 
 ```js
 class WrappedAgent {
@@ -289,11 +301,11 @@ const agent = new http.Agent({
 const wrappedAgent = new TransformHeadersAgent(agent);
 ```
 
-See [an example](examples/uppercase-headers.js).
+参看[例子](examples/uppercase-headers.js).
 
-## Custom options
+## 自定义选项
 
-Got v12 throws when an option does not exist. Therefore passing a top-level option such as:
+当一个选项不存在时 Got v12 抛出。因此传递一个顶级选项，如:
 
 ```js
 import got from "got";
@@ -303,7 +315,7 @@ await got("https://example.com", {
 });
 ```
 
-will throw. To prevent this, you need read the option in an `init` hook:
+将抛出。为了防止这种情况，你需要在`init`钩子中读取该选项:
 
 ```js
 import got from "got";
@@ -335,7 +347,7 @@ const { headers } = await instance("https://httpbin.org/anything", { foo: "bar" 
 console.log(headers.Foo); //=> 'bar'
 ```
 
-Eventually, you may want to create a catch-all instance:
+最后，您可能想要创建一个捕获所有实例:
 
 ```js
 import got from "got";
@@ -370,13 +382,17 @@ const { headers } = await instance("https://httpbin.org/anything", { foo: "bar" 
 console.log(headers.Foo); //=> 'bar'
 ```
 
-**Note:**
+!!! note
 
-> - It's a good practice to perform the validation inside the `init` hook. You can safely throw when an option is unknown! Internally, Got uses the [`@sindresorhus/is`](https://github.com/sindresorhus/is) package.
+    在`init`钩子中执行验证是一个很好的做法。
+    当选项未知时，可以安全地抛出!
+    在内部，Got使用 [`@sindresorhus/is`](https://github.com/sindresorhus/is) 包。
 
-## Electron `net` module is not supported
+## 不支持Electron  `net` 模块
 
-**Note:** Got v12 and later is an ESM package, but Electron does not yet support ESM. So you need to use Got v11.
+!!! note 
+    
+    得到了v12和更高版本的ESM包，但是Electron还不支持ESM。所以你需要使用Got v11。
 
 Got doesn't support the `electron.net` module. It's missing crucial APIs that are available in Node.js.\
 While Got used to support `electron.net`, it got very unstable and caused many errors.

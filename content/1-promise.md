@@ -25,7 +25,7 @@ const { headers } = await got("https://httpbin.org/anything", {
 
 **Returns: <code>Promise<[Response](3-streams.md#response-1)>**</code>
 
-Alternatively, you can pass only options containing a `url` property.
+或者，你可以只传递包含`url`属性的选项。
 
 ```js
 import got from "got";
@@ -38,31 +38,31 @@ const { headers } = await got({
 }).json();
 ```
 
-This is semantically the same as the first approach.
+这在语义上与第一种方法相同。
 
 ## `promise.json<T>()`
 
 **Returns: `Promise<T>`**
 
-A shortcut method that gives a Promise returning a JSON object.
+一个快捷方法，它给出一个返回JSON对象的Promise。
 
-It is semantically the same as settings [`options.resolveBodyOnly`](2-options.md#resolvebodyonly) to `true` and [`options.responseType`](2-options.md#responsetype) to `'json'`.
+它在语义上与将[`options.resolveBodyOnly`](2-options.md#resolvebodyonly)设置为`true`和将[`options.responseType`](2-options.md#responsetype)设置为`'json'`相同。
 
 ## `promise.buffer()`
 
 **Returns: `Promise<Buffer>`**
 
-A shortcut method that gives a Promise returning a [Buffer](https://nodejs.org/api/buffer.html).
+给出一个Promise返回一个[Buffer](https://nodejs.org/api/buffer.html)的快捷方法.
 
-It is semantically the same as settings [`options.resolveBodyOnly`](2-options.md#resolvebodyonly) to `true` and [`options.responseType`](2-options.md#responsetype) to `'buffer'`.
+它在语义上与将 [`options.resolveBodyOnly`](2-options.md#resolvebodyonly)设置为`true`和将[`options.responseType`](2-options.md#responsetype)设置为`'buffer'`相同。
 
 ## `promise.text()`
 
 **Returns: `Promise<string>`**
 
-A shortcut method that gives a Promise returning a string.
+一个快捷方法，给出一个返回字符串的Promise。
 
-It is semantically the same as settings [`options.resolveBodyOnly`](2-options.md#resolvebodyonly) to `true` and [`options.responseType`](2-options.md#responsetype) to `'text'`.
+它在语义上与将 [`options.resolveBodyOnly`](2-options.md#resolvebodyonly) 设置为 `true` 和将 [`options.responseType`](2-options.md#responsetype) 设置为 `'text'`相同。.
 
 ## `promise.cancel(reason?: string)`
 
@@ -77,15 +77,15 @@ It is semantically the same as settings [`options.resolveBodyOnly`](2-options.md
 
 **类型: `boolean`**
 
-Whether the promise is canceled.
+承诺是否被取消。
 
 ## `promise.on(event, handler)`
 
-The events are the same as in [Stream API](3-streams.md#events).
+事件与[流API](3-streams.md#events)中相同.
 
 ## `promise.off(event, handler)`
 
-Removes listener registered with [`promise.on`](1-promise.md#promiseonevent-handler)
+移除用[`promise.on`](1-promise.md#promiseonevent-handler)注册的监听器
 
 ```js
 import { createReadStream } from "node:fs";
