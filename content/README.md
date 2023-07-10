@@ -54,7 +54,7 @@ console.log(data);
 //=> {"hello": "world"}
 ```
 
-对于高级 JSON 用法，请查看[ `parseJson` ](documentation/2-options.md# parseJson)和[ `stringifyJson` ](documentation/2-options.md# stringifyJson)选项。
+对于高级 JSON 用法，请查看[ `parseJson` ](2-options.md# parseJson)和[ `stringifyJson` ](2-options.md# stringifyJson)选项。
 
 **要了解更多有用的技巧，请访问[tips](tips.md)页面。**
 
@@ -66,52 +66,52 @@ console.log(data);
 
 ## 文档
 
-默认情况下，Got 将在失败时重试。要禁用此选项，请将[ `options.retry.limit` ](documentation/7-retry.md#retry)设置为 0。
+默认情况下，Got 将在失败时重试。要禁用此选项，请将[ `options.retry.limit` ](7-retry.md#retry)设置为 0。
 
 #### 主要 API
 
-- [x] [Promise API](documentation/1-promise.md)
-- [x] [Options](documentation/2-options.md)
-- [x] [Stream API](documentation/3-streams.md)
-- [x] [Pagination API](documentation/4-pagination.md)
-- [x] [Advanced HTTPS API](documentation/5-https.md)
-- [x] [HTTP/2 support](documentation/2-options.md#http2)
-- [x] [`Response` class](documentation/3-streams.md#response-2)
+- [x] [Promise API](1-promise.md)
+- [x] [Options](2-options.md)
+- [x] [Stream API](3-streams.md)
+- [x] [Pagination API](4-pagination.md)
+- [x] [Advanced HTTPS API](5-https.md)
+- [x] [HTTP/2 support](2-options.md#http2)
+- [x] [`Response` class](3-streams.md#response-2)
 
 #### 超时并重试
 
-- [x] [Advanced timeout handling](documentation/6-timeout.md)
-- [x] [Retries on failure](documentation/7-retry.md)
-- [x] [Errors with metadata](documentation/8-errors.md)
+- [x] [Advanced timeout handling](6-timeout.md)
+- [x] [Retries on failure](7-retry.md)
+- [x] [Errors with metadata](8-errors.md)
 
 #### 先进的创造
 
-- [x] [Hooks](documentation/9-hooks.md)
-- [x] [Instances](documentation/10-instances.md)
-- [x] [Progress events & other events](documentation/3-streams.md#events)
-- [x] [Plugins](documentation/lets-make-a-plugin.md)
-- [x] [Compose](documentation/examples/advanced-creation.js)
+- [x] [Hooks](9-hooks.md)
+- [x] [Instances](10-instances.md)
+- [x] [Progress events & other events](3-streams.md#events)
+- [x] [Plugins](lets-make-a-plugin.md)
+- [x] [Compose](examples/advanced-creation.js)
 
 #### 缓存，代理和 UNIX socket
 
-- [x] [RFC compliant caching](documentation/cache.md)
-- [x] [Proxy support](documentation/tips.md#proxying)
-- [x] [Unix Domain Sockets](documentation/2-options.md#enableunixsockets)
+- [x] [RFC compliant caching](cache.md)
+- [x] [Proxy support](tips.md#proxying)
+- [x] [Unix Domain Sockets](2-options.md#enableunixsockets)
 
 #### 集成
 
-- [x] [TypeScript support](documentation/typescript.md)
-- [x] [AWS](documentation/tips.md#aws)
-- [x] [Testing](documentation/tips.md#testing)
+- [x] [TypeScript support](typescript.md)
+- [x] [AWS](tips.md#aws)
+- [x] [Testing](tips.md#testing)
 
 ---
 
 ### 迁移向导
 
-- [Request migration guide](documentation/migration-guides/request.md)
+- [Request migration guide](migration-guides/request.md)
   - [_(Note that Request is unmaintained)_](https://github.com/request/request/issues/3142)
-- [Axios](documentation/migration-guides/axios.md)
-- [Node.js](documentation/migration-guides/nodejs.md)
+- [Axios](migration-guides/axios.md)
+- [Node.js](migration-guides/nodejs.md)
 
 ## Got 插件
 

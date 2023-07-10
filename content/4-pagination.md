@@ -1,6 +1,6 @@
 # 分页 API
 
-源码: [`source/create.ts`](../source/create.ts)
+源码: [`source/create.ts`](./source/create.ts)
 
 ## How does the `Link` header work?
 

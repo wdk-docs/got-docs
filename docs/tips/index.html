@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://wdk-docs.github.io/got-docs/tips/">
       
+      
+        <link rel="prev" href="../async-stack-traces/">
+      
+      
+        <link rel="next" href="../typescript/">
+      
       <link rel="icon" href="../assets/favicons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -23,11 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
       
       
 
@@ -55,14 +57,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -84,7 +83,7 @@
 
   
 
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href=".." title="Got 文档" class="md-header__button md-logo" aria-label="Got 文档" data-md-component="logo">
       
@@ -139,7 +138,7 @@
           <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -151,7 +150,7 @@
         <a href="https://github.com/wdk-docs/got-docs" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     wdk-docs/got-docs
@@ -164,7 +163,7 @@
     
       
 <nav class="md-tabs" aria-label="标签" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -272,7 +271,7 @@
       <a href="https://github.com/wdk-docs/got-docs" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     wdk-docs/got-docs
@@ -295,8 +294,9 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
       
       
         
@@ -329,7 +329,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="首页" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           首页
@@ -345,7 +345,7 @@
   
     <li class="md-nav__item">
       <a href="../quick-start/" class="md-nav__link">
-        快速入门指南
+        快速入门
       </a>
     </li>
   
@@ -403,7 +403,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -434,15 +434,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#timeout" class="md-nav__link">
-    Timeout
+  <a href="#_2" class="md-nav__link">
+    超时
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#retries" class="md-nav__link">
-    Retries
+  <a href="#_3" class="md-nav__link">
+    重试
   </a>
   
 </li>
@@ -462,25 +462,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pagination" class="md-nav__link">
-    Pagination
+  <a href="#_4" class="md-nav__link">
+    分页
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unix-domain-sockets" class="md-nav__link">
-    UNIX Domain Sockets
+  <a href="#unix" class="md-nav__link">
+    UNIX域套接字
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    Testing
+  <a href="#_5" class="md-nav__link">
+    测试
   </a>
   
-    <nav class="md-nav" aria-label="Testing">
+    <nav class="md-nav" aria-label="测试">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -496,15 +496,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proxying" class="md-nav__link">
-    Proxying
+  <a href="#_6" class="md-nav__link">
+    代理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#retry-without-an-agent" class="md-nav__link">
-    Retry without an agent
+  <a href="#_7" class="md-nav__link">
+    在没有代理的情况下重试
   </a>
   
 </li>
@@ -517,22 +517,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uppercase-headers" class="md-nav__link">
-    Uppercase headers
+  <a href="#_8" class="md-nav__link">
+    大写标头
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-options" class="md-nav__link">
-    Custom options
+  <a href="#_9" class="md-nav__link">
+    自定义选项
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#electron-net-module-is-not-supported" class="md-nav__link">
-    Electron net module is not supported
+  <a href="#electron-net" class="md-nav__link">
+    不支持Electron  net 模块
   </a>
   
 </li>
@@ -577,39 +577,40 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
-        <label class="md-nav__link" for="__nav_2">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           接口
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="接口" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           接口
@@ -623,7 +624,7 @@
   
     <li class="md-nav__item">
       <a href="../1-promise/" class="md-nav__link">
-        Promise API
+        同步 API
       </a>
     </li>
   
@@ -651,7 +652,7 @@
   
     <li class="md-nav__item">
       <a href="../3-streams/" class="md-nav__link">
-        Stream API
+        流 API
       </a>
     </li>
   
@@ -665,7 +666,7 @@
   
     <li class="md-nav__item">
       <a href="../4-pagination/" class="md-nav__link">
-        Pagination API
+        分页 API
       </a>
     </li>
   
@@ -679,7 +680,7 @@
   
     <li class="md-nav__item">
       <a href="../5-https/" class="md-nav__link">
-        Advanced HTTPS API
+        高级 HTTPS API
       </a>
     </li>
   
@@ -693,7 +694,7 @@
   
     <li class="md-nav__item">
       <a href="../6-timeout/" class="md-nav__link">
-        Timeout options
+        超时选项
       </a>
     </li>
   
@@ -707,7 +708,7 @@
   
     <li class="md-nav__item">
       <a href="../7-retry/" class="md-nav__link">
-        Retry API
+        重试 API
       </a>
     </li>
   
@@ -721,7 +722,7 @@
   
     <li class="md-nav__item">
       <a href="../8-errors/" class="md-nav__link">
-        Errors
+        错误
       </a>
     </li>
   
@@ -735,7 +736,7 @@
   
     <li class="md-nav__item">
       <a href="../9-hooks/" class="md-nav__link">
-        Hooks API
+        钩子 API
       </a>
     </li>
   
@@ -749,7 +750,7 @@
   
     <li class="md-nav__item">
       <a href="../10-instances/" class="md-nav__link">
-        Instances
+        实例
       </a>
     </li>
   
@@ -773,8 +774,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -801,7 +803,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="迁移指南" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           迁移指南
@@ -869,13 +871,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
         
           
             
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
       
@@ -885,15 +900,103 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../examples/">示例</a>
           
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
-      <nav class="md-nav" aria-label="示例" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           示例
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/advanced-creation/" class="md-nav__link">
+        先进的创造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/gh-got/" class="md-nav__link">
+        Github
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/h2c/" class="md-nav__link">
+        h2c
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/pagination/" class="md-nav__link">
+        分页
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/runkit-example/" class="md-nav__link">
+        runkit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/uppercase-headers/" class="md-nav__link">
+        大写标题
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -929,15 +1032,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#timeout" class="md-nav__link">
-    Timeout
+  <a href="#_2" class="md-nav__link">
+    超时
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#retries" class="md-nav__link">
-    Retries
+  <a href="#_3" class="md-nav__link">
+    重试
   </a>
   
 </li>
@@ -957,25 +1060,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pagination" class="md-nav__link">
-    Pagination
+  <a href="#_4" class="md-nav__link">
+    分页
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unix-domain-sockets" class="md-nav__link">
-    UNIX Domain Sockets
+  <a href="#unix" class="md-nav__link">
+    UNIX域套接字
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    Testing
+  <a href="#_5" class="md-nav__link">
+    测试
   </a>
   
-    <nav class="md-nav" aria-label="Testing">
+    <nav class="md-nav" aria-label="测试">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -991,15 +1094,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proxying" class="md-nav__link">
-    Proxying
+  <a href="#_6" class="md-nav__link">
+    代理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#retry-without-an-agent" class="md-nav__link">
-    Retry without an agent
+  <a href="#_7" class="md-nav__link">
+    在没有代理的情况下重试
   </a>
   
 </li>
@@ -1012,22 +1115,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uppercase-headers" class="md-nav__link">
-    Uppercase headers
+  <a href="#_8" class="md-nav__link">
+    大写标头
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-options" class="md-nav__link">
-    Custom options
+  <a href="#_9" class="md-nav__link">
+    自定义选项
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#electron-net-module-is-not-supported" class="md-nav__link">
-    Electron net module is not supported
+  <a href="#electron-net" class="md-nav__link">
+    不支持Electron  net 模块
   </a>
   
 </li>
@@ -1049,88 +1152,87 @@
 
 
 
-  <a href="https://github.com/wdk-docs/got-docs/edit/master/content/tips.md" title="编辑此页" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
 <h1 id="_1">技巧<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="timeout">Timeout<a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h2>
-<p>Each request can have a maximum allowed time to run.\
-In order to use this, specify the <code>request</code> timeout option.</p>
+<h2 id="_2">超时<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>每个请求可以有一个最大允许运行时间。
+为了使用此功能，请指定<code>request</code>超时选项。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
 <span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nx">timeout</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="mf">30000</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nx">timeout</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="mf">30000</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
-<p>For more specific timeouts, visit the <a href="../6-timeout/">Timeout API</a>.</p>
-<h2 id="retries">Retries<a class="headerlink" href="#retries" title="Permanent link">&para;</a></h2>
-<p>By default, Got makes a new retry on a failed request if possible.</p>
-<p>It is possible to disable this feature entirely by setting the amount of maximum allowed retries to <code>0</code>.</p>
+<p>有关更具体的超时，请访问<a href="../6-timeout/">超时 API</a>.</p>
+<h2 id="_3">重试<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>默认情况下，如果可能，Got会对失败的请求进行新的重试。</p>
+<p>通过将允许的最大重试次数设置为<code>0</code>，可以完全禁用此功能。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
 <span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">noRetryGot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"></span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nx">retry</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="nx">limit</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">noRetryGot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nx">retry</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="nx">limit</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
-<p>In order to specify retriable errors, use the <a href="../7-retry/">Retry API</a>.</p>
+<p>要指定可检索的错误，请使用<a href="../7-retry/">重试API</a>.</p>
 <h2 id="cookies">Cookies<a class="headerlink" href="#cookies" title="Permanent link">&para;</a></h2>
-<p>Got supports cookies out of box. There is no need to parse them manually.\
-In order to use cookies, pass a <code>CookieJar</code> instance from the <a href="https://github.com/salesforce/tough-cookie"><code>tough-cookie</code></a> package.</p>
+<p>Got 支持 cookies 开箱即用。
+不需要手动解析它们。
+为了使用cookie，从<a href="https://github.com/salesforce/tough-cookie"><code>tough-cookie</code></a>包中传递一个<code>CookieJar</code>实例。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
 <span class="normal"><a href="#__codelineno-2-5">5</a></span>
 <span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CookieJar</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tough-cookie&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">CookieJar</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;tough-cookie&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cookieJar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CookieJar</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">cookieJar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CookieJar</span><span class="p">();</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="k">await</span><span class="w"> </span><span class="nx">cookieJar</span><span class="p">.</span><span class="nx">setCookie</span><span class="p">(</span><span class="s2">&quot;foo=bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cookieJar</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="k">await</span><span class="w"> </span><span class="nx">cookieJar</span><span class="p">.</span><span class="nx">setCookie</span><span class="p">(</span><span class="s2">&quot;foo=bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cookieJar</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h2>
-<p>Requests to AWS services need to have their headers signed.\
-This can be accomplished by using the <a href="https://github.com/SamVerschueren/got4aws"><code>got4aws</code></a> package.</p>
-<p>This is an example for querying an <a href="https://docs.aws.amazon.com/apigateway/api-reference/signing-requests/"><code>API Gateway</code></a> with a signed request.</p>
+<p>对AWS服务的请求需要对其标头进行签名。
+这可以通过使用 <a href="https://github.com/SamVerschueren/got4aws"><code>got4aws</code></a>包来完成。</p>
+<p>这是一个使用签名请求查询<a href="https://docs.aws.amazon.com/apigateway/api-reference/signing-requests/"><code>API 网关</code></a> 的示例。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
 <span class="normal"><a href="#__codelineno-3-5">5</a></span>
 <span class="normal"><a href="#__codelineno-3-6">6</a></span>
-<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got4aws</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got4aws&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got4aws</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got4aws&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got4aws</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got4aws</span><span class="p">();</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://&lt;api-id&gt;.execute-api.&lt;api-region&gt;.amazonaws.com/&lt;stage&gt;/endpoint/path&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">  </span><span class="c1">// …</span><span class="w"></span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://&lt;api-id&gt;.execute-api.&lt;api-region&gt;.amazonaws.com/&lt;stage&gt;/endpoint/path&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">  </span><span class="c1">// …</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h2>
-<p>When working with large datasets, it's very efficient to use pagination.\
-By default, Got uses the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link"><code>Link</code> header</a> to retrieve the next page.\
-However, this behavior can be customized, see the <a href="../4-pagination/">Pagination API</a>.</p>
+<h2 id="_4">分页<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>在处理大型数据集时，使用分页是非常有效的
+默认情况下，Got使用<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link"><code>Link</code> 头</a>来检索下一页。
+但是，这种行为可以自定义，参见<a href="../4-pagination/">分页API</a>。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1141,36 +1243,39 @@ However, this behavior can be customized, see the <a href="../4-pagination/">Pag
 <span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">countLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">countLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">pagination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">paginate</span><span class="p">(</span><span class="s2">&quot;https://api.github.com/repos/sindresorhus/got/commits&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">  </span><span class="nx">pagination</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">countLimit</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">pagination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">paginate</span><span class="p">(</span><span class="s2">&quot;https://api.github.com/repos/sindresorhus/got/commits&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">  </span><span class="nx">pagination</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">countLimit</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">});</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Printing latest </span><span class="si">${</span><span class="nx">countLimit</span><span class="si">}</span><span class="sb"> Got commits (newest to oldest):`</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Printing latest </span><span class="si">${</span><span class="nx">countLimit</span><span class="si">}</span><span class="sb"> Got commits (newest to oldest):`</span><span class="p">);</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="k">for</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">commitData</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">pagination</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">commitData</span><span class="p">.</span><span class="nx">commit</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="k">for</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">commitData</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">pagination</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">commitData</span><span class="p">.</span><span class="nx">commit</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><a name="unix"></a></p>
-<h2 id="unix-domain-sockets">UNIX Domain Sockets<a class="headerlink" href="#unix-domain-sockets" title="Permanent link">&para;</a></h2>
-<p>See the <a href="../2-options/#enableunixsockets"><code>enableUnixSockets</code> option</a>.</p>
-<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
-<p>Got uses the native <a href="https://nodejs.org/api/http.html"><code>http</code></a> module, which depends on the native <a href="https://nodejs.org/api/net.html"><code>net</code></a> module.\
-This means there are two possible ways to test:</p>
+<h2 id="unix">UNIX域套接字<a class="headerlink" href="#unix" title="Permanent link">&para;</a></h2>
+<p>参考<a href="../2-options/#enableunixsockets"><code>enableUnixSockets</code> 选项</a>.</p>
+<h2 id="_5">测试<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Got使用本机<a href="https://nodejs.org/api/http.html"><code>http</code></a>模块，该模块依赖于本机<a href="https://nodejs.org/api/net.html"><code>net</code></a>模块。
+这意味着有两种可能的测试方法:</p>
 <ol>
-<li>Use a mocking library like <a href="https://github.com/nock/nock"><code>nock</code></a>,</li>
-<li>Create a server.</li>
+<li>使用像[<code>nock</code>]这样的mock库(<a href="https://github.com/nock/nock">https://github.com/nock/nock</a>),</li>
+<li>创建服务器。</li>
 </ol>
-<p>The first approach should cover all common use cases.\
-Bear in mind that it overrides the native <code>http</code> module, so bugs may occur due to the differences.</p>
-<p>The most solid way is to create a server.\
-There may be cases where <code>nock</code> won't be sufficient or lacks functionality.</p>
+<p>第一种方法应该涵盖所有常见的用例
+请记住，它覆盖了本地的<code>http</code>模块，因此可能会由于差异而出现bug。</p>
+<p>最可靠的方法是创建一个服务器
+在某些情况下，<code>nock</code> 可能不够或缺乏功能。</p>
 <h3 id="nock">Nock<a class="headerlink" href="#nock" title="Permanent link">&para;</a></h3>
 <p>By default <code>nock</code> mocks only one request.\
 Got will <a href="../7-retry/">retry</a> on failed requests by default, causing a <code>No match for request ...</code> error.\
 The solution is to either disable retrying (set <code>options.retry.limit</code> to <code>0</code>) or call <code>.persist()</code> on the mocked request.</p>
+<p>默认情况下，<code>nock</code>只模拟一个请求。
+默认情况下，Got将对失败的请求进行<a href="../7-retry/">retry</a>，导致<code>No match for request ...</code>的错误。
+解决方案是禁用重试(将<code>options.retry.limit</code>设置为<code>0</code>)或在模拟请求上调用<code>.persist()</code>。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1186,33 +1291,32 @@ The solution is to either disable retrying (set <code>options.retry.limit</code>
 <span class="normal"><a href="#__codelineno-5-13">13</a></span>
 <span class="normal"><a href="#__codelineno-5-14">14</a></span>
 <span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">nock</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;nock&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">nock</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;nock&quot;</span><span class="p">;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nock</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">).</span><span class="nx">reply</span><span class="p">(</span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Internal server error&quot;</span><span class="p">).</span><span class="nx">persist</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nock</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">).</span><span class="nx">reply</span><span class="p">(</span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Internal server error&quot;</span><span class="p">).</span><span class="nx">persist</span><span class="p">();</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">  </span><span class="c1">//=&gt; &#39;Internal server error&#39;</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">  </span><span class="c1">//=&gt; &#39;Internal server error&#39;</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">retryCount</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">  </span><span class="c1">//=&gt; 2</span><span class="w"></span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">retryCount</span><span class="p">);</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">  </span><span class="c1">//=&gt; 2</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="p">}</span>
 <a id="__codelineno-5-15" name="__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="nx">scope</span><span class="p">.</span><span class="nx">persist</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="nx">scope</span><span class="p">.</span><span class="nx">persist</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="proxying">Proxying<a class="headerlink" href="#proxying" title="Permanent link">&para;</a></h2>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>The popular <a href="https://www.npmjs.com/package/tunnel"><code>tunnel</code></a> package is unmaintained. Use at your own risk.</li>
-<li>The <a href="https://www.npmjs.com/package/proxy-agent"><code>proxy-agent</code></a> family doesn't follow newest Node.js features and lacks support.</li>
-</ul>
-</blockquote>
-<p>Although there isn't a perfect, bug-free package, <a href="https://apify.com/">Apify</a>'s solution is a modern one.\
-See <a href="https://github.com/apify/got-scraping/blob/2ec7f9148917a6a38d6d1c8c695606767c46cce5/src/agent/h1-proxy-agent.ts"><code>got-scraping/src/agent/h1-proxy-agent.ts</code></a>. It has the same API as <code>hpagent</code>.</p>
+<h2 id="_6">代理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>流行的<a href="https://www.npmjs.com/package/tunnel"><code>tunnel</code></a>包未维护。使用风险自负。<br />
+<a href="https://www.npmjs.com/package/proxy-agent"><code>proxy-agent</code></a>家族不遵循最新的Node.js特性，缺乏支持。</p>
+</div>
+<p>虽然没有一个完美的、没有错误的软件包，但<a href="https://apify.com/">Apify</a>解决方案是一个现代的解决方案
+查看<a href="https://github.com/apify/got-scraping/blob/2ec7f9148917a6a38d6d1c8c695606767c46cce5/src/agent/h1-proxy-agent.ts"><code>got-scraping/src/agent/h1-proxy-agent.ts</code></a>。
+它具有与<code>hpagent</code>相同的API。</p>
 <p><a href="https://github.com/delvedor/hpagent"><code>hpagent</code></a> is a modern package as well. In contrast to <code>tunnel</code>, it allows keeping the internal sockets alive to be reused.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
@@ -1228,28 +1332,29 @@ See <a href="https://github.com/apify/got-scraping/blob/2ec7f9148917a6a38d6d1c8c
 <span class="normal"><a href="#__codelineno-6-12">12</a></span>
 <span class="normal"><a href="#__codelineno-6-13">13</a></span>
 <span class="normal"><a href="#__codelineno-6-14">14</a></span>
-<span class="normal"><a href="#__codelineno-6-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">HttpsProxyAgent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;hpagent&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">HttpsProxyAgent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;hpagent&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">  </span><span class="nx">agent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HttpsProxyAgent</span><span class="p">({</span><span class="w"></span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">      </span><span class="nx">keepAlive</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">      </span><span class="nx">keepAliveMsecs</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">      </span><span class="nx">maxSockets</span><span class="o">:</span><span class="w"> </span><span class="mf">256</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">      </span><span class="nx">maxFreeSockets</span><span class="o">:</span><span class="w"> </span><span class="mf">256</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">      </span><span class="nx">scheduling</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;lifo&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">      </span><span class="nx">proxy</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://localhost:8080&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="p">}),</span><span class="w"></span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">  </span><span class="nx">agent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HttpsProxyAgent</span><span class="p">({</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">      </span><span class="nx">keepAlive</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">      </span><span class="nx">keepAliveMsecs</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">      </span><span class="nx">maxSockets</span><span class="o">:</span><span class="w"> </span><span class="mf">256</span><span class="p">,</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">      </span><span class="nx">maxFreeSockets</span><span class="o">:</span><span class="w"> </span><span class="mf">256</span><span class="p">,</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">      </span><span class="nx">scheduling</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;lifo&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">      </span><span class="nx">proxy</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://localhost:8080&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="p">}),</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
 <p>Alternatively, use <a href="https://github.com/gajus/global-agent"><code>global-agent</code></a> to configure a global proxy for all HTTP/HTTPS traffic in your program.</p>
 <p>If you're using HTTP/2, the <a href="https://github.com/szmarczak/http2-wrapper/#proxy-support"><code>http2-wrapper</code></a> package provides proxy support out-of-box.\
 <a href="https://github.com/szmarczak/http2-wrapper#proxy-support">Learn more.</a></p>
-<h2 id="retry-without-an-agent">Retry without an agent<a class="headerlink" href="#retry-without-an-agent" title="Permanent link">&para;</a></h2>
-<p>If you're using proxies, you may run into connection issues.\
-One way out is to disable proxies when retrying. The solution for the Stream API looks like this:</p>
+<h2 id="_7">在没有代理的情况下重试<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>如果使用代理，可能会遇到连接问题。
+一种解决方法是在重试时禁用代理。
+流API的解决方案是这样的:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -1294,57 +1399,59 @@ One way out is to disable proxies when retrying. The solution for the Stream API
 <span class="normal"><a href="#__codelineno-7-42">42</a></span>
 <span class="normal"><a href="#__codelineno-7-43">43</a></span>
 <span class="normal"><a href="#__codelineno-7-44">44</a></span>
-<span class="normal"><a href="#__codelineno-7-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">https</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;https&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;fs&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-7-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">https</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;https&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;fs&quot;</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="kd">class</span><span class="w"> </span><span class="nx">MyAgent</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">https</span><span class="p">.</span><span class="nx">Agent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">  </span><span class="nx">createConnection</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Connecting with MyAgent`</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">https</span><span class="p">.</span><span class="nx">Agent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="kd">class</span><span class="w"> </span><span class="nx">MyAgent</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">https</span><span class="p">.</span><span class="nx">Agent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">  </span><span class="nx">createConnection</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Connecting with MyAgent`</span><span class="p">);</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">https</span><span class="p">.</span><span class="nx">Agent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="p">}</span>
 <a id="__codelineno-7-11" name="__codelineno-7-11"></a>
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="kd">const</span><span class="w"> </span><span class="nx">proxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MyAgent</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="kd">const</span><span class="w"> </span><span class="nx">proxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MyAgent</span><span class="p">();</span>
 <a id="__codelineno-7-13" name="__codelineno-7-13"></a>
-<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="kd">let</span><span class="w"> </span><span class="nx">writeStream</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="kd">let</span><span class="w"> </span><span class="nx">writeStream</span><span class="p">;</span>
 <a id="__codelineno-7-15" name="__codelineno-7-15"></a>
-<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">retryStream</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="nx">agent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">      </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="nx">proxy</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">  </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">retryStream</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="nx">agent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">      </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="nx">proxy</span><span class="p">,</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">  </span><span class="p">};</span>
 <a id="__codelineno-7-22" name="__codelineno-7-22"></a>
-<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">retryStream</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">retryStream</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
 <a id="__codelineno-7-24" name="__codelineno-7-24"></a>
-<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">writeStream</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">    </span><span class="nx">writeStream</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">writeStream</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">    </span><span class="nx">writeStream</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-7-28" name="__codelineno-7-28"></a>
-<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">  </span><span class="nx">writeStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">&quot;example-com.html&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">  </span><span class="nx">writeStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">&quot;example-com.html&quot;</span><span class="p">);</span>
 <a id="__codelineno-7-30" name="__codelineno-7-30"></a>
-<a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="w">  </span><span class="nx">stream</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">writeStream</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="w">  </span><span class="nx">stream</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;retry&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">retryCount</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">createRetryStream</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="w">    </span><span class="nx">fn</span><span class="p">(</span><span class="w"></span>
-<a id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="w">      </span><span class="nx">createRetryStream</span><span class="p">({</span><span class="w"></span>
-<a id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="w">        </span><span class="nx">agent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="w">          </span><span class="nx">http</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-7-37" name="__codelineno-7-37"></a><span class="w">          </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-7-38" name="__codelineno-7-38"></a><span class="w">          </span><span class="nx">http2</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-7-39" name="__codelineno-7-39"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-7-40" name="__codelineno-7-40"></a><span class="w">      </span><span class="p">})</span><span class="w"></span>
-<a id="__codelineno-7-41" name="__codelineno-7-41"></a><span class="w">    </span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-7-42" name="__codelineno-7-42"></a><span class="w">  </span><span class="p">});</span><span class="w"></span>
-<a id="__codelineno-7-43" name="__codelineno-7-43"></a><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="w">  </span><span class="nx">stream</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">writeStream</span><span class="p">);</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="w">  </span><span class="nx">stream</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;retry&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">retryCount</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">createRetryStream</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="w">    </span><span class="nx">fn</span><span class="p">(</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="w">      </span><span class="nx">createRetryStream</span><span class="p">({</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="w">        </span><span class="nx">agent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="w">          </span><span class="nx">http</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37"></a><span class="w">          </span><span class="nx">https</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38"></a><span class="w">          </span><span class="nx">http2</span><span class="o">:</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40"></a><span class="w">      </span><span class="p">})</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41"></a><span class="w">    </span><span class="p">);</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43"></a><span class="p">};</span>
 <a id="__codelineno-7-44" name="__codelineno-7-44"></a>
-<a id="__codelineno-7-45" name="__codelineno-7-45"></a><span class="nx">fn</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-7-45" name="__codelineno-7-45"></a><span class="nx">fn</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="h2c"><code>h2c</code><a class="headerlink" href="#h2c" title="Permanent link">&para;</a></h2>
-<p>There is no direct <a href="https://datatracker.ietf.org/doc/html/rfc7540#section-3.1"><code>h2c</code></a> support.</p>
-<p>However, you can provide a <code>h2session</code> option in a <code>beforeRequest</code> hook. See <a href="../examples/h2c.js">an example</a>.</p>
-<h2 id="uppercase-headers">Uppercase headers<a class="headerlink" href="#uppercase-headers" title="Permanent link">&para;</a></h2>
-<p>Got always normalizes the headers, therefore passing an <code>Uppercase-Header</code> will transform it into <code>uppercase-header</code>. To fix this, you need to pass a wrapped agent:</p>
+<p>没有直接的<a href="https://datatracker.ietf.org/doc/html/rfc7540#section-3.1"><code>h2c</code></a>支持。</p>
+<p>然而，你可以在<code>beforeRequest</code>钩子中提供一个<code>h2session</code>选项。
+参见<a href="../examples/h2c.js">例子</a>。</p>
+<h2 id="_8">大写标头<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Got总是将标头规范化，因此传递<code>Uppercase-Header</code>会将其转换为<code>uppercase-header</code>。
+要解决这个问题，你需要传递一个包装代理:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -1400,77 +1507,77 @@ One way out is to disable proxies when retrying. The solution for the Stream API
 <span class="normal"><a href="#__codelineno-8-53">53</a></span>
 <span class="normal"><a href="#__codelineno-8-54">54</a></span>
 <span class="normal"><a href="#__codelineno-8-55">55</a></span>
-<span class="normal"><a href="#__codelineno-8-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">WrappedAgent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">agent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">agent</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-8-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">WrappedAgent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">agent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">agent</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5"></a>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">  </span><span class="nx">addRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">addRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">  </span><span class="nx">addRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">addRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9"></a>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">keepAlive</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">keepAlive</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">keepAlive</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">keepAlive</span><span class="p">;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-13" name="__codelineno-8-13"></a>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">maxSockets</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">maxSockets</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">maxSockets</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">maxSockets</span><span class="p">;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-17" name="__codelineno-8-17"></a>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">options</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">options</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">options</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">options</span><span class="p">;</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-21" name="__codelineno-8-21"></a>
-<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">defaultPort</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">defaultPort</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">defaultPort</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">defaultPort</span><span class="p">;</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-25" name="__codelineno-8-25"></a>
-<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">protocol</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">protocol</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">protocol</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">agent</span><span class="p">.</span><span class="nx">protocol</span><span class="p">;</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="p">}</span>
 <a id="__codelineno-8-30" name="__codelineno-8-30"></a>
-<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="kd">class</span><span class="w"> </span><span class="nx">TransformHeadersAgent</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">WrappedAgent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="w">  </span><span class="nx">addRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">getHeaderNames</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="kd">class</span><span class="w"> </span><span class="nx">TransformHeadersAgent</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">WrappedAgent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="w">  </span><span class="nx">addRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">getHeaderNames</span><span class="p">();</span>
 <a id="__codelineno-8-34" name="__codelineno-8-34"></a>
-<a id="__codelineno-8-35" name="__codelineno-8-35"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">header</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">headers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-36" name="__codelineno-8-36"></a><span class="w">      </span><span class="nx">request</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">transformHeader</span><span class="p">(</span><span class="nx">header</span><span class="p">),</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">getHeader</span><span class="p">(</span><span class="nx">header</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-8-37" name="__codelineno-8-37"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-35" name="__codelineno-8-35"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">header</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">headers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36"></a><span class="w">      </span><span class="nx">request</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">transformHeader</span><span class="p">(</span><span class="nx">header</span><span class="p">),</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">getHeader</span><span class="p">(</span><span class="nx">header</span><span class="p">));</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-8-38" name="__codelineno-8-38"></a>
-<a id="__codelineno-8-39" name="__codelineno-8-39"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">addRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-8-40" name="__codelineno-8-40"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-39" name="__codelineno-8-39"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">addRequest</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+<a id="__codelineno-8-40" name="__codelineno-8-40"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-41" name="__codelineno-8-41"></a>
-<a id="__codelineno-8-42" name="__codelineno-8-42"></a><span class="w">  </span><span class="nx">transformHeader</span><span class="p">(</span><span class="nx">header</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-43" name="__codelineno-8-43"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">header</span><span class="w"></span>
-<a id="__codelineno-8-44" name="__codelineno-8-44"></a><span class="w">      </span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="w"></span>
-<a id="__codelineno-8-45" name="__codelineno-8-45"></a><span class="w">      </span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">part</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-8-46" name="__codelineno-8-46"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">part</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">part</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-8-47" name="__codelineno-8-47"></a><span class="w">      </span><span class="p">})</span><span class="w"></span>
-<a id="__codelineno-8-48" name="__codelineno-8-48"></a><span class="w">      </span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-8-49" name="__codelineno-8-49"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-8-50" name="__codelineno-8-50"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-8-42" name="__codelineno-8-42"></a><span class="w">  </span><span class="nx">transformHeader</span><span class="p">(</span><span class="nx">header</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-43" name="__codelineno-8-43"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">header</span>
+<a id="__codelineno-8-44" name="__codelineno-8-44"></a><span class="w">      </span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-45" name="__codelineno-8-45"></a><span class="w">      </span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">part</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-46" name="__codelineno-8-46"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">part</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">part</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+<a id="__codelineno-8-47" name="__codelineno-8-47"></a><span class="w">      </span><span class="p">})</span>
+<a id="__codelineno-8-48" name="__codelineno-8-48"></a><span class="w">      </span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-49" name="__codelineno-8-49"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-50" name="__codelineno-8-50"></a><span class="p">}</span>
 <a id="__codelineno-8-51" name="__codelineno-8-51"></a>
-<a id="__codelineno-8-52" name="__codelineno-8-52"></a><span class="kd">const</span><span class="w"> </span><span class="nx">agent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">Agent</span><span class="p">({</span><span class="w"></span>
-<a id="__codelineno-8-53" name="__codelineno-8-53"></a><span class="w">  </span><span class="nx">keepAlive</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-8-54" name="__codelineno-8-54"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-8-52" name="__codelineno-8-52"></a><span class="kd">const</span><span class="w"> </span><span class="nx">agent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">Agent</span><span class="p">({</span>
+<a id="__codelineno-8-53" name="__codelineno-8-53"></a><span class="w">  </span><span class="nx">keepAlive</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-8-54" name="__codelineno-8-54"></a><span class="p">});</span>
 <a id="__codelineno-8-55" name="__codelineno-8-55"></a>
-<a id="__codelineno-8-56" name="__codelineno-8-56"></a><span class="kd">const</span><span class="w"> </span><span class="nx">wrappedAgent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TransformHeadersAgent</span><span class="p">(</span><span class="nx">agent</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-8-56" name="__codelineno-8-56"></a><span class="kd">const</span><span class="w"> </span><span class="nx">wrappedAgent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TransformHeadersAgent</span><span class="p">(</span><span class="nx">agent</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<p>See <a href="../examples/uppercase-headers.js">an example</a>.</p>
-<h2 id="custom-options">Custom options<a class="headerlink" href="#custom-options" title="Permanent link">&para;</a></h2>
-<p>Got v12 throws when an option does not exist. Therefore passing a top-level option such as:</p>
+<p>参看<a href="../examples/uppercase-headers.js">例子</a>.</p>
+<h2 id="_9">自定义选项<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>当一个选项不存在时 Got v12 抛出。因此传递一个顶级选项，如:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">await</span><span class="w"> </span><span class="nx">got</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
-<p>will throw. To prevent this, you need read the option in an <code>init</code> hook:</p>
+<p>将抛出。为了防止这种情况，你需要在<code>init</code>钩子中读取该选项:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
@@ -1497,35 +1604,35 @@ One way out is to disable proxies when retrying. The solution for the Stream API
 <span class="normal"><a href="#__codelineno-10-24">24</a></span>
 <span class="normal"><a href="#__codelineno-10-25">25</a></span>
 <span class="normal"><a href="#__codelineno-10-26">26</a></span>
-<span class="normal"><a href="#__codelineno-10-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-10-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">convertFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"></span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="nx">init</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">      </span><span class="p">(</span><span class="nx">rawOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">rawOptions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">          </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">rawOptions</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">          </span><span class="ow">delete</span><span class="w"> </span><span class="nx">rawOptions</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">      </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="p">],</span><span class="w"></span>
-<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">convertFoo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="nx">init</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">      </span><span class="p">(</span><span class="nx">rawOptions</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">rawOptions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">          </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">rawOptions</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">          </span><span class="ow">delete</span><span class="w"> </span><span class="nx">rawOptions</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="p">});</span>
 <a id="__codelineno-10-15" name="__codelineno-10-15"></a>
-<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">convertFoo</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="nx">beforeRequest</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">      </span><span class="p">(</span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">        </span><span class="nx">options</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">      </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">    </span><span class="p">],</span><span class="w"></span>
-<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">convertFoo</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="nx">beforeRequest</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">      </span><span class="p">(</span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">        </span><span class="nx">options</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="p">});</span>
 <a id="__codelineno-10-25" name="__codelineno-10-25"></a>
-<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="w"> </span><span class="p">}).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">.</span><span class="nx">Foo</span><span class="p">);</span><span class="w"> </span><span class="c1">//=&gt; &#39;bar&#39;</span><span class="w"></span>
+<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="w"> </span><span class="p">}).</span><span class="nx">json</span><span class="p">();</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">.</span><span class="nx">Foo</span><span class="p">);</span><span class="w"> </span><span class="c1">//=&gt; &#39;bar&#39;</span>
 </code></pre></div></td></tr></table></div>
-<p>Eventually, you may want to create a catch-all instance:</p>
+<p>最后，您可能想要创建一个捕获所有实例:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
@@ -1555,45 +1662,48 @@ One way out is to disable proxies when retrying. The solution for the Stream API
 <span class="normal"><a href="#__codelineno-11-27">27</a></span>
 <span class="normal"><a href="#__codelineno-11-28">28</a></span>
 <span class="normal"><a href="#__codelineno-11-29">29</a></span>
-<span class="normal"><a href="#__codelineno-11-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-11-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">catchAllOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"></span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="nx">init</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">      </span><span class="p">(</span><span class="nx">raw</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">raw</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">options</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">            </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">raw</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span><span class="w"></span>
-<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">            </span><span class="ow">delete</span><span class="w"> </span><span class="nx">raw</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span><span class="w"></span>
-<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">          </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">      </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">    </span><span class="p">],</span><span class="w"></span>
-<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">catchAllOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="nx">init</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">      </span><span class="p">(</span><span class="nx">raw</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">raw</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">options</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">            </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">raw</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">            </span><span class="ow">delete</span><span class="w"> </span><span class="nx">raw</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">          </span><span class="p">}</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="p">});</span>
 <a id="__codelineno-11-17" name="__codelineno-11-17"></a>
-<a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">catchAllOptions</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="w">    </span><span class="nx">beforeRequest</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="w">      </span><span class="p">(</span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-11-22" name="__codelineno-11-22"></a><span class="w">        </span><span class="c1">// All custom options will be visible under `options.context`</span><span class="w"></span>
-<a id="__codelineno-11-23" name="__codelineno-11-23"></a><span class="w">        </span><span class="nx">options</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-11-24" name="__codelineno-11-24"></a><span class="w">      </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-11-25" name="__codelineno-11-25"></a><span class="w">    </span><span class="p">],</span><span class="w"></span>
-<a id="__codelineno-11-26" name="__codelineno-11-26"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-11-27" name="__codelineno-11-27"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">catchAllOptions</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="w">  </span><span class="nx">hooks</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="w">    </span><span class="nx">beforeRequest</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="w">      </span><span class="p">(</span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22"></a><span class="w">        </span><span class="c1">// All custom options will be visible under `options.context`</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23"></a><span class="w">        </span><span class="nx">options</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24"></a><span class="w">      </span><span class="p">},</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-11-27" name="__codelineno-11-27"></a><span class="p">});</span>
 <a id="__codelineno-11-28" name="__codelineno-11-28"></a>
-<a id="__codelineno-11-29" name="__codelineno-11-29"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="w"> </span><span class="p">}).</span><span class="nx">json</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-11-30" name="__codelineno-11-30"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">.</span><span class="nx">Foo</span><span class="p">);</span><span class="w"> </span><span class="c1">//=&gt; &#39;bar&#39;</span><span class="w"></span>
+<a id="__codelineno-11-29" name="__codelineno-11-29"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="w"> </span><span class="p">}).</span><span class="nx">json</span><span class="p">();</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headers</span><span class="p">.</span><span class="nx">Foo</span><span class="p">);</span><span class="w"> </span><span class="c1">//=&gt; &#39;bar&#39;</span>
 </code></pre></div></td></tr></table></div>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>It's a good practice to perform the validation inside the <code>init</code> hook. You can safely throw when an option is unknown! Internally, Got uses the <a href="https://github.com/sindresorhus/is"><code>@sindresorhus/is</code></a> package.</li>
-</ul>
-</blockquote>
-<h2 id="electron-net-module-is-not-supported">Electron <code>net</code> module is not supported<a class="headerlink" href="#electron-net-module-is-not-supported" title="Permanent link">&para;</a></h2>
-<p><strong>Note:</strong> Got v12 and later is an ESM package, but Electron does not yet support ESM. So you need to use Got v11.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在<code>init</code>钩子中执行验证是一个很好的做法。
+当选项未知时，可以安全地抛出!
+在内部，Got使用 <a href="https://github.com/sindresorhus/is"><code>@sindresorhus/is</code></a> 包。</p>
+</div>
+<h2 id="electron-net">不支持Electron  <code>net</code> 模块<a class="headerlink" href="#electron-net" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>得到了v12和更高版本的ESM包，但是Electron还不支持ESM。所以你需要使用Got v11。</p>
+</div>
 <p>Got doesn't support the <code>electron.net</code> module. It's missing crucial APIs that are available in Node.js.\
 While Got used to support <code>electron.net</code>, it got very unstable and caused many errors.</p>
 <p>However, you can use <a href="https://www.electronjs.org/docs/api/ipc-main#ipcmainhandlechannel-listener">IPC communication</a> to get the Response object:</p>
@@ -1613,23 +1723,23 @@ While Got used to support <code>electron.net</code>, it got very unstable and ca
 <span class="normal"><a href="#__codelineno-12-14">14</a></span>
 <span class="normal"><a href="#__codelineno-12-15">15</a></span>
 <span class="normal"><a href="#__codelineno-12-16">16</a></span>
-<span class="normal"><a href="#__codelineno-12-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1">// Main process</span><span class="w"></span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;got&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1">// Main process</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;got&quot;</span><span class="p">);</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><span class="w"></span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">  </span><span class="c1">// ...</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="p">});</span>
 <a id="__codelineno-12-7" name="__codelineno-12-7"></a>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="nx">ipcMain</span><span class="p">.</span><span class="nx">handle</span><span class="p">(</span><span class="s2">&quot;got&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">statusCode</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(...</span><span class="nx">args</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">statusCode</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="nx">ipcMain</span><span class="p">.</span><span class="nx">handle</span><span class="p">(</span><span class="s2">&quot;got&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">statusCode</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(...</span><span class="nx">args</span><span class="p">);</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">statusCode</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="p">});</span>
 <a id="__codelineno-12-12" name="__codelineno-12-12"></a>
-<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="c1">// Renderer process</span><span class="w"></span>
-<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">statusCode</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="s2">&quot;got&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
-<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="c1">// Renderer process</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">statusCode</span><span class="p">,</span><span class="w"> </span><span class="nx">headers</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="s2">&quot;got&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">);</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="w">  </span><span class="c1">// ...</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1643,50 +1753,14 @@ While Got used to support <code>electron.net</code>, it got very unstable and ca
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             回到页面顶部
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="页脚" >
-      
-        
-        <a href="../async-stack-traces/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 捕获异步堆栈跟踪" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              捕获异步堆栈跟踪
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../typescript/" class="md-footer__link md-footer__link--next" aria-label="下一页: TypeScript" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              TypeScript
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1708,32 +1782,44 @@ While Got used to support <code>electron.net</code>, it got very unstable and ca
   
     
     
+    
+    
     <a href="https://twitter.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Twitter" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://github.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Github" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://instagram.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Instagram" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://sindresorhus.com/apps" target="_blank" rel="noopener" title="Sindre Sorhus Blog" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
     </a>
   
     
     
-    <a href="https://mastodon.social/@sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Mastodon" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+      
+    
+    
+    
+    <a href="https://mastodon.social/@sindresorhus" target="_blank" rel="noopener me" title="Sindre Sorhus Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
     </a>
   
 </div>
@@ -1747,12 +1833,11 @@ While Got used to support <code>electron.net</code>, it got very unstable and ca
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
       
-    
     
   </body>
 </html>

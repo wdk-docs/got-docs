@@ -1,10 +1,10 @@
 # Axios
 
-Axios is very similar to Got. The difference is that Axios targets browsers first, while Got fully makes use of Node.js features.
+Axios与Got非常相似。区别在于Axios首先针对浏览器，而Got则充分利用了Node.js的特性。
 
-## Common options
+## 常见的选项
 
-These options remain the same as well:
+这些选项也保持不变:
 
 - [`url`](../2-options.md#url)
 - [`method`](../2-options.md#method)
@@ -12,9 +12,9 @@ These options remain the same as well:
 - [`maxRedirects`](../2-options.md#maxredirects)
 - [`decompress`](../2-options.md#decompress)
 
-## Renamed options
+## 重命名选项
 
-We deeply care about readability, so we renamed these options:
+我们非常关心可读性，所以我们重命名了这些选项:
 
 - `httpAgent` → [`agent.http`](../2-options.md#agent)
 - `httpsAgent` → [`agent.https`](../2-options.md#agent)
@@ -25,7 +25,7 @@ We deeply care about readability, so we renamed these options:
 - `data` → [`body`](../2-options.md#body) / [`json`](../2-options.md#json) / [`form`](../2-options.md#form)
 - `params` → [`searchParams`](../2-options.md#serachparams)
 
-## Changes in behavior
+## 行为的改变
 
 - `transformRequest` → [`hooks.beforeRequest`](../9-hooks.md#beforerequest)
   - The API is different.
@@ -38,7 +38,7 @@ We deeply care about readability, so we renamed these options:
 - [`responseType`](../2-options.md#responsetype)
   - Accepts `'text'`, `'json'` or `'buffer'`.
 
-## Breaking changes
+## 突发的变化
 
 - `onUploadProgress`
   - This option does not exist. Instead, use [`got(…).on('uploadProgress', …)`](../3-streams.md#uploadprogress).
@@ -57,9 +57,9 @@ We deeply care about readability, so we renamed these options:
 - `maxBodyLength`
   - This option does not exist.
 
-## Response
+## 响应
 
-The response object is different as well:
+响应对象也不同:
 
 - `response.data` → [`response.body`](../3-streams.md#response-1)
 - `response.status` → [`response.statusCode`](../3-streams.md#response-1)
@@ -70,26 +70,28 @@ The response object is different as well:
 
 The `response.headers` object remains the same.
 
-## Interceptors
+## 拦截器
 
-Got offers [hooks](../9-hooks.md) instead, which are more flexible.
+而是提供了[hooks](../9-hooks.md)，这更灵活。
 
-## Errors
+## 错误
 
-Errors look the same, with the difference `error.request` returns a Got stream. Furthermore, Got provides [more details](../8-errors.md) to make debugging easier.
+错误看起来是一样的，不同的是`error.request`返回一个get流。
+此外，Got还提供了[更多细节](../8-errors.md)，使调试更容易。
 
-## Cancelation
+## 取消
 
-While Got doesn't support [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) yet, you can use `promise.cancel()`.
+虽然Got不支持[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)，你可以使用`promise.cancel()`。
 
-## Convenience methods
+## 方便的方法
 
-Convenience methods, such as `axios.get(…)` etc. remain the same: `got.get(…)`. Instead of `axios.create(…)` use `got.extend(…)`.
+方便的方法，如`axios.get(…)`等保持不变:`got.get(…)`。
+而不是`axios.create(…)`使用 `got.extend(…)`。
 
-## You're good to go!
+## 你可以走了!
 
-Well, you have already come this far :tada:\
-Take a look at the [documentation](../../readme.md#documentation). It's worth the time to read it.\
-There are [some great tips](../tips.md).
+好吧，你已经走了这么远了  :tada:  
+请查看[文档](../README.md#documentation)。值得花时间读一读
+这里有一些很好的建议(../tips.md)。
 
-If something is unclear or doesn't work as it should, don't hesitate to [open an issue](https://github.com/sindresorhus/got/issues/new/choose).
+如果有些事情不清楚或没有正常工作，不要犹豫[提出问题](https://github.com/sindresorhus/got/issues/new/choose).

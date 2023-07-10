@@ -1,6 +1,6 @@
 # 同步 API
 
-源码: [`source/as-promise/index.ts`](../source/as-promise/index.ts)
+源码: [`source/as-promise/index.ts`](./source/as-promise/index.ts)
 
 主Got函数返回一个[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
 虽然为了支持取消，使用[`PCancelable`](https://github.com/sindresorhus/p-cancelable)代替纯`Promise`。

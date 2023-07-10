@@ -1,6 +1,6 @@
 # Node.js
 
-Let's make a simple request. With Node.js, this is:
+让我们提出一个简单的请求。对于Node.js，这是:
 
 ```js
 import http from "node:http";
@@ -38,7 +38,7 @@ request.once("error", console.error);
 request.end();
 ```
 
-With Got, this becomes:
+使用 Got, 这就变成了:
 
 ```js
 import got from "got";
@@ -51,7 +51,7 @@ try {
 }
 ```
 
-Much cleaner. But what about streams?
+更加清晰。但是流呢?
 
 ```js
 import http from "node:http";
@@ -72,7 +72,7 @@ const request = http.request(
 source.pipe(request);
 ```
 
-Well, it's easy as that:
+嗯，就这么简单:
 
 ```js
 import got from "got";
@@ -86,16 +86,17 @@ await stream.promises.pipeline(
 );
 ```
 
-The advantage is that Got also handles errors automatically, so you don't have to create custom listeners.
+优点是Got还自动处理错误，因此您不必创建自定义侦听器。
 
-Furthermore, Got supports redirects, compression, advanced timeouts, cache, pagination, cookies, hooks, and more!
+此外，Got还支持重定向、压缩、高级超时、缓存、分页、cookie、钩子等等!
 
-## What next?
+## 下一个什么?
 
-Unfortunately Got options differ too much from the Node.js options. It's not possible to provide a brief summary.\
-Don't worry, you will learn them fast - they are easy to understand! Every option has an example attached.
+不幸的是，Got选项与Node.js选项差别太大。提供一个简短的总结是不可能的。  
+别担心，你会很快学会的——它们很容易理解!每个选项都附有示例。
 
-Take a look at the [documentation](../../readme.md#documentation). It's worth the time to read it.\
-There are [some great tips](../tips.md).
+请查看[文档](../README.md#documentation)。
+值得花时间去读。
+这里有一些很好的建议(../tips.md)。
 
-If something is unclear or doesn't work as it should, don't hesitate to [open an issue](https://github.com/sindresorhus/got/issues/new/choose).
+如果有些事情不清楚或没有正常工作，不要犹豫[提出问题](https://github.com/sindresorhus/got/issues/new/choose).

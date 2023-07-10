@@ -2,7 +2,7 @@
 
 ## 构造函数
 
-源码: [`source/core/index.ts`](../source/core/index.ts)
+源码: [`source/core/index.ts`](./source/core/index.ts)
 
 **`got.stream(url, options, defaults)`**
 
@@ -340,7 +340,7 @@ Whether piping is disabled or not. This property is used by the Promise API.
 
 # `Response`
 
-源码: [`source/core/response.ts`](../source/core/response.ts)
+源码: [`source/core/response.ts`](./source/core/response.ts)
 
 **Extends: [`IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage)**
 

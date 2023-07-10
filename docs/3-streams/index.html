@@ -14,20 +14,22 @@
       
         <link rel="canonical" href="https://wdk-docs.github.io/got-docs/3-streams/">
       
+      
+        <link rel="prev" href="../2-options/">
+      
+      
+        <link rel="next" href="../4-pagination/">
+      
       <link rel="icon" href="../assets/favicons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>Stream API - Got 文档</title>
+        <title>流 API - Got 文档</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
       
       
 
@@ -55,14 +57,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -70,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stream-api" class="md-skip">
+        <a href="#api" class="md-skip">
           跳转至
         </a>
       
@@ -84,7 +83,7 @@
 
   
 
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href=".." title="Got 文档" class="md-header__button md-logo" aria-label="Got 文档" data-md-component="logo">
       
@@ -104,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stream API
+              流 API
             
           </span>
         </div>
@@ -139,7 +138,7 @@
           <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -151,7 +150,7 @@
         <a href="https://github.com/wdk-docs/got-docs" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     wdk-docs/got-docs
@@ -164,7 +163,7 @@
     
       
 <nav class="md-tabs" aria-label="标签" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -272,7 +271,7 @@
       <a href="https://github.com/wdk-docs/got-docs" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     wdk-docs/got-docs
@@ -293,8 +292,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
       
       
         
@@ -327,7 +327,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="首页" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           首页
@@ -343,7 +343,7 @@
   
     <li class="md-nav__item">
       <a href="../quick-start/" class="md-nav__link">
-        快速入门指南
+        快速入门
       </a>
     </li>
   
@@ -439,39 +439,40 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
-        <label class="md-nav__link" for="__nav_2">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           接口
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="接口" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           接口
@@ -485,7 +486,7 @@
   
     <li class="md-nav__item">
       <a href="../1-promise/" class="md-nav__link">
-        Promise API
+        同步 API
       </a>
     </li>
   
@@ -515,19 +516,19 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Stream API
+          流 API
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Stream API
+        流 API
       </a>
       
         
@@ -546,114 +547,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gotstreamurl-options-defaults" class="md-nav__link">
-    got.stream(url, options, defaults)
+  <a href="#_1" class="md-nav__link">
+    构造函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#goturl-options-isstream-true-defaults" class="md-nav__link">
-    got(url, {...options, isStream: true}, defaults)
+  <a href="#_2" class="md-nav__link">
+    选项
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-requesturl-options-defaults" class="md-nav__link">
-    new Request(url, options, defaults)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="选项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#streamoptions" class="md-nav__link">
     stream.options
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamresponse" class="md-nav__link">
     stream.response
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamrequesturl" class="md-nav__link">
     stream.requestUrl
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamredirecturls" class="md-nav__link">
     stream.redirectUrls
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamretrycount" class="md-nav__link">
     stream.retryCount
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamip" class="md-nav__link">
     stream.ip
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamisaborted" class="md-nav__link">
     stream.isAborted
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamsocket" class="md-nav__link">
     stream.socket
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamdownloadprogress" class="md-nav__link">
     stream.downloadProgress
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamuploadprogress" class="md-nav__link">
     stream.uploadProgress
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamtimings" class="md-nav__link">
     stream.timings
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamisfromcache" class="md-nav__link">
     stream.isFromCache
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamreusedsocket" class="md-nav__link">
     stream.reusedSocket
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -673,7 +673,7 @@
   
     <li class="md-nav__item">
       <a href="../4-pagination/" class="md-nav__link">
-        Pagination API
+        分页 API
       </a>
     </li>
   
@@ -687,7 +687,7 @@
   
     <li class="md-nav__item">
       <a href="../5-https/" class="md-nav__link">
-        Advanced HTTPS API
+        高级 HTTPS API
       </a>
     </li>
   
@@ -701,7 +701,7 @@
   
     <li class="md-nav__item">
       <a href="../6-timeout/" class="md-nav__link">
-        Timeout options
+        超时选项
       </a>
     </li>
   
@@ -715,7 +715,7 @@
   
     <li class="md-nav__item">
       <a href="../7-retry/" class="md-nav__link">
-        Retry API
+        重试 API
       </a>
     </li>
   
@@ -729,7 +729,7 @@
   
     <li class="md-nav__item">
       <a href="../8-errors/" class="md-nav__link">
-        Errors
+        错误
       </a>
     </li>
   
@@ -743,7 +743,7 @@
   
     <li class="md-nav__item">
       <a href="../9-hooks/" class="md-nav__link">
-        Hooks API
+        钩子 API
       </a>
     </li>
   
@@ -757,7 +757,7 @@
   
     <li class="md-nav__item">
       <a href="../10-instances/" class="md-nav__link">
-        Instances
+        实例
       </a>
     </li>
   
@@ -781,8 +781,9 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -809,7 +810,7 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="迁移指南" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           迁移指南
@@ -877,13 +878,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
         
           
             
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
       
@@ -893,15 +907,103 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../examples/">示例</a>
           
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
-      <nav class="md-nav" aria-label="示例" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           示例
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/advanced-creation/" class="md-nav__link">
+        先进的创造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/gh-got/" class="md-nav__link">
+        Github
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/h2c/" class="md-nav__link">
+        h2c
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/pagination/" class="md-nav__link">
+        分页
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/runkit-example/" class="md-nav__link">
+        runkit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/uppercase-headers/" class="md-nav__link">
+        大写标题
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -937,114 +1039,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gotstreamurl-options-defaults" class="md-nav__link">
-    got.stream(url, options, defaults)
+  <a href="#_1" class="md-nav__link">
+    构造函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#goturl-options-isstream-true-defaults" class="md-nav__link">
-    got(url, {...options, isStream: true}, defaults)
+  <a href="#_2" class="md-nav__link">
+    选项
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-requesturl-options-defaults" class="md-nav__link">
-    new Request(url, options, defaults)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="选项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#streamoptions" class="md-nav__link">
     stream.options
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamresponse" class="md-nav__link">
     stream.response
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamrequesturl" class="md-nav__link">
     stream.requestUrl
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamredirecturls" class="md-nav__link">
     stream.redirectUrls
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamretrycount" class="md-nav__link">
     stream.retryCount
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamip" class="md-nav__link">
     stream.ip
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamisaborted" class="md-nav__link">
     stream.isAborted
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamsocket" class="md-nav__link">
     stream.socket
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamdownloadprogress" class="md-nav__link">
     stream.downloadProgress
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamuploadprogress" class="md-nav__link">
     stream.uploadProgress
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamtimings" class="md-nav__link">
     stream.timings
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamisfromcache" class="md-nav__link">
     stream.isFromCache
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#streamreusedsocket" class="md-nav__link">
     stream.reusedSocket
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1065,36 +1166,35 @@
 
 
 
-  <a href="https://github.com/wdk-docs/got-docs/edit/master/content/3-streams.md" title="编辑此页" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
-<h1 id="stream-api">Stream API<a class="headerlink" href="#stream-api" title="Permanent link">&para;</a></h1>
-<p>Source code: <a href="../source/core/index.ts"><code>source/core/index.ts</code></a></p>
-<h2 id="gotstreamurl-options-defaults"><code>got.stream(url, options, defaults)</code><a class="headerlink" href="#gotstreamurl-options-defaults" title="Permanent link">&para;</a></h2>
-<h2 id="goturl-options-isstream-true-defaults"><code>got(url, {...options, isStream: true}, defaults)</code><a class="headerlink" href="#goturl-options-isstream-true-defaults" title="Permanent link">&para;</a></h2>
-<p>The two functions above are exposed by the <code>got</code> main interface and return a new instance of <code>Request</code>.</p>
-<h2 id="new-requesturl-options-defaults"><code>new Request(url, options, defaults)</code><a class="headerlink" href="#new-requesturl-options-defaults" title="Permanent link">&para;</a></h2>
+<h1 id="api">流 API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
+<h2 id="_1">构造函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>源码: <a href="../source/core/index.ts"><code>source/core/index.ts</code></a></p>
+<p><strong><code>got.stream(url, options, defaults)</code></strong></p>
+<p><strong><code>got(url, {...options, isStream: true}, defaults)</code></strong></p>
+<p>上面的两个函数由 <code>got</code> 主界面公开，并返回 <code>Request</code> 的一个新实例。</p>
+<p><strong><code>new Request(url, options, defaults)</code></strong></p>
 <p><strong>Extends: <a href="https://nodejs.org/api/stream.html#stream_class_stream_duplex"><code>Duplex</code> stream</a></strong></p>
-<p>This constructor takes the same arguments as the Got promise.</p>
-<p><strong>Note:</strong></p>
-<blockquote>
-<p>When piping to <a href="https://nodejs.org/api/http.html#http_class_http_serverresponse"><code>ServerResponse</code></a>, the headers will be automatically copied.<br />
-In order to prevent this behavior you need to override the request headers in a <a href="../9-hooks/#beforerequest"><code>beforeRequest</code></a> hook.</p>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<p>If the <code>body</code>, <code>json</code> or <code>form</code> option is used, this stream will be read-only.</p>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
+<p>此构造函数接受与 Got 承诺相同的参数。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当连接到<a href="https://nodejs.org/api/http.html#http_class_http_serverresponse"> <code>ServerResponse</code> </a>时，头将被自动复制。
+为了防止这种行为，你需要覆盖一个<a href="../9-hooks/# beforeRequest"> <code>beforeRequest</code> </a>钩子中的请求头。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果使用 <code>body</code> ，  <code>json</code> 或 <code>form</code> 选项，此流将是只读的。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
-<li>While <code>got.post('https://example.com')</code> resolves, <code>got.stream.post('https://example.com')</code> will hang indefinitely until a body is provided.</li>
-<li>If there's no body on purpose, remember to <code>stream.end()</code> or set the body option to an empty string.</li>
+<li>当 <code>got.post('https://example.com')</code> 被解析时， <code>got.stream.post('https://example.com')</code> 将无限期挂起，直到提供正文。</li>
+<li>如果故意没有body，请记住 <code>stream.end()</code> 或将body选项设置为空字符串。</li>
 </ul>
-</blockquote>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1114,78 +1214,91 @@ In order to prevent this behavior you need to override the request headers in a 
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
 <span class="normal"><a href="#__codelineno-0-18">18</a></span>
 <span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">promisify</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:util&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:stream&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:fs&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">promisify</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:util&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:stream&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:fs&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">promisify</span><span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">pipeline</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">promisify</span><span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">pipeline</span><span class="p">);</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">// This example streams the GET response of a URL to a file.</span><span class="w"></span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">await</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">),</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c1">// For POST, PUT, PATCH, and DELETE methods, `got.stream` returns a `stream.Writable`.</span><span class="w"></span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1">// This example POSTs the contents of a file to a URL.</span><span class="w"></span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="k">await</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="w"></span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">  </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">),</span><span class="w"></span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">),</span><span class="w"></span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">stream</span><span class="p">.</span><span class="nx">PassThrough</span><span class="p">()</span><span class="w"></span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="c1">// In order to POST, PUT, PATCH, or DELETE without a request body, explicitly specify an empty body:</span><span class="w"></span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="k">await</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">stream</span><span class="p">.</span><span class="nx">PassThrough</span><span class="p">());</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">// 这个示例将URL的GET响应流式传输到文件。</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">await</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">);</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="c1">// 对于POST, PUT, PATCH和DELETE方法， `got.stream` 返回一个 `stream.Writable` 。</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c1">// 这个例子将一个文件的内容post到一个URL。</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="k">await</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">  </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">  </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">stream</span><span class="p">.</span><span class="nx">PassThrough</span><span class="p">()</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="p">);</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="c1">// 为了在没有请求体的情况下POST、PUT、PATCH或DELETE，显式地指定一个空体:</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="k">await</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">  </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://sindresorhus.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">}),</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">stream</span><span class="p">.</span><span class="nx">PassThrough</span><span class="p">()</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<p>Please note that <code>new stream.PassThrough()</code> is required in order to catch read errors.<br />
-If it was missing then <code>pipeline</code> wouldn't catch any read errors because there would be no stream to pipe to.<br />
-In other words, it would only check errors when writing.</p>
-<p><strong>Tip:</strong></p>
-<blockquote>
+<p>请注意，为了捕捉读取错误， <code>new stream.PassThrough()</code> 是必需的。
+如果没有，那么 <code>pipeline</code> 将不会捕获任何读取错误，因为没有流可以管道。
+换句话说，它只在写入时检查错误。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ul>
-<li>Avoid <code>from.pipe(to)</code> as it doesn't forward errors.</li>
+<li>避免使用 <code>from.pipe(to)</code> ，因为它不会转发错误。</li>
 </ul>
-</blockquote>
-<h2 id="streamoptions"><code>stream.options</code><a class="headerlink" href="#streamoptions" title="Permanent link">&para;</a></h2>
+</div>
+<h2 id="_2">选项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="streamoptions"><code>stream.options</code><a class="headerlink" href="#streamoptions" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <a href="../2-options/"><code>Options</code></a></strong></p>
-<p>The options used to make the request.</p>
-<h2 id="streamresponse"><code>stream.response</code><a class="headerlink" href="#streamresponse" title="Permanent link">&para;</a></h2>
+<p>用于发出请求的选项。</p>
+<h3 id="streamresponse"><code>stream.response</code><a class="headerlink" href="#streamresponse" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage"><code>IncomingMessage</code></a></strong></p>
-<p>The underlying <code>IncomingMessage</code> instance.</p>
-<h2 id="streamrequesturl"><code>stream.requestUrl</code><a class="headerlink" href="#streamrequesturl" title="Permanent link">&para;</a></h2>
+<p>底层的 <code>IncomingMessage</code> 实例。</p>
+<h3 id="streamrequesturl"><code>stream.requestUrl</code><a class="headerlink" href="#streamrequesturl" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <a href="https://nodejs.org/api/url.html#url_the_whatwg_url_api"><code>URL</code></a></strong></p>
-<p>The current <code>URL</code> object in this try.</p>
-<h2 id="streamredirecturls"><code>stream.redirectUrls</code><a class="headerlink" href="#streamredirecturls" title="Permanent link">&para;</a></h2>
+<p>这次尝试中的当前“URL”对象。</p>
+<h3 id="streamredirecturls"><code>stream.redirectUrls</code><a class="headerlink" href="#streamredirecturls" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <a href="https://nodejs.org/api/url.html#url_the_whatwg_url_api"><code>URL[]</code></a></strong></p>
-<p>An array of URLs of consecutive requests.</p>
-<h2 id="streamretrycount"><code>stream.retryCount</code><a class="headerlink" href="#streamretrycount" title="Permanent link">&para;</a></h2>
+<p>连续请求的 url 数组。</p>
+<h3 id="streamretrycount"><code>stream.retryCount</code><a class="headerlink" href="#streamretrycount" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>number</code></strong></p>
-<p>The current retry count.</p>
-<p><strong>Note:</strong></p>
-<blockquote>
+<p>当前重试计数。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
-<li>Must be overriden when retrying.</li>
+<li>重试时必须重写。</li>
 </ul>
-</blockquote>
-<h2 id="streamip"><code>stream.ip</code><a class="headerlink" href="#streamip" title="Permanent link">&para;</a></h2>
+</div>
+<h3 id="streamip"><code>stream.ip</code><a class="headerlink" href="#streamip" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>string | undefined</code></strong></p>
-<p>The destination IP address.</p>
-<h2 id="streamisaborted"><code>stream.isAborted</code><a class="headerlink" href="#streamisaborted" title="Permanent link">&para;</a></h2>
+<p>目的 IP 地址。</p>
+<h3 id="streamisaborted"><code>stream.isAborted</code><a class="headerlink" href="#streamisaborted" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>boolean</code></strong></p>
-<p>Whether the request has been aborted or not.</p>
-<h2 id="streamsocket"><code>stream.socket</code><a class="headerlink" href="#streamsocket" title="Permanent link">&para;</a></h2>
+<p>请求是否被中止。</p>
+<h3 id="streamsocket"><code>stream.socket</code><a class="headerlink" href="#streamsocket" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>net.Socket | tls.Socket | undefined</code></strong></p>
-<p>The socket used for this particular request.</p>
-<h2 id="streamdownloadprogress"><code>stream.downloadProgress</code><a class="headerlink" href="#streamdownloadprogress" title="Permanent link">&para;</a></h2>
+<p>用于此特定请求的套接字。</p>
+<h3 id="streamdownloadprogress"><code>stream.downloadProgress</code><a class="headerlink" href="#streamdownloadprogress" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <a href="../typescript/#progress"><code>Progress</code></a></strong></p>
-<p>An object representing how much data have been downloaded.</p>
-<h2 id="streamuploadprogress"><code>stream.uploadProgress</code><a class="headerlink" href="#streamuploadprogress" title="Permanent link">&para;</a></h2>
+<p>表示已下载数据量的对象。</p>
+<h3 id="streamuploadprogress"><code>stream.uploadProgress</code><a class="headerlink" href="#streamuploadprogress" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <a href="../typescript/#progress"><code>Progress</code></a></strong></p>
-<p>An object representing how much data have been uploaded.</p>
-<p><strong>Note:</strong></p>
-<blockquote>
+<p>表示已上传数据量的对象。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
-<li>When a chunk is greater than <code>highWaterMark</code>, the progress won't be emitted. The body needs to be split into chunks.</li>
+<li>当一个chunk大于 <code>highWaterMark</code> 时，进度将不会被触发。体需要被分成几块。</li>
 </ul>
-</blockquote>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -1204,39 +1317,39 @@ In other words, it would only check errors when writing.</p>
 <span class="normal"><a href="#__codelineno-1-16">16</a></span>
 <span class="normal"><a href="#__codelineno-1-17">17</a></span>
 <span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="nx">alloc</span><span class="p">(</span><span class="mf">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1024</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1MB</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="nx">alloc</span><span class="p">(</span><span class="mf">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1024</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1MB</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">chunkify</span><span class="p">(</span><span class="nx">buffer</span><span class="p">,</span><span class="w"> </span><span class="nx">chunkSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">64</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1024</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">byteLength</span><span class="p">;</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">chunkSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">subarray</span><span class="p">(</span><span class="nx">pos</span><span class="p">,</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">chunkSize</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">chunkify</span><span class="p">(</span><span class="nx">buffer</span><span class="p">,</span><span class="w"> </span><span class="nx">chunkSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">64</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1024</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">byteLength</span><span class="p">;</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">chunkSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nx">subarray</span><span class="p">(</span><span class="nx">pos</span><span class="p">,</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">chunkSize</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">chunkify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span><span class="w"></span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/anything&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">chunkify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">});</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="nx">stream</span><span class="p">.</span><span class="nx">resume</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="nx">stream</span><span class="p">.</span><span class="nx">resume</span><span class="p">();</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="nx">stream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;uploadProgress&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="p">});</span><span class="w"></span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="nx">stream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;uploadProgress&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">);</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="streamtimings"><code>stream.timings</code><a class="headerlink" href="#streamtimings" title="Permanent link">&para;</a></h2>
+<h3 id="streamtimings"><code>stream.timings</code><a class="headerlink" href="#streamtimings" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <a href="../typescript/#timings"><code>Timings</code></a></strong></p>
 <p>An object representing performance information.</p>
 <p>To generate the timings, Got uses the <a href="https://github.com/szmarczak/http-timer"><code>http-timer</code></a> package.</p>
-<h2 id="streamisfromcache"><code>stream.isFromCache</code><a class="headerlink" href="#streamisfromcache" title="Permanent link">&para;</a></h2>
+<h3 id="streamisfromcache"><code>stream.isFromCache</code><a class="headerlink" href="#streamisfromcache" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>boolean | undefined</code></strong></p>
 <p>Whether the response has been fetched from cache.</p>
-<h2 id="streamreusedsocket"><code>stream.reusedSocket</code><a class="headerlink" href="#streamreusedsocket" title="Permanent link">&para;</a></h2>
+<h3 id="streamreusedsocket"><code>stream.reusedSocket</code><a class="headerlink" href="#streamreusedsocket" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>boolean</code></strong></p>
 <p>Whether the socket was used for other previous requests.</p>
 <h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h1>
-<h2 id="streamonresponse"><code>stream.on('response', …)</code><a class="headerlink" href="#streamonresponse" title="Permanent link">&para;</a></h2>
-<h3 id="response"><code>response</code><a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<h3 id="streamonresponse"><code>stream.on('response', …)</code><a class="headerlink" href="#streamonresponse" title="Permanent link">&para;</a></h3>
+<h4 id="response"><code>response</code><a class="headerlink" href="#response" title="Permanent link">&para;</a></h4>
 <p><strong>类型: <a href="../typescript/#plainresponse"><code>PlainResponse</code></a></strong></p>
 <p>This is emitted when a HTTP response is received.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -1268,65 +1381,69 @@ In other words, it would only check errors when writing.</p>
 <span class="normal"><a href="#__codelineno-2-27">27</a></span>
 <span class="normal"><a href="#__codelineno-2-28">28</a></span>
 <span class="normal"><a href="#__codelineno-2-29">29</a></span>
-<span class="normal"><a href="#__codelineno-2-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:stream/promises&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createWriteStream</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:fs&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:stream/promises&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createWriteStream</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:fs&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">readStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;http://example.com/image.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">throwHttpErrors</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">onError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">  </span><span class="c1">// Do something with it.</span><span class="w"></span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">};</span><span class="w"></span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="nx">readStream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;response&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">3600</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Failure - response too old&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="nx">readStream</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span><span class="w"> </span><span class="c1">// Destroy the stream to prevent hanging resources.</span><span class="w"></span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">  </span><span class="c1">// Prevent `onError` being called twice.</span><span class="w"></span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">  </span><span class="nx">readStream</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">onError</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="nx">readStream</span><span class="p">,</span><span class="w"> </span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">&quot;image.png&quot;</span><span class="p">));</span><span class="w"></span>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Success&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">    </span><span class="nx">onError</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="p">});</span><span class="w"></span>
-<a id="__codelineno-2-29" name="__codelineno-2-29"></a>
-<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="nx">readStream</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">onError</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">readStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;http://example.com/image.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">  </span><span class="nx">throwHttpErrors</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">});</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">onError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">  </span><span class="c1">// Do something with it.</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="p">};</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="nx">readStream</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;response&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">age</span><span class="w">     </span><span class="mf">3600</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Failure - response too old&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="nx">readStream</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span><span class="w"> </span><span class="c1">// Destroy the stream to prevent hanging resources.</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">  </span><span class="c1">// Prevent `onError` being called twice.</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">  </span><span class="nx">readStream</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">onError</span><span class="p">);</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">pipeline</span><span class="p">(</span><span class="nx">readStream</span><span class="p">,</span><span class="w"> </span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">&quot;image.png&quot;</span><span class="p">));</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Success&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">    </span><span class="nx">onError</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="p">});</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="nx">readStream</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">onError</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="streamondownloadprogress"><code>stream.on('downloadProgress', …)</code><a class="headerlink" href="#streamondownloadprogress" title="Permanent link">&para;</a></h2>
-<h3 id="progress"><code>progress</code><a class="headerlink" href="#progress" title="Permanent link">&para;</a></h3>
+<h3 id="streamondownloadprogress"><code>stream.on('downloadProgress', …)</code><a class="headerlink" href="#streamondownloadprogress" title="Permanent link">&para;</a></h3>
+<h4 id="progress"><code>progress</code><a class="headerlink" href="#progress" title="Permanent link">&para;</a></h4>
 <p><strong>类型: <a href="../typescript/#progress"><code>Progress</code></a></strong></p>
 <p>This is emitted on every time <code>stream.downloadProgress</code> is updated.</p>
-<h2 id="streamonuploadprogress"><code>stream.on('uploadProgress', …)</code><a class="headerlink" href="#streamonuploadprogress" title="Permanent link">&para;</a></h2>
-<h3 id="progress_1"><code>progress</code><a class="headerlink" href="#progress_1" title="Permanent link">&para;</a></h3>
+<h3 id="streamonuploadprogress"><code>stream.on('uploadProgress', …)</code><a class="headerlink" href="#streamonuploadprogress" title="Permanent link">&para;</a></h3>
+<h4 id="progress_1"><code>progress</code><a class="headerlink" href="#progress_1" title="Permanent link">&para;</a></h4>
 <p><strong>类型: <a href="../typescript/#progress"><code>Progress</code></a></strong></p>
 <p>This is emitted on every time <code>stream.uploadProgress</code> is updated.</p>
 <p><a name="retry"></a></p>
-<h2 id="streamonretry"><code>stream.on('retry', …)</code><a class="headerlink" href="#streamonretry" title="Permanent link">&para;</a></h2>
+<h3 id="streamonretry"><code>stream.on('retry', …)</code><a class="headerlink" href="#streamonretry" title="Permanent link">&para;</a></h3>
 <p>To enable retrying when using streams, a retry handler must be attached.</p>
 <p>When this event is emitted, you should reset the stream you were writing to and prepare the body again.</p>
-<p><strong>Note:</strong></p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li><a href="../8-errors/#httperror"><code>HTTPError</code>s</a> cannot be retried if <a href="../2-options/#throwhttperrors"><code>options.throwHttpErrors</code></a> is <code>false</code>.
   This is because stream data is saved to <code>error.response.body</code> and streams can be read only once.</li>
 <li>For the Promise API, there is no such limitation.</li>
 </ul>
-</blockquote>
-<h3 id="retrycount"><code>retryCount</code><a class="headerlink" href="#retrycount" title="Permanent link">&para;</a></h3>
+</div>
+<h4 id="retrycount"><code>retryCount</code><a class="headerlink" href="#retrycount" title="Permanent link">&para;</a></h4>
 <p><strong>类型: <code>number</code></strong></p>
 <p>The current retry count.</p>
-<h3 id="error"><code>error</code><a class="headerlink" href="#error" title="Permanent link">&para;</a></h3>
+<h4 id="error"><code>error</code><a class="headerlink" href="#error" title="Permanent link">&para;</a></h4>
 <p><strong>类型: <a href="../8-errors/#requesterror"><code>RequestError</code></a></strong></p>
 <p>The error that caused this retry.</p>
-<h3 id="createretrystream"><code>createRetryStream</code><a class="headerlink" href="#createretrystream" title="Permanent link">&para;</a></h3>
-<p><strong>类型: <code>(options?: OptionsInit) =&gt; Request</code></strong></p>
+<h4 id="createretrystream"><code>createRetryStream</code><a class="headerlink" href="#createretrystream" title="Permanent link">&para;</a></h4>
+<p><strong>类型: <code>(options?: OptionsInit) =    Request</code></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -1356,134 +1473,134 @@ In other words, it would only check errors when writing.</p>
 <span class="normal"><a href="#__codelineno-3-27">27</a></span>
 <span class="normal"><a href="#__codelineno-3-28">28</a></span>
 <span class="normal"><a href="#__codelineno-3-29">29</a></span>
-<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:fs&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;node:fs&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;got&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">writeStream</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kd">let</span><span class="w"> </span><span class="nx">writeStream</span><span class="p">;</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">retryStream</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">      </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">  </span><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">retryStream</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">      </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">  </span><span class="p">};</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">retryStream</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">retryStream</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="nx">got</span><span class="p">.</span><span class="nx">stream</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14"></a>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">writeStream</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">    </span><span class="nx">writeStream</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">writeStream</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">    </span><span class="nx">writeStream</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-3-18" name="__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">  </span><span class="nx">writeStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">&quot;example-com.html&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">  </span><span class="nx">writeStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s2">&quot;example-com.html&quot;</span><span class="p">);</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20"></a>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">  </span><span class="nx">stream</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">writeStream</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">  </span><span class="nx">stream</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">writeStream</span><span class="p">);</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22"></a>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">  </span><span class="c1">// If you don&#39;t attach the listener, it will NOT make a retry.</span><span class="w"></span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">  </span><span class="c1">// It automatically checks the listener count so it knows whether to retry or not :)</span><span class="w"></span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">  </span><span class="nx">stream</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;retry&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">retryCount</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">createRetryStream</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="nx">fn</span><span class="p">(</span><span class="nx">createRetryStream</span><span class="p">());</span><span class="w"> </span><span class="c1">// or: fn(createRetryStream(optionsToMerge))</span><span class="w"></span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">  </span><span class="p">});</span><span class="w"></span>
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="p">};</span><span class="w"></span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">  </span><span class="c1">// If you don&#39;t attach the listener, it will NOT make a retry.</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">  </span><span class="c1">// It automatically checks the listener count so it knows whether to retry or not :)</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">  </span><span class="nx">stream</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;retry&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">retryCount</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">createRetryStream</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="nx">fn</span><span class="p">(</span><span class="nx">createRetryStream</span><span class="p">());</span><span class="w"> </span><span class="c1">// or: fn(createRetryStream(optionsToMerge))</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="p">};</span>
 <a id="__codelineno-3-29" name="__codelineno-3-29"></a>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="nx">fn</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="nx">fn</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="streamonredirect"><code>stream.on('redirect', …)</code><a class="headerlink" href="#streamonredirect" title="Permanent link">&para;</a></h2>
-<h3 id="updatedoptions"><code>updatedOptions</code><a class="headerlink" href="#updatedoptions" title="Permanent link">&para;</a></h3>
+<h3 id="streamonredirect"><code>stream.on('redirect', …)</code><a class="headerlink" href="#streamonredirect" title="Permanent link">&para;</a></h3>
+<h4 id="updatedoptions"><code>updatedOptions</code><a class="headerlink" href="#updatedoptions" title="Permanent link">&para;</a></h4>
 <p><strong>类型: <a href="../2-options/"><code>Options</code></a></strong></p>
 <p>The new options used to make the next request.</p>
-<h3 id="response_1"><code>response</code><a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<h4 id="response_1"><code>response</code><a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h4>
 <p><strong>类型: <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage"><code>IncomingMessage</code></a></strong></p>
 <p>The <code>IncomingMessage</code> instance the redirect came from.</p>
 <h1 id="internal-usage">Internal usage<a class="headerlink" href="#internal-usage" title="Permanent link">&para;</a></h1>
 <p>This are the functions used internally by Got.<br />
 Other non-documented functions are private and should not be accessible.</p>
-<h2 id="streamflush"><code>stream.flush()</code><a class="headerlink" href="#streamflush" title="Permanent link">&para;</a></h2>
+<h3 id="streamflush"><code>stream.flush()</code><a class="headerlink" href="#streamflush" title="Permanent link">&para;</a></h3>
 <p>This function is executed automatically by Got. It marks the current stream as ready. If an error occurs before <code>stream.flush()</code> is called, it's thrown immediately after <code>stream.flush()</code>.</p>
-<h2 id="stream_beforeerrorerror"><code>stream._beforeError(error)</code><a class="headerlink" href="#stream_beforeerrorerror" title="Permanent link">&para;</a></h2>
+<h3 id="stream_beforeerrorerror"><code>stream._beforeError(error)</code><a class="headerlink" href="#stream_beforeerrorerror" title="Permanent link">&para;</a></h3>
 <p>This function is called instead <code>stream.destroy(error)</code>, required in order to exectue async logic, such as reading the response (e.g. when <code>ERR_NON_2XX_3XX_RESPONSE</code> occurs).</p>
-<h2 id="stream_nopipe"><code>stream._noPipe</code><a class="headerlink" href="#stream_nopipe" title="Permanent link">&para;</a></h2>
+<h3 id="stream_nopipe"><code>stream._noPipe</code><a class="headerlink" href="#stream_nopipe" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>boolean</code></strong></p>
 <p>Whether piping is disabled or not. This property is used by the Promise API.</p>
 <hr />
 <h1 id="response_2"><code>Response</code><a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h1>
-<p>Source code: <a href="../source/core/response.ts"><code>source/core/response.ts</code></a></p>
+<p>源码: <a href="../source/core/response.ts"><code>source/core/response.ts</code></a></p>
 <p><strong>Extends: <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage"><code>IncomingMessage</code></a></strong></p>
-<h2 id="requesturl"><code>requestUrl</code><a class="headerlink" href="#requesturl" title="Permanent link">&para;</a></h2>
+<h3 id="requesturl"><code>requestUrl</code><a class="headerlink" href="#requesturl" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>URL</code></strong></p>
 <p>The original request URL. It is the first argument when calling <code>got(…)</code>.</p>
-<h2 id="redirecturls"><code>redirectUrls</code><a class="headerlink" href="#redirecturls" title="Permanent link">&para;</a></h2>
+<h3 id="redirecturls"><code>redirectUrls</code><a class="headerlink" href="#redirecturls" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>URL[]</code></strong></p>
 <p>The redirect URLs.</p>
-<h2 id="request"><code>request</code><a class="headerlink" href="#request" title="Permanent link">&para;</a></h2>
+<h3 id="request"><code>request</code><a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>Request</code></strong></p>
 <p>The underlying Got stream.</p>
-<h2 id="ip"><code>ip</code><a class="headerlink" href="#ip" title="Permanent link">&para;</a></h2>
+<h3 id="ip"><code>ip</code><a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>string</code></strong></p>
 <p>The server's IP address.</p>
-<p><strong>Note:</strong></p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>Not available when the response is cached.</li>
 </ul>
-</blockquote>
-<h2 id="isfromcache"><code>isFromCache</code><a class="headerlink" href="#isfromcache" title="Permanent link">&para;</a></h2>
+</div>
+<h3 id="isfromcache"><code>isFromCache</code><a class="headerlink" href="#isfromcache" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>boolean</code></strong></p>
 <p>Whether the response comes from cache or not.</p>
-<h2 id="ok"><code>ok</code><a class="headerlink" href="#ok" title="Permanent link">&para;</a></h2>
+<h3 id="ok"><code>ok</code><a class="headerlink" href="#ok" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>boolean</code></strong></p>
 <p>Whether the response was successful</p>
-<p><strong>Note:</strong></p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>A request is successful when the status code of the final request is <code>2xx</code> or <code>3xx</code>.</li>
 <li>When <a href="../2-options/#followredirect">following redirects</a>, a request is successful <strong>only</strong> when the status code of the final request is <code>2xx</code>.</li>
 <li><code>304</code> responses are always considered successful.</li>
 <li>Got throws automatically when <code>response.ok</code> is <code>false</code> and <code>throwHttpErrors</code> is <code>true</code>.</li>
 </ul>
-</blockquote>
-<h2 id="statuscode"><code>statusCode</code><a class="headerlink" href="#statuscode" title="Permanent link">&para;</a></h2>
+</div>
+<h3 id="statuscode"><code>statusCode</code><a class="headerlink" href="#statuscode" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>number</code></strong></p>
 <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP status code</a>.</p>
-<h2 id="url"><code>url</code><a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
+<h3 id="url"><code>url</code><a class="headerlink" href="#url" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>string</code></strong></p>
 <p>The final URL after all redirects.</p>
-<h2 id="timings"><code>timings</code><a class="headerlink" href="#timings" title="Permanent link">&para;</a></h2>
+<h3 id="timings"><code>timings</code><a class="headerlink" href="#timings" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <a href="../typescript/#timings"><code>Timings</code></a></strong></p>
 <p>The same as <code>request.timings</code>.</p>
-<h2 id="retrycount_1"><code>retryCount</code><a class="headerlink" href="#retrycount_1" title="Permanent link">&para;</a></h2>
+<h3 id="retrycount_1"><code>retryCount</code><a class="headerlink" href="#retrycount_1" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>number</code></strong></p>
 <p>The same as <code>request.retryCount</code>.</p>
-<h2 id="rawbody"><code>rawBody</code><a class="headerlink" href="#rawbody" title="Permanent link">&para;</a></h2>
+<h3 id="rawbody"><code>rawBody</code><a class="headerlink" href="#rawbody" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>Buffer</code></strong></p>
-<p><strong>Note:</strong></p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>This property is only accessible when using Promise API.</li>
 </ul>
-</blockquote>
+</div>
 <p>The raw response body buffer.</p>
-<h2 id="body"><code>body</code><a class="headerlink" href="#body" title="Permanent link">&para;</a></h2>
+<h3 id="body"><code>body</code><a class="headerlink" href="#body" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>unknown</code></strong></p>
-<p><strong>Note:</strong></p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>This property is only accessible when using Promise API.</li>
 </ul>
-</blockquote>
+</div>
 <p>The parsed response body.</p>
-<h2 id="aborted"><code>aborted</code><a class="headerlink" href="#aborted" title="Permanent link">&para;</a></h2>
+<h3 id="aborted"><code>aborted</code><a class="headerlink" href="#aborted" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>boolean</code></strong></p>
 <p>The same as <code>request.aborted</code>.</p>
-<h2 id="complete"><code>complete</code><a class="headerlink" href="#complete" title="Permanent link">&para;</a></h2>
+<h3 id="complete"><code>complete</code><a class="headerlink" href="#complete" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>boolean</code></strong></p>
 <p>If <code>true</code>, the response has been fully parsed.</p>
-<h2 id="socket"><code>socket</code><a class="headerlink" href="#socket" title="Permanent link">&para;</a></h2>
+<h3 id="socket"><code>socket</code><a class="headerlink" href="#socket" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>net.Socket | tls.TLSSocket</code></strong></p>
 <p>The same as <code>request.socket</code>.</p>
-<h2 id="headers"><code>headers</code><a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
+<h3 id="headers"><code>headers</code><a class="headerlink" href="#headers" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>object&lt;string, string&gt;</code></strong></p>
 <p>The <a href="https://nodejs.org/api/http.html#http_message_headers">response headers</a>.</p>
-<h2 id="statusmessage"><code>statusMessage</code><a class="headerlink" href="#statusmessage" title="Permanent link">&para;</a></h2>
+<h3 id="statusmessage"><code>statusMessage</code><a class="headerlink" href="#statusmessage" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>string</code></strong></p>
 <p>The status message corresponding to the status code.</p>
 
@@ -1498,50 +1615,14 @@ Other non-documented functions are private and should not be accessible.</p>
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             回到页面顶部
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="页脚" >
-      
-        
-        <a href="../2-options/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 选项" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              选项
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../4-pagination/" class="md-footer__link md-footer__link--next" aria-label="下一页: Pagination API" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              Pagination API
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1563,32 +1644,44 @@ Other non-documented functions are private and should not be accessible.</p>
   
     
     
+    
+    
     <a href="https://twitter.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Twitter" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://github.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Github" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://instagram.com/sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Instagram" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
     </a>
   
+    
+    
     
     
     <a href="https://sindresorhus.com/apps" target="_blank" rel="noopener" title="Sindre Sorhus Blog" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg>
     </a>
   
     
     
-    <a href="https://mastodon.social/@sindresorhus" target="_blank" rel="noopener" title="Sindre Sorhus Mastodon" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
+      
+    
+    
+    
+    <a href="https://mastodon.social/@sindresorhus" target="_blank" rel="noopener me" title="Sindre Sorhus Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg>
     </a>
   
 </div>
@@ -1602,12 +1695,11 @@ Other non-documented functions are private and should not be accessible.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.top", "navigation.indexes", "content.code.annotate", "navigation.top"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
       
-    
     
   </body>
 </html>

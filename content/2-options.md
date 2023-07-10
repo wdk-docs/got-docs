@@ -2,7 +2,7 @@
 
 
 
-源码: [`source/core/options.ts`](../source/core/options.ts)
+源码: [`source/core/options.ts`](./source/core/options.ts)
 
 就像 `fetch` 在 `Request` 实例中存储选项一样，Got 在 `options` 实例中存储选项。
 它由 `getter` 和 `setter` 组成，提供快速的选项规范化和验证。
@@ -1048,7 +1048,7 @@ await gotUnixSocketsDisabled(
 
 将`other` 合并到当前实例中。
 
-如果你查看[源代码](../source/core/options.ts)，你会注意到内部有一个 `this._merging` 属性。
+如果你查看[源代码](./source/core/options.ts)，你会注意到内部有一个 `this._merging` 属性。
 当它为`true`时，Setters 的工作方式略有不同。
 
 ### `options.toJSON()`

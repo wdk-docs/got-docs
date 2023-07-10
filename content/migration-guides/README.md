@@ -1,3 +1,3 @@
-# Migration guides
+# 迁移向导
 
-> You may think it's too hard to switch, but it's really not. 🦄
+> 你可能认为转换太难了，但事实并非如此。🦄

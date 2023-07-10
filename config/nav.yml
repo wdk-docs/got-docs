@@ -25,5 +25,11 @@ nav:
       - ./migration-guides/request.md
   - 示例:
       - ./examples/index.md
+      - ./examples/advanced-creation.md
+      - ./examples/gh-got.md
+      - ./examples/h2c.md
+      - ./examples/pagination.md
+      - ./examples/runkit-example.md
+      - ./examples/uppercase-headers.md
     
     

@@ -234,6 +234,6 @@ _注意，钩子以数组的形式给出_, 因此可以给出多个钩子。参�
 
 ### 走得更远
 
-在[文档](../README.md#documentation)和[技巧](tips.md#tips)中还有很多需要发现的地方。
+在[文档](README.md#documentation)和[技巧](tips.md#tips)中还有很多需要发现的地方。
 其中，`Got`可以处理[cookies](tips.md#cookies)， [分页](4-pagination.md#pagination-api)， [缓存](cache.md#cache)。
 在实现 `Got` :innocent: 已经完成的操作之前，请阅读文档。

@@ -1,6 +1,6 @@
 # 实例
 
-源码: [`source/create.ts`](../source/create.ts)
+源码: [`source/create.ts`](./source/create.ts)
 
 ## `got.defaults`
 

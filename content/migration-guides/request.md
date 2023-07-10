@@ -140,7 +140,7 @@ server.listen(8080);
 ## 你可以开始了!
 
 好吧，你已经走了这么远:tada:
-看一下[文档](../../readme.md#documentation)。值得花时间读一读。
+看一下[文档](../README.md#documentation)。值得花时间读一读。
 [这里](../tips.md)有一些很棒的建议。
 
 如果某件事不清楚或没有按照它应该的方式运行，不要犹豫[打开一个问题](https://github.com/sindresorhus/got/issues/new/choose).
