@@ -2,162 +2,162 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://wdk-docs.github.io/got-docs/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/1-promise/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/10-instances/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/2-options/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/3-streams/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/4-pagination/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/5-https/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/6-timeout/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/7-retry/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/8-errors/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/9-hooks/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/async-stack-traces/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/cache/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/lets-make-a-plugin/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/quick-start/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/tags/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/thanksto/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/tips/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/typescript/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/examples/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/examples/advanced-creation/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/examples/gh-got/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/examples/h2c/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/examples/pagination/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/examples/runkit-example/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/examples/uppercase-headers/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/includes/abbreviations/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/migration-guides/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/migration-guides/axios/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/migration-guides/nodejs/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/migration-guides/request/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://wdk-docs.github.io/got-docs/tags/</loc>
-         <lastmod>2023-07-10</lastmod>
+         <lastmod>2023-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

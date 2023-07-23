@@ -4,7 +4,7 @@
 
 **类型: `object<string, Function[]>`**
 
-This option represents the hooks to run. Thrown errors will be automatically converted to [`RequestError`](8-errors.md#requesterror).
+该选项表示要运行的钩子。抛出的错误将自动转换为[`RequestError`](8-errors.md#requesterror).
 
 ### `init`
 
@@ -15,33 +15,33 @@ This option represents the hooks to run. Thrown errors will be automatically con
 (plainRequestOptions: OptionsInit, options: Options) => void
 ```
 
-Called with the plain request options, right before their normalization.  
-The second argument represents the current [`Options`](2-options.md) instance.
+用普通请求选项调用，就在它们规范化之前。
+第二个参数表示当前的[`Options`](2-options.md)实例。
 
-**Note:**
+!!! note
 
-> - This hook must be synchronous.
+    这个钩子必须是同步的。
 
-**Note:**
+!!! note
 
-> - This is called every time options are merged.
+    每次合并选项时都会调用这个函数。
 
-**Note:**
+!!! note
 
-> - The `options` object may not have the `url` property. To modify it, use a `beforeRequest` hook instead.
+    `options`对象可能没有`url`属性。要修改它，可以使用`beforeRequest`钩子。
 
-**Note:**
+!!! note
 
-> - This hook is called when a new instance of `Options` is created.
-> - Do not confuse this with the creation of `Request` or `got(…)`.
+    这个钩子在创建一个新的`Options`实例时被调用。
+    不要将它与`Request`或`got(…)`的创建混淆。
 
-**Note:**
+!!! note
 
-> - When using `got(url)` or `got(url, undefined, defaults)` this hook will **not** be called.
+    当使用`got(url)`或`got(url, undefined, defaults)`时，这个钩子将 **不** 被调用。
 
-This is especially useful in conjunction with `got.extend()` when the input needs custom handling.
+当输入需要自定义处理时，这与`got.extend()`结合使用特别有用。
 
-For example, this can be used to fix typos to migrate from older versions faster.
+例如，这可以用于修复错别字，以便更快地从旧版本迁移。
 
 ```js
 import got from "got";
@@ -59,15 +59,15 @@ const instance = got.extend({
   },
 });
 
-// Normally, the following would throw:
+// 通常，下面的代码会抛出:
 const response = await instance("https://example.com", {
   followRedirects: true,
 });
 
-// There is no option named `followRedirects`, but we correct it in an `init` hook.
+// 没有名为`followRedirects`的选项，但我们在`init`钩子中纠正了它。
 ```
 
-Or you can create your own option and store it in a context:
+或者你可以创建自己的选项并将其存储在一个上下文中:
 
 ```js
 import got from "got";
@@ -107,16 +107,17 @@ console.log(headers.Secret);
 (options: Options) => Promisable<void | Response | ResponseLike>;
 ```
 
-Called right before making the request with `options.createNativeRequestOptions()`.  
-This hook is especially useful in conjunction with `got.extend()` when you want to sign your request.
+在使用`options.createNativeRequestOptions()`发出请求之前调用。
+当您想要签名请求时，此钩子与`got.extend()`结合使用特别有用。
 
-**Note:**
+!!! note
 
-> - Got will make no further changes to the request before it is sent.
+    在发送请求之前，Got不会对请求做进一步的更改。
 
-**Note:**
+!!! note
 
-> - Changing `options.json` or `options.form` has no effect on the request. You should change `options.body` instead. If needed, update the `options.headers` accordingly.
+    更改`options.json`或`options.form`对请求没有影响，您应该更改`options.body`。
+    如果需要，相应地更新`options.headers`。
 
 ```js
 import got from "got";
@@ -134,10 +135,10 @@ const response = await got.post("https://httpbin.org/anything", {
 });
 ```
 
-**Tip:**
+!!! tip
 
-> - You can indirectly override the `request` function by early returning a [`ClientRequest`-like](https://nodejs.org/api/http.html#http_class_http_clientrequest) instance or a [`IncomingMessage`-like](https://nodejs.org/api/http.html#http_class_http_incomingmessage) instance. This is very useful when creating a custom cache mechanism.
-> - [Read more about this tip](cache.md#advanced-caching-mechanisms).
+    你可以通过提前返回一个[`ClientRequest`-like](https://nodejs.org/api/http.html#http_class_http_clientrequest)实例或一个[`IncomingMessage`-like](https://nodejs.org/api/http.html#http_class_http_incomingmessage)实例来间接覆盖`request`函数。这在创建自定义缓存机制时非常有用。
+    [阅读更多关于这个技巧的内容](cache.md#advanced-caching-mechanisms).
 
 ### `beforeRedirect`
 
@@ -148,11 +149,11 @@ const response = await got.post("https://httpbin.org/anything", {
 (updatedOptions: Options, plainResponse: PlainResponse) => Promisable<void>;
 ```
 
-The equivalent of `beforeRequest` but when redirecting.
+相当于`beforeRequest`，但在重定向时。
 
-**Tip:**
+!!! tip
 
-> - This is especially useful when you want to avoid dead sites.
+    当你想要避免死站点时，这是特别有用的。
 
 ```js
 import got from "got";
@@ -181,19 +182,19 @@ const response = await got("https://example.com", {
 
 The equivalent of `beforeError` but when retrying. Additionally, there is a second argument `retryCount`, the current retry number.
 
-**Note:**
+!!! note
 
-> - When using the Stream API, this hook is ignored.
+    当使用Stream API时，这个钩子将被忽略。
 
-**Note:**
+!!! note
 
-> - When retrying, the `beforeRequest` hook is called afterwards.
+    当重试时，`beforeRequest`钩子在重试后被调用。
 
-**Note:**
+!!! note
 
-> - If no retry occurs, the `beforeError` hook is called instead.
+    如果没有重试，则调用`beforeError`钩子。
 
-This hook is especially useful when you want to retrieve the cause of a retry.
+当您想要检索重试的原因时，此钩子特别有用。
 
 ```js
 import got from "got";
@@ -220,15 +221,15 @@ await got("https://httpbin.org/status/500", {
   Promisable<Response | CancelableRequest<Response>>;
 ```
 
-Each function should return the response. This is especially useful when you want to refresh an access token.
+每个函数都应该返回响应。这在您想要刷新访问令牌时特别有用。
 
-**Note:**
+!!! note
 
-> - When using the Stream API, this hook is ignored.
+    当使用Stream API时，这个钩子将被忽略。
 
-**Note:**
+!!! note
 
-> - Calling the `retryWithMergedOptions` function will trigger `beforeRetry` hooks. If the retry is successful, all remaining `afterResponse` hooks will be called. In case of an error, `beforeRetry` hooks will be called instead.
+    Calling the `retryWithMergedOptions` function will trigger `beforeRetry` hooks. If the retry is successful, all remaining `afterResponse` hooks will be called. In case of an error, `beforeRetry` hooks will be called instead.
 >   Meanwhile the `init`, `beforeRequest` , `beforeRedirect` as well as already executed `afterResponse` hooks will be skipped.
 
 ```js
@@ -277,9 +278,9 @@ const instance = got.extend({
 (error: RequestError) => Promisable<RequestError>;
 ```
 
-Called with a [`RequestError`](8-errors.md#requesterror) instance. The error is passed to the hook right before it's thrown.
+用[`RequestError`](8-errors.md#requesterror)实例调用。在抛出钩子之前，错误被传递给钩子。
 
-This is especially useful when you want to have more detailed errors.
+当您希望获得更详细的错误时，这尤其有用。
 
 ```js
 import got from "got";

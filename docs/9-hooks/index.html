@@ -1061,47 +1061,37 @@
 <h1 id="api">钩子 API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
 <h2 id="hooks"><code>hooks</code><a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h2>
 <p><strong>类型: <code>object&lt;string, Function[]&gt;</code></strong></p>
-<p>This option represents the hooks to run. Thrown errors will be automatically converted to <a href="../8-errors/#requesterror"><code>RequestError</code></a>.</p>
+<p>该选项表示要运行的钩子。抛出的错误将自动转换为<a href="../8-errors/#requesterror"><code>RequestError</code></a>.</p>
 <h3 id="init"><code>init</code><a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>InitHook[]</code></strong><br />
 <strong>默认: <code>[]</code></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nx">plainRequestOptions</span><span class="o">:</span><span class="w"> </span><span class="kt">OptionsInit</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">Options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span>
 </code></pre></div></td></tr></table></div>
-<p>Called with the plain request options, right before their normalization.<br />
-The second argument represents the current <a href="../2-options/"><code>Options</code></a> instance.</p>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>This hook must be synchronous.</li>
-</ul>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>This is called every time options are merged.</li>
-</ul>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>The <code>options</code> object may not have the <code>url</code> property. To modify it, use a <code>beforeRequest</code> hook instead.</li>
-</ul>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>This hook is called when a new instance of <code>Options</code> is created.</li>
-<li>Do not confuse this with the creation of <code>Request</code> or <code>got(…)</code>.</li>
-</ul>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>When using <code>got(url)</code> or <code>got(url, undefined, defaults)</code> this hook will <strong>not</strong> be called.</li>
-</ul>
-</blockquote>
-<p>This is especially useful in conjunction with <code>got.extend()</code> when the input needs custom handling.</p>
-<p>For example, this can be used to fix typos to migrate from older versions faster.</p>
+<p>用普通请求选项调用，就在它们规范化之前。
+第二个参数表示当前的<a href="../2-options/"><code>Options</code></a>实例。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这个钩子必须是同步的。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>每次合并选项时都会调用这个函数。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>options</code>对象可能没有<code>url</code>属性。要修改它，可以使用<code>beforeRequest</code>钩子。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这个钩子在创建一个新的<code>Options</code>实例时被调用。
+不要将它与<code>Request</code>或<code>got(…)</code>的创建混淆。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当使用<code>got(url)</code>或<code>got(url, undefined, defaults)</code>时，这个钩子将 <strong>不</strong> 被调用。</p>
+</div>
+<p>当输入需要自定义处理时，这与<code>got.extend()</code>结合使用特别有用。</p>
+<p>例如，这可以用于修复错别字，以便更快地从旧版本迁移。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -1137,14 +1127,14 @@ The second argument represents the current <a href="../2-options/"><code>Options
 <a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">  </span><span class="p">},</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">});</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15"></a>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="c1">// Normally, the following would throw:</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="c1">// 通常，下面的代码会抛出:</span>
 <a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">instance</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">  </span><span class="nx">followRedirects</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="p">});</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20"></a>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="c1">// There is no option named `followRedirects`, but we correct it in an `init` hook.</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="c1">// 没有名为`followRedirects`的选项，但我们在`init`钩子中纠正了它。</span>
 </code></pre></div></td></tr></table></div>
-<p>Or you can create your own option and store it in a context:</p>
+<p>或者你可以创建自己的选项并将其存储在一个上下文中:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -1202,20 +1192,17 @@ The second argument represents the current <a href="../2-options/"><code>Options
 <strong>默认: <code>[]</code></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">Options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Promisable</span><span class="o">&lt;</span><span class="ow">void</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Response</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">ResponseLike</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<p>Called right before making the request with <code>options.createNativeRequestOptions()</code>.<br />
-This hook is especially useful in conjunction with <code>got.extend()</code> when you want to sign your request.</p>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>Got will make no further changes to the request before it is sent.</li>
-</ul>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>Changing <code>options.json</code> or <code>options.form</code> has no effect on the request. You should change <code>options.body</code> instead. If needed, update the <code>options.headers</code> accordingly.</li>
-</ul>
-</blockquote>
+<p>在使用<code>options.createNativeRequestOptions()</code>发出请求之前调用。
+当您想要签名请求时，此钩子与<code>got.extend()</code>结合使用特别有用。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在发送请求之前，Got不会对请求做进一步的更改。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>更改<code>options.json</code>或<code>options.form</code>对请求没有影响，您应该更改<code>options.body</code>。
+如果需要，相应地更新<code>options.headers</code>。</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1242,25 +1229,21 @@ This hook is especially useful in conjunction with <code>got.extend()</code> whe
 <a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">  </span><span class="p">},</span>
 <a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="p">});</span>
 </code></pre></div></td></tr></table></div>
-<p><strong>Tip:</strong></p>
-<blockquote>
-<ul>
-<li>You can indirectly override the <code>request</code> function by early returning a <a href="https://nodejs.org/api/http.html#http_class_http_clientrequest"><code>ClientRequest</code>-like</a> instance or a <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage"><code>IncomingMessage</code>-like</a> instance. This is very useful when creating a custom cache mechanism.</li>
-<li><a href="../cache/#advanced-caching-mechanisms">Read more about this tip</a>.</li>
-</ul>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>你可以通过提前返回一个<a href="https://nodejs.org/api/http.html#http_class_http_clientrequest"><code>ClientRequest</code>-like</a>实例或一个<a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage"><code>IncomingMessage</code>-like</a>实例来间接覆盖<code>request</code>函数。这在创建自定义缓存机制时非常有用。
+<a href="../cache/#advanced-caching-mechanisms">阅读更多关于这个技巧的内容</a>.</p>
+</div>
 <h3 id="beforeredirect"><code>beforeRedirect</code><a class="headerlink" href="#beforeredirect" title="Permanent link">&para;</a></h3>
 <p><strong>类型: <code>BeforeRedirectHook[]</code></strong><br />
 <strong>默认: <code>[]</code></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nx">updatedOptions</span><span class="o">:</span><span class="w"> </span><span class="kt">Options</span><span class="p">,</span><span class="w"> </span><span class="nx">plainResponse</span><span class="o">:</span><span class="w"> </span><span class="kt">PlainResponse</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Promisable</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<p>The equivalent of <code>beforeRequest</code> but when redirecting.</p>
-<p><strong>Tip:</strong></p>
-<blockquote>
-<ul>
-<li>This is especially useful when you want to avoid dead sites.</li>
-</ul>
-</blockquote>
+<p>相当于<code>beforeRequest</code>，但在重定向时。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>当你想要避免死站点时，这是特别有用的。</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1293,25 +1276,19 @@ This hook is especially useful in conjunction with <code>got.extend()</code> whe
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">(</span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">RequestError</span><span class="p">,</span><span class="w"> </span><span class="nx">retryCount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Promisable</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>The equivalent of <code>beforeError</code> but when retrying. Additionally, there is a second argument <code>retryCount</code>, the current retry number.</p>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>When using the <abbr title="Stream API">Stream</abbr> API, this hook is ignored.</li>
-</ul>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>When retrying, the <code>beforeRequest</code> hook is called afterwards.</li>
-</ul>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>If no retry occurs, the <code>beforeError</code> hook is called instead.</li>
-</ul>
-</blockquote>
-<p>This hook is especially useful when you want to retrieve the cause of a retry.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当使用Stream API时，这个钩子将被忽略。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当重试时，<code>beforeRequest</code>钩子在重试后被调用。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果没有重试，则调用<code>beforeError</code>钩子。</p>
+</div>
+<p>当您想要检索重试的原因时，此钩子特别有用。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -1343,19 +1320,17 @@ This hook is especially useful in conjunction with <code>got.extend()</code> whe
 <span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">(</span><span class="nx">response</span><span class="o">:</span><span class="w"> </span><span class="kt">Response</span><span class="p">,</span><span class="w"> </span><span class="nx">retryWithMergedOptions</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">OptionsInit</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">never</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="nx">Promisable</span><span class="o">&lt;</span><span class="nx">Response</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">CancelableRequest</span><span class="o">&lt;</span><span class="nx">Response</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<p>Each function should return the response. This is especially useful when you want to refresh an access token.</p>
-<p><strong>Note:</strong></p>
+<p>每个函数都应该返回响应。这在您想要刷新访问令牌时特别有用。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当使用Stream API时，这个钩子将被忽略。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Calling the <code>retryWithMergedOptions</code> function will trigger <code>beforeRetry</code> hooks. If the retry is successful, all remaining <code>afterResponse</code> hooks will be called. In case of an error, <code>beforeRetry</code> hooks will be called instead.</p>
+</div>
 <blockquote>
-<ul>
-<li>When using the <abbr title="Stream API">Stream</abbr> API, this hook is ignored.</li>
-</ul>
-</blockquote>
-<p><strong>Note:</strong></p>
-<blockquote>
-<ul>
-<li>Calling the <code>retryWithMergedOptions</code> function will trigger <code>beforeRetry</code> hooks. If the retry is successful, all remaining <code>afterResponse</code> hooks will be called. In case of an error, <code>beforeRetry</code> hooks will be called instead.
-  Meanwhile the <code>init</code>, <code>beforeRequest</code> , <code>beforeRedirect</code> as well as already executed <code>afterResponse</code> hooks will be skipped.</li>
-</ul>
+<p>Meanwhile the <code>init</code>, <code>beforeRequest</code> , <code>beforeRedirect</code> as well as already executed <code>afterResponse</code> hooks will be skipped.</p>
 </blockquote>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
@@ -1430,8 +1405,8 @@ This hook is especially useful in conjunction with <code>got.extend()</code> whe
 <strong>默认: <code>[]</code></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">RequestError</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Promisable</span><span class="o">&lt;</span><span class="nx">RequestError</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<p>Called with a <a href="../8-errors/#requesterror"><code>RequestError</code></a> instance. The error is passed to the hook right before it's thrown.</p>
-<p>This is especially useful when you want to have more detailed errors.</p>
+<p>用<a href="../8-errors/#requesterror"><code>RequestError</code></a>实例调用。在抛出钩子之前，错误被传递给钩子。</p>
+<p>当您希望获得更详细的错误时，这尤其有用。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
