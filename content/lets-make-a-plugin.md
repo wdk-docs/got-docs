@@ -12,21 +12,21 @@
 
 让我们写下最重要的信息:
 
-1. The root endpoint is `https://api.github.com/`.
-2. We will use version 3 of the API. The `Accept` header needs to be set to `application/vnd.github.v3+json`.
-3. The body is in a JSON format.
-4. We will use OAuth2 for authorization.
-5. We may receive `400 Bad Request` or `422 Unprocessable Entity`. The body contains detailed information about the error.
-6. _Pagination?_ Yeah! Supported natively by Got.
-7. Rate limiting. These headers are interesting:
+1. 根端点是 `https://api.github.com/`.
+2. 我们将使用API的版本3。 `Accept`标头需要设置为 `application/vnd.github.v3+json`.
+3. 正文是JSON格式。
+4. 我们将使用OAuth2进行授权。
+5. 我们可能会收到 `400 Bad Request` 或 `422 Unprocessable Entity`. 正文包含有关错误的详细信息。
+6. _分页?_ 是啊!本机支持。
+7. 率限制。这些头文件很有趣:
 
-   - `X-RateLimit-Limit`
-   - `X-RateLimit-Remaining`
-   - `X-RateLimit-Reset`
+      - `X-RateLimit-Limit`
+      - `X-RateLimit-Remaining`
+      - `X-RateLimit-Reset`
 
-     Also `X-GitHub-Request-Id` may be useful for debugging.
+        也 `X-GitHub-Request-Id` 可能对调试有用。
 
-8. The `User-Agent` header is required.
+8. `User-Agent` 头是必需的。
 
 当我们有了所有必要的信息，我们可以开始搅拌 :cake:
 
@@ -204,13 +204,14 @@ export default instance;
 ...
 ```
 
-Note that by providing our own errors in handlers, we don't alter the ones in `beforeError` hooks.\
-The conversion is the last thing here.
+注意，通过在处理程序中提供我们自己的错误，我们不会改变`beforeError`钩子中的错误。  
+转换是最后一件事。
 
 ## 速度限制
 
-Umm... `response.headers['x-ratelimit-remaining']` doesn't look good. What about `response.rateLimit.limit` instead?\
-Yeah, definitely. Since `response.headers` is an object, we can easily parse these:
+嗯…… `response.headers['x-ratelimit-remaining']` 看起来不太好。 
+用`response.rateLimit.limit`代替怎么样?  
+是的,当然。因为`response.headers`是一个对象，我们可以很容易地解析这些:
 
 ```js
 const getRateLimit = (headers) => ({
@@ -231,7 +232,7 @@ getRateLimit({
 // }
 ```
 
-Let's integrate it:
+我们来积分一下:
 
 ```js
 const getRateLimit = (headers) => ({
@@ -305,7 +306,7 @@ const instance = got.extend({
 
 ## 哇。就是这样吗？
 
-Yup. View the full source code [here](examples/gh-got.js). Here's an example of how to use it:
+是的。查看完整的源代码[在这里](examples/gh-got.js)。下面是如何使用它的一个例子:
 
 ```js
 import ghGot from "gh-got";

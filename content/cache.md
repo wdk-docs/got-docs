@@ -60,7 +60,7 @@ const storageAdapter = new QuickLRU({ maxSize: 1000 });
 await got("https://sindresorhus.com", { cache: storageAdapter });
 ```
 
-View the [Keyv docs](https://github.com/lukechilds/keyv) for more information on how to use storage adapters.
+查看[Keyv文档](https://github.com/lukechilds/keyv)以获取有关如何使用存储适配器的更多信息。
 
 ### 高级缓存机制
 
@@ -104,7 +104,7 @@ console.log(body);
 //=> "Hello, world!"
 ```
 
-If you don't want to alter the `request` function, you can return a cached response in a `beforeRequest` hook:
+如果你不想改变`request`函数，你可以在`beforeRequest`钩子中返回一个缓存的响应:
 
 ```js
 import https from "node:https";
@@ -148,7 +148,7 @@ console.log(body);
 //=> "Hello, world!"
 ```
 
-If you want to prevent duplicating the same requests, you can use a handler instead.
+如果希望防止重复相同的请求，可以使用处理程序。
 
 ```js
 import got from "got";
