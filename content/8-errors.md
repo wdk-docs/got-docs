@@ -1,107 +1,107 @@
 # 错误
 
-Source code:
+源代码:
 
 - [`source/core/errors.ts`](./source/core/errors.ts)
 - [`source/as-promise/types.ts`](./source/as-promise/types.ts)
 - [`source/core/response.ts`](./source/core/response.ts)
 
-All Got errors contain various metadata, such as:
+所有Got错误包含各种元数据，例如:
 
-- `code` - A string like `ERR_NON_2XX_3XX_RESPONSE`,
-- `options` - An instance of [`Options`](2-options.md),
-- `request` - An instance of Got Stream,
-- `response` (optional) - An instance of Got Response,
-- `timings` (optional) - Points to `response.timings`.
+- `code` - 一个字符串就像 `ERR_NON_2XX_3XX_RESPONSE`,
+- `options` - [`Options`](2-options.md)的实例,
+- `request` - Got Stream的一个实例,
+- `response` (optional) - Got Response的一个实例,
+- `timings` (optional) - 指出 `response.timings`.
 
-### Capturing async stack traces
+### 捕获异步堆栈跟踪
 
-Read the article [here](async-stack-traces.md).
+阅读文章[这里](async-stack-traces.md)。
 
-**Note:**
+!!! Note
 
-> - The error codes may differ when the root error has a `code` property set.
+    当根错误设置了`code`属性时，错误代码可能会有所不同。
 
 ## `RequestError`
 
 **Code: `ERR_GOT_REQUEST_ERROR`**
 
-When a request fails. Contains a `code` property with error class code, like `ECONNREFUSED`. All the errors below inherit this one.
+当请求失败时。包含带有错误类代码的 `code` 属性，如`ECONNREFUSED`。下面的所有错误都继承了这个错误。
 
 ## `CacheError`
 
 **Code: `ERR_CACHE_ACCESS`**
 
-When a cache method fails, for example, if the database goes down or there's a filesystem error.
+当缓存方法失败时，例如，如果数据库宕机或存在文件系统错误。
 
 ## `ReadError`
 
 **Code: `ERR_READING_RESPONSE_STREAM`**
 
-When reading from response stream fails.
+从响应流读取失败时。
 
 ## `ParseError`
 
 **Code: `ERR_BODY_PARSE_FAILURE`**
 
-When server response code is 2xx, and parsing body fails. Includes a `response` property.
+当服务器响应代码为2xx时，解析体失败。包含一个`response`属性。
 
 ## `UploadError`
 
 **Code: `ERR_UPLOAD`**
 
-When the request body is a stream and an error occurs while reading from that stream.
+当请求体是流并且从该流读取时发生错误时。
 
 ## `HTTPError`
 
 **Code: `ERR_NON_2XX_3XX_RESPONSE`**
 
-When the request is unsuccessful.
+请求不成功时。
 
-A request is successful when the status code of the final request is `2xx` or `3xx`.
+当最后请求的状态码为`2xx` 或 `3xx`时，请求成功。
 
-When [following redirects](2-options.md#followredirect), a request is successful **only** when the status code of the final request is `2xx`.
+当[跟随重定向](2-options.md#followredirect)时，只有当最终请求的状态码为`2xx`时，请求才会成功。
 
 **Note:**
 
-> - `304` responses are always considered successful.
+> - `304` 回应总是被认为是成功的。
 
 ## `MaxRedirectsError`
 
 **Code: `ERR_TOO_MANY_REDIRECTS`**
 
-When the server redirects you more than ten times. Includes a `response` property.
+当服务器重定向你超过10次。包含一个`response`属性。
 
 ## `UnsupportedProtocolError`
 
-**Note:**
+!!! Note
 
-> - This error is not public.
+    此错误不是公开的。
 
 **Code: `ERR_UNSUPPORTED_PROTOCOL`**
 
-When given an unsupported protocol.
+当给定不支持的协议时。
 
 ## `TimeoutError`
 
 **Code: `ETIMEDOUT`**
 
-When the request is aborted due to a [timeout](6-timeout.md). Includes an `event` (a string) property along with `timings`.
+当请求由于[timeout](6-timeout.md)而中止时。包括`event`(一个字符串)属性和`timings`。
 
 ## `CancelError`
 
 **Code: `ERR_CANCELED`**
 
-When the request is aborted with `promise.cancel()`.
+当使用`promise.cancel()`终止请求时。
 
 ## `RetryError`
 
 **Code: `ERR_RETRYING`**
 
-Always triggers a new retry when thrown.
+抛出时总是触发新的重试。
 
 ## `AbortError`
 
 **Code: `ERR_ABORTED`**
 
-When the request is aborted with [AbortController.abort()](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort).
+当请求被[AbortController.abort()](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)终止时。

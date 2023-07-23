@@ -8,7 +8,7 @@
 
 **类型: [`Options`](2-options.md)**
 
-The options used for this instance.
+用于此实例的选项。
 
 ### `handlers`
 
@@ -18,28 +18,31 @@ The options used for this instance.
 (options: Options, next: …) => next(options)
 ```
 
-An array of handlers. The `next` function returns a [`Promise`](1-promise.md) or a [`Request` Got stream](3-streams.md).
+处理程序数组。
+`next`函数返回一个[`Promise`](1-promise.md)或一个[`Request` Got stream](3-streams.md)。
 
-You execute them directly by calling `got(…)`. They are some sort of "global hooks" - these functions are called first. The last handler (it's invisible) is either `asPromise` or `asStream`, depending on the `options.isStream` property.
+你可以通过调用`got(…)`直接执行它们。
+它们是某种“全局钩子”——首先调用这些函数。最后一个处理程序(它是不可见的)是`asPromise`或`asStream`，取决于`options.isStream`属性。
 
 ### `mutableDefaults`
 
 **类型: `boolean`**  
 **默认: `false`**
 
-Determines whether `got.defaults.options` can be modified.
+确定是否可以修改`got.defaults.options`。
 
 ## `got.extend(…options, …instances)`
 
-**Tip:**
+!!! Tip
 
-> - `options` can include `handlers` and `mutableDefaults`.
+     `options` 可以包括 `handlers` 和 `mutableDefaults`.
 
-**Note:**
+!!! Note
 
-> - Properties that are not enumerable, such as `body`, `json`, and `form`, will not be merged.
+    不可枚举的属性，例如 `body`, `json`, 和 `form`, 不会被合并。
 
-Configure a new `got` instance with merged default options. The options are merged with the parent instance's `defaults.options` using [`options.merge(…)`](2-options.md#merge).
+用合并的默认选项配置一个新的`got`实例。
+使用[`options.merge(…)`](2-options.md#merge)将这些选项与父实例的`defaults.options`合并。
 
 ```js
 import got from "got";
@@ -67,13 +70,13 @@ console.log(headers2["x-foo"]); //=> 'bar'
 console.log(headers2["x-lorem"]); //=> 'impsum'
 ```
 
-**Note:**
+!!! Note
 
-> - Handlers can be asynchronous and can return a `Promise`, but never a `Promise<Stream>` if `options.isStream` is `true`.
-> - Streams must always be handled synchronously.
-> - In order to perform async work using streams, the `beforeRequest` hook should be used instead.
+    - 处理程序可以是异步的，并且可以返回 `Promise`, 但从来没有 `Promise<Stream>` 如果 `options.isStream` 是 `true`.
+    - 流必须始终同步处理。
+    - 为了使用流执行异步工作，  `beforeRequest` 应该使用Hook。
 
-The recommended approach for creating handlers that can handle both promises and streams is:
+创建可以同时处理承诺和流的处理程序的推荐方法是:
 
 ```js
 import got from "got";
