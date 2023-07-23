@@ -7,7 +7,7 @@
 [![Downloads](https://img.shields.io/npm/dm/got.svg)](https://npmjs.com/got)
 [![Install size](https://packagephobia.com/badge?p=got)](https://packagephobia.com/result?p=got)
 
-[了解 get 与其他 HTTP 库的比较](#comparison)
+[了解 Got 与其他 HTTP 库的比较](#comparison)
   
 ---  
 
@@ -108,20 +108,20 @@ console.log(data);
 
 ### 迁移向导
 
-- [Request migration guide](migration-guides/request.md)
-  - [_(Note that Request is unmaintained)_](https://github.com/request/request/issues/3142)
+- [Request迁移指南](migration-guides/request.md)
+    - [_(注意，Request是不维护的)_](https://github.com/request/request/issues/3142)
 - [Axios](migration-guides/axios.md)
 - [Node.js](migration-guides/nodejs.md)
 
 ## Got 插件
 
-- [`got4aws`](https://github.com/SamVerschueren/got4aws) - Got convenience wrapper to interact with AWS v4 signed APIs
-- [`gh-got`](https://github.com/sindresorhus/gh-got) - Got convenience wrapper to interact with the GitHub API
-- [`gl-got`](https://github.com/singapore/gl-got) - Got convenience wrapper to interact with the GitLab API
-- [`gotql`](https://github.com/khaosdoctor/gotql) - Got convenience wrapper to interact with GraphQL using JSON-parsed queries instead of strings
-- [`got-fetch`](https://github.com/alexghr/got-fetch) - Got with a [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) interface
-- [`got-scraping`](https://github.com/apify/got-scraping) - Got wrapper specifically designed for web scraping purposes
-- [`got-ssrf`](https://github.com/JaneJeon/got-ssrf) - Got wrapper to protect server-side requests against SSRF attacks
+- [`got4aws`](https://github.com/SamVerschueren/got4aws) - Got 方便的包装器与AWS v4签名api交互
+- [`gh-got`](https://github.com/sindresorhus/gh-got) - Got 方便包装器与GitHub API交互
+- [`gl-got`](https://github.com/singapore/gl-got) - Got 方便包装器与GitLab API交互
+- [`gotql`](https://github.com/khaosdoctor/gotql) - Got 方便的包装器使用json解析的查询而不是字符串与GraphQL交互
+- [`got-fetch`](https://github.com/alexghr/got-fetch) - `Got` 使用[' fetch '](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)接口
+- [`got-scraping`](https://github.com/apify/got-scraping) - Got 专门为网页抓取目的设计的包装器
+- [`got-ssrf`](https://github.com/JaneJeon/got-ssrf) - Got 包装器保护服务器端请求免受SSRF攻击
 
 ### 遗产
 
@@ -163,12 +163,12 @@ console.log(data);
 | TypeScript support    |   [![][gts]][g10]   |   [![][nts]][n10]    |     [![][kts]][k10]      |  [![][ats]][a10]   |    [![][sts]][s11]     |
 | Last commit           |   [![][glc]][g11]   |   [![][nlc]][n11]    |     [![][klc]][k11]      |  [![][alc]][a11]   |    [![][slc]][s11]     |
 
-\* It's almost API compatible with the browser `fetch` API.\
-\*\* Need to switch the protocol manually. Doesn't accept PUSH streams and doesn't reuse HTTP/2 sessions.\
-\*\*\* Currently, only `DownloadProgress` event is supported, `UploadProgress` event is not supported.\
-¹ Requires Node.js 15.10.0 or above.\
-:sparkle: Almost-stable feature, but the API may change. Don't hesitate to try it out!\
-:grey_question: Feature in early stage of development. Very experimental.
+它几乎与浏览器的`fetch`API兼容。  
+需要手动切换协议。不接受PUSH流，不重用HTTP/2会话。  
+目前，只支持`DownloadProgress`事件，不支持`UploadProgress`事件。 
+¹ 要求Node.js 15.10.0或以上版本。  
+:sparkle: 几乎稳定的特性，但是API可能会改变。不要犹豫，试一试吧!  
+:grey_question: 在早期开发阶段的功能。实验。  
 
 <!-- GITHUB -->
 
@@ -320,7 +320,7 @@ console.log(data);
 [a11]: https://github.com/axios/axios/commits
 [s11]: https://github.com/visionmedia/superagent/commits
 
-[Click here][installsizeofthedependencies] to see the install size of the Got dependencies.
+[点击这里][installsizeofthedependencies]查看got依赖的安装大小。
 
 [installsizeofthedependencies]: https://packagephobia.com/result?p=@sindresorhus/is@4.0.1,@szmarczak/http-timer@4.0.5,@types/cacheable-request@6.0.1,@types/responselike@1.0.0,cacheable-lookup@6.0.0,cacheable-request@7.0.2,decompress-response@6.0.0,get-stream@6.0.1,http2-wrapper@2.0.5,lowercase-keys@2.0.0,p-cancelable@2.1.1,responselike@2.0.0
 
@@ -426,44 +426,44 @@ console.log(data);
 >
 > — <a href="https://github.com/mojavelinux">Dan Allen</a>
 
-> GetVoIP is happily using Got in production. One of the unique capabilities of Got is the ability to handle Unix sockets which enables us to build a full control interfaces for our docker stack.
+> GetVoIP在生产中愉快地使用了Got。Got的独特功能之一是处理Unix套接字的能力，这使我们能够为我们的docker堆栈构建一个完整的控制接口。
 >
 > — <a href="https://github.com/danielkalen">Daniel Kalen</a>
 
-> We're using Got inside of Exoframe to handle all the communication between CLI and server. Exoframe is a self-hosted tool that allows simple one-command deployments using Docker.
+> 我们在exframe内部使用get来处理CLI和服务器之间的所有通信。Exoframe是一个自托管工具，允许使用Docker进行简单的单命令部署。
 >
 > — <a href="https://github.com/yamalight">Tim Ermilov</a>
 
-> Karaoke Mugen uses Got to fetch content updates from its online server.
+> 卡拉ok Mugen使用Got从其在线服务器获取内容更新。
 >
 > — <a href="https://github.com/AxelTerizaki">Axel Terizaki</a>
 
-> Renovate uses Got, gh-got and gl-got to send millions of queries per day to GitHub, GitLab, npmjs, PyPi, Packagist, Docker Hub, Terraform, CircleCI, and more.
+> Renovate使用Got、gh-got和gl-got每天向GitHub、GitLab、npmjs、PyPi、Packagist、Docker Hub、Terraform、CircleCI等发送数百万个查询。
 >
 > — <a href="https://github.com/rarkins">Rhys Arkins</a>
 
-> Resistbot uses Got to communicate from the API frontend where all correspondence ingresses to the officials lookup database in back.
+> Resistbot使用Got从API前端进行通信，其中所有通信都进入到后台的官方查找数据库。
 >
 > — <a href="https://github.com/chris-erickson">Chris Erickson</a>
 
-> Natural Cycles is using Got to communicate with all kinds of 3rd-party REST APIs (over 9000!).
+> Natural Cycles使用Got与各种第三方REST api(超过9000个!)进行通信。
 >
 > — <a href="https://github.com/kirillgroshkov">Kirill Groshkov</a>
 
-> Microlink is a cloud browser as an API service that uses Got widely as the main HTTP client, serving ~22M requests a month, every time a network call needs to be performed.
+> Microlink是一个云浏览器作为API服务，广泛使用get作为主要的HTTP客户端，每月处理约2200万个请求，每次需要执行网络调用。
 >
 > — <a href="https://github.com/Kikobeats">Kiko Beats</a>
 
-> We’re using Got at Radity. Thanks for such an amazing work!
+> 我们在Radity使用Got。谢谢你这么了不起的工作!
 >
 > — <a href="https://github.com/MirzayevFarid">Mirzayev Farid</a>
 
-> Got has been a crucial component of Apify's scraping for years. We use it to extract data from billions of web pages every month, and we really appreciate the powerful API and extensibility, which allowed us to build our own specialized HTTP client on top of Got. The support has always been stellar too.
+> 多年来，Got一直是Apify数据抓取的关键组成部分。我们每个月都用它从数十亿个网页中提取数据，我们真的很欣赏它强大的API和可扩展性，它使我们能够在Got的基础上构建我们自己的专用HTTP客户端。支持也一直是一流的。
 >
 > — <a href="https://github.com/mnmkng">Ondra Urban</a>
 
 ## 为企业
 
-Available as part of the Tidelift Subscription.
+可作为Tidelift订阅的一部分。
 
-The maintainers of `got` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-got?utm_source=npm-got&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+`got`和其他数千个软件包的维护者正在与Tidelift合作，为您构建应用程序时使用的开源依赖项提供商业支持和维护。节省时间、降低风险并改善代码运行状况，同时向您所使用的依赖项的维护者支付费用。[了解更多](https://tidelift.com/subscription/pkg/npm-got?utm_source=npm-got&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)

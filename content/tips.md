@@ -151,7 +151,8 @@ scope.persist(false);
 查看[`got-scraping/src/agent/h1-proxy-agent.ts`](https://github.com/apify/got-scraping/blob/2ec7f9148917a6a38d6d1c8c695606767c46cce5/src/agent/h1-proxy-agent.ts)。
 它具有与`hpagent`相同的API。
 
-[`hpagent`](https://github.com/delvedor/hpagent) is a modern package as well. In contrast to `tunnel`, it allows keeping the internal sockets alive to be reused.
+[`hpagent`](https://github.com/delvedor/hpagent) 也是一个现代的包装。 
+与`tunnel`相比，它允许保持内部套接字的活动以被重用。
 
 ```js
 import got from "got";
@@ -171,10 +172,10 @@ await got("https://sindresorhus.com", {
 });
 ```
 
-Alternatively, use [`global-agent`](https://github.com/gajus/global-agent) to configure a global proxy for all HTTP/HTTPS traffic in your program.
+或者，使用[`global-agent`](https://github.com/gajus/global-agent)为程序中的所有HTTP/HTTPS流量配置一个全局代理。
 
-If you're using HTTP/2, the [`http2-wrapper`](https://github.com/szmarczak/http2-wrapper/#proxy-support) package provides proxy support out-of-box.\
-[Learn more.](https://github.com/szmarczak/http2-wrapper#proxy-support)
+如果您使用的是HTTP/2， [`http2-wrapper`](https://github.com/szmarczak/http2-wrapper/#proxy-support)包提供了开箱即用的代理支持。  
+[学习更多的知识。](https://github.com/szmarczak/http2-wrapper#proxy-support)
 
 ## 在没有代理的情况下重试
 
@@ -394,10 +395,10 @@ console.log(headers.Foo); //=> 'bar'
     
     得到了v12和更高版本的ESM包，但是Electron还不支持ESM。所以你需要使用Got v11。
 
-Got doesn't support the `electron.net` module. It's missing crucial APIs that are available in Node.js.\
-While Got used to support `electron.net`, it got very unstable and caused many errors.
+Got不支持`electron.net`模块。它缺少Node.js中可用的关键api。  
+虽然Got习惯支持`electron.net`，但它变得非常不稳定，并导致许多错误。
 
-However, you can use [IPC communication](https://www.electronjs.org/docs/api/ipc-main#ipcmainhandlechannel-listener) to get the Response object:
+但是，你可以使用[IPC通信](https://www.electronjs.org/docs/api/ipc-main#ipcmainhandlechannel-listener)来获取响应对象:
 
 ```js
 // Main process

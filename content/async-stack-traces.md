@@ -33,7 +33,7 @@ Error: here
     at processTimers (node:internal/timers:500:7)
 ```
 
-The stack trace does not show where the timeout was set. It's currently not possible to determine this with the native `Promise`s. However, [`bluebird`](https://github.com/petkaantonov/bluebird/) exposes an option dedicated to capturing async stack traces:
+堆栈跟踪不会显示超时设置的位置。目前无法用原生的`Promise`来确定这一点。然而，[`bluebird`](https://github.com/petkaantonov/bluebird/)提供了一个专门用于捕获异步堆栈跟踪的选项:
 
 ```js
 import Bluebird from "bluebird";
@@ -65,7 +65,7 @@ From previous event:
     at async handleMainPromise (node:internal/modules/run_main:63:12)
 ```
 
-Now it's clear. We know that the timeout was set on line 5. Bluebird should be sufficient for Got:
+现在很清楚了。我们知道超时设置在第5行。蓝鸟对Got来说应该足够了:
 
 ```js
 import Bluebird from "bluebird";
@@ -114,7 +114,11 @@ From previous event:
     at async handleMainPromise (node:internal/modules/run_main:63:12)
 ```
 
-As expected, we know where the timeout has been set. Unfortunately, if we increase our retry count limit to `1`, the stack trace remains the same. That's because `bluebird` doesn't track I/O events. Please note that this should be sufficient for most cases. In order to debug further, we can use [`async_hooks`](https://nodejs.org/api/async_hooks.html) instead. A Stack Overflow user has come up with an awesome solution:
+正如预期的那样，我们知道在哪里设置了超时。
+不幸的是，如果我们将重试计数限制增加到`1`，堆栈跟踪将保持不变。
+这是因为`bluebird`不跟踪I/O事件。请注意，这对于大多数情况应该是足够的。
+为了进一步调试，我们可以使用[`async_hooks`](https://nodejs.org/api/async_hooks.html)来代替。
+一位Stack Overflow用户提出了一个很棒的解决方案:
 
 ```js
 import asyncHooks from "async_hooks";
@@ -151,7 +155,7 @@ globalThis.Error = class extends Error {
 };
 ```
 
-If we replace the `bluebird` part with this, we get:
+如果我们把`bluebird`部分替换成这个，我们得到:
 
 ```
 Error: Timeout awaiting 'request' for 1ms
@@ -222,11 +226,14 @@ Error: Timeout awaiting 'request' for 1ms
     at processTimers (node:internal/timers:500:7)
 ```
 
-This is extremely long, and not a complete Node.js app. Just a demo. Imagine how long it would be if this was used with databases, file systems, etc.
+这是一个非常长的，并不是一个完整的Node.js应用程序，只是一个演示。想象一下，如果将它与数据库、文件系统等一起使用，将需要多长时间。
 
-#### Conclusion
+#### 结论
 
-All these workarounds have a large impact on performance. However, there is a possible solution to this madness. Got provides handlers, hooks, and context. We can capture the stack trace in a handler, store it in a context and expose it in a `beforeError` hook.
+所有这些变通方法都对性能有很大的影响。
+然而，这种疯狂有一个可能的解决方案。
+Got提供了处理程序、钩子和上下文。
+我们可以在处理程序中捕获堆栈跟踪，将其存储在一个上下文中，并将其暴露在`beforeError`钩子中。
 
 ```js
 import got from "got";
@@ -295,9 +302,10 @@ RequestError: Timeout awaiting 'request' for 100ms
 }
 ```
 
-Yay! This is much more readable. Furthermore, we capture the stack trace only when `got` is called. This is definitely going to have some performance impact, but it will be much more performant than the other mentioned solutions.
+耶!这样更容易读懂。此外，我们仅在调用`got`时捕获堆栈跟踪。
+这肯定会对性能产生一些影响，但它比前面提到的其他解决方案的性能要好得多。
 
-Curious to know more? Check out these links:
+想知道更多吗?看看这些链接:
 
 - https://stackoverflow.com/questions/54914770/is-there-a-good-way-to-surface-error-traces-in-production-across-event-emitters
 - https://github.com/nodejs/node/issues/11370
